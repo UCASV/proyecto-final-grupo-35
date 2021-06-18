@@ -1,0 +1,11 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/.idea.VaccinationManagement.iml
+/projectSettingsUpdater.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\oscar\Desktop\CICLO 01_2021 STUFF\PROYECTO\VaccinationManagement\.idea\.idea.VaccinationManagement\.idea/dataSources/
+/dataSources.local.xml
