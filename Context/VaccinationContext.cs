@@ -18,9 +18,9 @@ namespace VaccinationManagement.Context
         {
         }
 
+        public virtual DbSet<Appointment> Appointments { get; set; }
+        public virtual DbSet<AppointmentType> AppointmentTypes { get; set; }
         public virtual DbSet<Booth> Booths { get; set; }
-        public virtual DbSet<Cite> Cites { get; set; }
-        public virtual DbSet<CiteType> CiteTypes { get; set; }
         public virtual DbSet<Citizen> Citizens { get; set; }
         public virtual DbSet<Disease> Diseases { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
@@ -43,6 +43,62 @@ namespace VaccinationManagement.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Modern_Spanish_CI_AS");
+
+            modelBuilder.Entity<Appointment>(entity =>
+            {
+                entity.ToTable("APPOINTMENT");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.AppointmentDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("appointment_date");
+
+                entity.Property(e => e.AppointmentLocation)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("appointment_location");
+
+                entity.Property(e => e.IdAppointmentType).HasColumnName("id_appointment_type");
+
+                entity.Property(e => e.IdCitizen).HasColumnName("id_citizen");
+
+                entity.Property(e => e.Step2Date)
+                    .HasColumnType("datetime")
+                    .HasColumnName("step2_date");
+
+                entity.Property(e => e.VaccineDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("vaccine_date");
+
+                entity.HasOne(d => d.IdAppointmentTypeNavigation)
+                    .WithMany(p => p.Appointments)
+                    .HasForeignKey(d => d.IdAppointmentType)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__APPOINTME__id_ap__44FF419A");
+
+                entity.HasOne(d => d.IdCitizenNavigation)
+                    .WithMany(p => p.Appointments)
+                    .HasForeignKey(d => d.IdCitizen)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__APPOINTME__id_ci__4316F928");
+            });
+
+            modelBuilder.Entity<AppointmentType>(entity =>
+            {
+                entity.ToTable("APPOINTMENT_TYPE");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.AppointmentType1)
+                    .IsRequired()
+                    .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .HasColumnName("appointment_type");
+            });
 
             modelBuilder.Entity<Booth>(entity =>
             {
@@ -73,66 +129,10 @@ namespace VaccinationManagement.Context
                 entity.Property(e => e.Phone).HasColumnName("phone");
             });
 
-            modelBuilder.Entity<Cite>(entity =>
-            {
-                entity.ToTable("CITE");
-
-                entity.Property(e => e.Id).HasColumnName("id");
-
-                entity.Property(e => e.CiteDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("cite_date");
-
-                entity.Property(e => e.CiteLocation)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("cite_location");
-
-                entity.Property(e => e.IdCiteType).HasColumnName("id_cite_type");
-
-                entity.Property(e => e.IdCitizen).HasColumnName("id_citizen");
-
-                entity.Property(e => e.Step2Date)
-                    .HasColumnType("datetime")
-                    .HasColumnName("step2_date");
-
-                entity.Property(e => e.VaccineDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("vaccine_date");
-
-                entity.HasOne(d => d.IdCiteTypeNavigation)
-                    .WithMany(p => p.Cites)
-                    .HasForeignKey(d => d.IdCiteType)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITE__id_cite_ty__440B1D61");
-
-                entity.HasOne(d => d.IdCitizenNavigation)
-                    .WithMany(p => p.Cites)
-                    .HasForeignKey(d => d.IdCitizen)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITE__id_citizen__4222D4EF");
-            });
-
-            modelBuilder.Entity<CiteType>(entity =>
-            {
-                entity.ToTable("CITE_TYPE");
-
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
-
-                entity.Property(e => e.CiteType1)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .IsUnicode(false)
-                    .HasColumnName("cite_type");
-            });
-
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__D876F1BEF8101C16");
+                    .HasName("PK__CITIZEN__D876F1BEE508A4D0");
 
                 entity.ToTable("CITIZEN");
 
@@ -171,19 +171,19 @@ namespace VaccinationManagement.Context
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdEmployee)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITIZEN__id_empl__3E52440B");
+                    .HasConstraintName("FK__CITIZEN__id_empl__3F466844");
 
                 entity.HasOne(d => d.IdPriorityGroupNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdPriorityGroup)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITIZEN__id_prio__412EB0B6");
+                    .HasConstraintName("FK__CITIZEN__id_prio__4222D4EF");
 
                 entity.HasOne(d => d.IdSpecialInstitutionNavigation)
                     .WithMany(p => p.Citizens)
                     .HasForeignKey(d => d.IdSpecialInstitution)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CITIZEN__id_spec__403A8C7D");
+                    .HasConstraintName("FK__CITIZEN__id_spec__412EB0B6");
             });
 
             modelBuilder.Entity<Disease>(entity =>
@@ -203,7 +203,7 @@ namespace VaccinationManagement.Context
                 entity.HasOne(d => d.IdCitizenNavigation)
                     .WithMany(p => p.Diseases)
                     .HasForeignKey(d => d.IdCitizen)
-                    .HasConstraintName("FK__DISEASE__id_citi__3F466844");
+                    .HasConstraintName("FK__DISEASE__id_citi__403A8C7D");
             });
 
             modelBuilder.Entity<Employee>(entity =>
@@ -242,18 +242,18 @@ namespace VaccinationManagement.Context
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.EmployeeType)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EMPLOYEE__employ__398D8EEE");
+                    .HasConstraintName("FK__EMPLOYEE__employ__3A81B327");
 
                 entity.HasOne(d => d.IdBoothNavigation)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.IdBooth)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EMPLOYEE__id_boo__3A81B327");
+                    .HasConstraintName("FK__EMPLOYEE__id_boo__3B75D760");
 
                 entity.HasOne(d => d.IdUserNavigation)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.IdUser)
-                    .HasConstraintName("FK__EMPLOYEE__id_use__3C69FB99");
+                    .HasConstraintName("FK__EMPLOYEE__id_use__3D5E1FD2");
             });
 
             modelBuilder.Entity<EmployeeType>(entity =>
@@ -290,13 +290,13 @@ namespace VaccinationManagement.Context
                     .WithMany(p => p.LogIns)
                     .HasForeignKey(d => d.IdBooth)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__LOG_IN__id_booth__3B75D760");
+                    .HasConstraintName("FK__LOG_IN__id_booth__3C69FB99");
 
                 entity.HasOne(d => d.IdUserNavigation)
                     .WithMany(p => p.LogIns)
                     .HasForeignKey(d => d.IdUser)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__LOG_IN__id_user__3D5E1FD2");
+                    .HasConstraintName("FK__LOG_IN__id_user__3E52440B");
             });
 
             modelBuilder.Entity<PriorityGroup>(entity =>
@@ -330,13 +330,13 @@ namespace VaccinationManagement.Context
                     .HasColumnType("datetime")
                     .HasColumnName("effect_time");
 
-                entity.Property(e => e.IdCite).HasColumnName("id_cite");
+                entity.Property(e => e.IdAppointment).HasColumnName("id_appointment");
 
-                entity.HasOne(d => d.IdCiteNavigation)
+                entity.HasOne(d => d.IdAppointmentNavigation)
                     .WithMany(p => p.SideEffects)
-                    .HasForeignKey(d => d.IdCite)
+                    .HasForeignKey(d => d.IdAppointment)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__SIDE_EFFE__id_ci__4316F928");
+                    .HasConstraintName("FK__SIDE_EFFE__id_ap__440B1D61");
             });
 
             modelBuilder.Entity<SpecialInstitution>(entity =>

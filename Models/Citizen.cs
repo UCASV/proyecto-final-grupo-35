@@ -9,7 +9,7 @@ namespace VaccinationManagement.Models
     {
         public Citizen()
         {
-            Cites = new HashSet<Cite>();
+            Appointments = new HashSet<Appointment>();
             Diseases = new HashSet<Disease>();
         }
 
@@ -26,7 +26,7 @@ namespace VaccinationManagement.Models
         public virtual Employee IdEmployeeNavigation { get; set; }
         public virtual PriorityGroup IdPriorityGroupNavigation { get; set; }
         public virtual SpecialInstitution IdSpecialInstitutionNavigation { get; set; }
-        public virtual ICollection<Cite> Cites { get; set; }
+        public virtual ICollection<Appointment> Appointments { get; set; }
         public virtual ICollection<Disease> Diseases { get; set; }
     }
 }
