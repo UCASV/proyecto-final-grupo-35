@@ -75,8 +75,8 @@ CREATE TABLE APPOINTMENT(
  id INT PRIMARY KEY IDENTITY,
  appointment_location VARCHAR(100) NOT NULL,
  appointment_date DATETIME NOT NULL,
- step2_date DATETIME NOT NULL,
- vaccine_date DATETIME NOT NULL,
+ step2_date DATETIME  NULL,
+ vaccine_date DATETIME NULL,
  id_appointment_type INT NOT NULL,
  id_citizen INT NOT NULL
 
@@ -206,4 +206,20 @@ INSERT INTO PRIORITY_GROUP VALUES(5,'Personal del gobierno central');
 INSERT INTO APPOINTMENT_TYPE VALUES(1,'Primera cita');
 INSERT INTO APPOINTMENT_TYPE VALUES(2,'Segunda cita');
 
-SELECT * FROM APPOINTMENT_TYPE
+SELECT * FROM CITIZEN
+SELECT * FROM APPOINTMENT
+SELECT * FROM EMPLOYEE
+
+
+INSERT INTO CITIZEN VALUES(063560166, 'Oscar Juarez', 'Urbanizacion Hacienda San José, Pasaje 6, Casa 17 pol D3, Santa Tecla',
+	77549165, 'juarezgonz02@gmail.com', 00126320, 3, 2, 2)
+
+INSERT INTO CITIZEN VALUES(324234234, 'Alexander Juarez', 'Urbanizacion Hacienda San José, Pasaje 6, Casa 17 pol D3, Santa Tecla',
+	77549165, 'juarezgonz02@gmail.com', 00126320, 6, 2, 2)
+	
+INSERT INTO APPOINTMENT VALUES('Santa Tecla', '12/06/2021 16:10:00', null, null, 1, 00126320) 
+
+SELECT * FROM BOOTH B JOIN EMPLOYEE E ON E.id_booth = B.id  
+		JOIN CITIZEN C ON E.id = C.id_employee 
+		JOIN APPOINTMENT A ON A.id_citizen = C.dui 
+	WHERE B.id = 3

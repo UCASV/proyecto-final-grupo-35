@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccinationManagement.Views;
 
 namespace VaccinationManagement
 {
+    static class LocationData
+    {
+        public static int UserId { get; set; }
+        public static string GestorName { get; set; }
+        public static int IdActualBooth { get; set; }
+    }
+    
     static class Program
     {
         /// <summary>
@@ -18,6 +26,7 @@ namespace VaccinationManagement
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new VaccinationProcess());
         }
     }
 }
