@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +13,7 @@ namespace VaccinationManagement.Views
     {
         public VaccinationProcess()
         {
+            
             var db = new VaccinationContext();
             LocationData.IdActualBooth = 2;
             
@@ -18,7 +21,11 @@ namespace VaccinationManagement.Views
             this.btnActualHour1.Click += new EventHandler(this.cmbTimeSelection);
             this.btnActualhour2.Click += new EventHandler(this.cmbTimeSelection);
 
+            Button1.Click += new EventHandler(this.Button1_Click);
+            docToPrint.PrintPage += new PrintPageEventHandler(this.document_PrintPage);
+
         }
+        
 
         ///// Event Handlers
         private void VaccinationProcess_Load(object sender, EventArgs e)
@@ -171,6 +178,55 @@ namespace VaccinationManagement.Views
         
         }
         
+        private System.Drawing.Printing.PrintDocument docToPrint = 
+            new System.Drawing.Printing.PrintDocument();
+        
+        // This method will set properties on the PrintDialog object and
+        // then display the dialog.
+        private void Button1_Click(System.Object sender, 
+            System.EventArgs e)
+        {
+            // Allow the user to choose the page range he or she would
+            // like to print.
+            PrintDialog1.AllowSomePages = true;
+
+            // Show the help button.
+            PrintDialog1.ShowHelp = true;
+
+            // Set the Document property to the PrintDocument for 
+            // which the PrintPage Event has been handled. To display the
+            // dialog, either this property or the PrinterSettings property 
+            // must be set 
+            PrintDialog1.Document = docToPrint;
+
+            DialogResult result = PrintDialog1.ShowDialog();
+
+            // If the result is OK then print the document.
+            if (result==DialogResult.OK)
+            {
+                docToPrint.Print();
+            }
+        }
+
+        // The PrintDialog will print the document
+        // by handling the document's PrintPage event.
+        private void document_PrintPage(object sender, 
+            System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+            // Insert code to render the page here.
+            // This code will be called when the control is drawn.
+
+            // The following code will render a simple
+            // message on the printed document.
+            string text = "In document_PrintPage method.";
+            System.Drawing.Font printFont = new System.Drawing.Font
+                ("Arial", 35, System.Drawing.FontStyle.Regular);
+
+            // Draw the content.
+            e.Graphics.DrawString(text, printFont, 
+                System.Drawing.Brushes.Black, 10, 10);
+        }
     }
     
 }

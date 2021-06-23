@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VaccinationManagement.Views;
+using VaccinationManagement.Context;
+using VaccinationManagement.Models;
 
 namespace VaccinationManagement
 {
@@ -22,7 +24,9 @@ namespace VaccinationManagement
         [STAThread]
         static void Main()
         {
-                    
+
+         
+            
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
