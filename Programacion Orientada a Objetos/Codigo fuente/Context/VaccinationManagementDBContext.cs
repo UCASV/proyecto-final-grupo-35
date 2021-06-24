@@ -76,13 +76,13 @@ namespace VaccinationManagement.Context
                     .WithMany(p => p.Appointments)
                     .HasForeignKey(d => d.IdAppointmentType)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__APPOINTME__id_ap__44FF419A");
+                    .HasConstraintName("FK__APPOINTME__id_ap__534D60F1");
 
                 entity.HasOne(d => d.IdCitizenNavigation)
                     .WithMany(p => p.Appointments)
                     .HasForeignKey(d => d.IdCitizen)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__APPOINTME__id_ci__4316F928");
+                    .HasConstraintName("FK__APPOINTME__id_ci__52593CB8");
             });
 
             modelBuilder.Entity<AppointmentType>(entity =>
@@ -273,30 +273,29 @@ namespace VaccinationManagement.Context
 
             modelBuilder.Entity<LogIn>(entity =>
             {
-                entity.HasKey(e => new { e.IdUser, e.IdBooth })
-                    .HasName("PK_log_in");
-
                 entity.ToTable("LOG_IN");
 
-                entity.Property(e => e.IdUser).HasColumnName("id_user");
-
-                entity.Property(e => e.IdBooth).HasColumnName("id_booth");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.DateTime)
                     .HasColumnType("datetime")
                     .HasColumnName("date_time");
 
+                entity.Property(e => e.IdBooth).HasColumnName("id_booth");
+
+                entity.Property(e => e.IdUser).HasColumnName("id_user");
+
                 entity.HasOne(d => d.IdBoothNavigation)
                     .WithMany(p => p.LogIns)
                     .HasForeignKey(d => d.IdBooth)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__LOG_IN__id_booth__3C69FB99");
+                    .HasConstraintName("FK__LOG_IN__id_booth__5812160E");
 
                 entity.HasOne(d => d.IdUserNavigation)
                     .WithMany(p => p.LogIns)
                     .HasForeignKey(d => d.IdUser)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__LOG_IN__id_user__3E52440B");
+                    .HasConstraintName("FK__LOG_IN__id_user__59063A47");
             });
 
             modelBuilder.Entity<PriorityGroup>(entity =>
@@ -336,7 +335,7 @@ namespace VaccinationManagement.Context
                     .WithMany(p => p.SideEffects)
                     .HasForeignKey(d => d.IdAppointment)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__SIDE_EFFE__id_ap__440B1D61");
+                    .HasConstraintName("FK__SIDE_EFFE__id_ap__5441852A");
             });
 
             modelBuilder.Entity<SpecialInstitution>(entity =>

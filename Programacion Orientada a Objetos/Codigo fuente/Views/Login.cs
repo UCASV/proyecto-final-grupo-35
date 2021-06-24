@@ -23,10 +23,14 @@ namespace VaccinationManagement.View
             {
                 loginData = db.Users.Where(w =>
                     w.Users == txtUser.Text && w.PasswordUser == txtPassword.Text).ToList();
+                var actualEmployee = db.Employees.Where(E => E.IdUser == loginData.First().Id).ToList().First();
+                LocationData.UserId = loginData.First().Id;
+                LocationData.GestorName = actualEmployee.EmployeeName;
+                LocationData.IdActualBooth = actualEmployee.IdBooth;
                 
                 if (loginData.Count != 0)
                 {
-                    button1_Click2();
+                    btnInsert_LogIn();
                     using (var mainWindow = new FrmMainWindow(loginData.First()))
                     {
                         Hide();
@@ -63,7 +67,7 @@ namespace VaccinationManagement.View
             }
         }
 
-        private void button1_Click2()
+        private void btnInsert_LogIn()
         {
             
             var db = new VaccinationContext();
@@ -75,8 +79,6 @@ namespace VaccinationManagement.View
             {
                 IdUser = loginData.First().Id,
                 IdBooth = DataEmployee.IdBooth,
-                //IdUserNavigation = loginData.ToList().First(),
-                //IdBoothNavigation = db.Booths.Where(w=> w.Id == DataEmployee.IdBooth).ToList().First(),
                 DateTime = DateTime.Now
 
             };

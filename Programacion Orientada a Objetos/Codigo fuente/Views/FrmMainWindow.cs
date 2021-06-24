@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
+using VaccinationManagement.Views;
 
 namespace VaccinationManagement.View
 {
@@ -14,7 +15,12 @@ namespace VaccinationManagement.View
             this.userData = userData;
             
             InitializeComponent();
-
+            
+            using (var VP = new VaccinationProcess())
+            {
+                VP.ShowDialog();
+            }
+            
         }
     }
 }

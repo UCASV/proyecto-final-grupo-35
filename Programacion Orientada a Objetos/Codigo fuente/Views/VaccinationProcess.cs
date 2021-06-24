@@ -15,7 +15,6 @@ namespace VaccinationManagement.Views
         {
             
             var db = new VaccinationContext();
-            LocationData.IdActualBooth = 2;
             
             InitializeComponent();
             this.btnActualHour1.Click += new EventHandler(this.cmbTimeSelection);
@@ -111,6 +110,7 @@ namespace VaccinationManagement.Views
         {
             var r = new Random();
             var db = new VaccinationContext();
+            var actualBooth = db.Booths.Where( B => B.Id == LocationData.IdActualBooth).ToList().First();
             var actualAppointmentId = Int32.Parse(dgvAppointment.SelectedCells[0].Value.ToString());
             var appointmentToChange = db.Appointments.Where(A => A.Id == actualAppointmentId).ToList()[0];
 
@@ -120,7 +120,7 @@ namespace VaccinationManagement.Views
             //Generate Second Date
             var secondVaccinationAppointment = new Appointment()
             {
-                AppointmentLocation = appointmentToChange.AppointmentLocation,
+                AppointmentLocation = actualBooth.BoothAddress,
                 AppointmentDate = appointmentToChange.AppointmentDate.AddDays(r.Next(42, 56)),
                 Step2Date = null,
                 VaccineDate = null,
