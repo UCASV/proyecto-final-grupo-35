@@ -211,12 +211,18 @@ SELECT * FROM APPOINTMENT
 SELECT * FROM EMPLOYEE
 
 
+<<<<<<< HEAD
 INSERT INTO CITIZEN VALUES(017238344, 'Victor', 'Hacienda las flores 12 F-3',
 	77549165, '003433@uca.edu.sv', 003433, 3, 3, 3)
+=======
+INSERT INTO CITIZEN VALUES(063560166, 'Oscar Juarez', 'Urbanizacion Hacienda San José, Pasaje 6, Casa 17 pol D3, Santa Tecla',
+	77549165, 'juarezgonz02@gmail.com', 00126320, 3, 2, 2)
+>>>>>>> 00126320_VaccinationProcess
 
 INSERT INTO CITIZEN VALUES(324234234, 'Alexander Juarez', 'Urbanizacion Hacienda San José, Pasaje 6, Casa 17 pol D3, Santa Tecla',
 	77549165, 'juarezgonz02@gmail.com', 00126320, 6, 2, 2)
 	
+<<<<<<< HEAD
 INSERT INTO APPOINTMENT VALUES('la libertad', '12/25/2021 16:10:00', null, null, 1, 017238344) 
 
 SELECT A.* FROM BOOTH B JOIN EMPLOYEE E ON E.id_booth = B.id  
@@ -232,3 +238,11 @@ ALTER TABLE LOG_IN ALTER COLUMN id int NOT NULL;
 
 ALTER TABLE LOG_IN ADD PRIMARY KEY (id)
 ALTER TABLE LOG_IN DROP CONSTRAINT PK_log_in
+=======
+INSERT INTO APPOINTMENT VALUES('Santa Tecla', '12/06/2021 16:10:00', null, null, 1, 00126320) 
+
+SELECT * FROM BOOTH B JOIN EMPLOYEE E ON E.id_booth = B.id  
+		JOIN CITIZEN C ON E.id = C.id_employee 
+		JOIN APPOINTMENT A ON A.id_citizen = C.dui 
+	WHERE B.id = 3
+>>>>>>> 00126320_VaccinationProcess

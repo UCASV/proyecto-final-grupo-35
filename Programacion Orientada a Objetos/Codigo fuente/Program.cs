@@ -7,6 +7,13 @@ using VaccinationManagement.View;
 
 namespace VaccinationManagement
 {
+    static class LocationData
+    {
+        public static int UserId { get; set; }
+        public static string GestorName { get; set; }
+        public static int IdActualBooth { get; set; }
+    }
+    
     static class Program
     {
         /// <summary>
@@ -15,7 +22,8 @@ namespace VaccinationManagement
         [STAThread]
         static void Main()
         {
-                    
+
+                   
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
