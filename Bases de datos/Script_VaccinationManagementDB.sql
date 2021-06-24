@@ -30,9 +30,9 @@ CREATE TABLE BOOTH(
 );
 
 CREATE TABLE LOG_IN(
-  id_user INT,
-  id_booth INT,
-  CONSTRAINT PK_log_in PRIMARY KEY(id_user, id_booth),
+  id INT PRIMARY KEY IDENTITY NOT NULL,
+  id_user INT NOT NULL,
+  id_booth INT NOT NULL,
   date_time DATETIME NOT NULL
 );
 
@@ -75,8 +75,8 @@ CREATE TABLE APPOINTMENT(
  id INT PRIMARY KEY IDENTITY,
  appointment_location VARCHAR(100) NOT NULL,
  appointment_date DATETIME NOT NULL,
- step2_date DATETIME NOT NULL,
- vaccine_date DATETIME NOT NULL,
+ step2_date DATETIME  NULL,
+ vaccine_date DATETIME NULL,
  id_appointment_type INT NOT NULL,
  id_citizen INT NOT NULL
 
@@ -206,4 +206,29 @@ INSERT INTO PRIORITY_GROUP VALUES(5,'Personal del gobierno central');
 INSERT INTO APPOINTMENT_TYPE VALUES(1,'Primera cita');
 INSERT INTO APPOINTMENT_TYPE VALUES(2,'Segunda cita');
 
-SELECT * FROM APPOINTMENT_TYPE
+SELECT * FROM CITIZEN
+SELECT * FROM APPOINTMENT
+SELECT * FROM EMPLOYEE
+
+
+INSERT INTO CITIZEN VALUES(017238344, 'Victor', 'Hacienda las flores 12 F-3',
+	77549165, '003433@uca.edu.sv', 003433, 3, 3, 3)
+
+INSERT INTO CITIZEN VALUES(324234234, 'Alexander Juarez', 'Urbanizacion Hacienda San José, Pasaje 6, Casa 17 pol D3, Santa Tecla',
+	77549165, 'juarezgonz02@gmail.com', 00126320, 6, 2, 2)
+	
+INSERT INTO APPOINTMENT VALUES('la libertad', '12/25/2021 16:10:00', null, null, 1, 017238344) 
+
+SELECT A.* FROM BOOTH B JOIN EMPLOYEE E ON E.id_booth = B.id  
+		JOIN CITIZEN C ON E.id = C.id_employee 
+		JOIN APPOINTMENT A ON A.id_citizen = C.dui 
+	WHERE B.id = 2
+
+SELECT * FROM USERS
+
+ALTER TABLE LOG_IN ADD id INT  
+
+ALTER TABLE LOG_IN ALTER COLUMN id int NOT NULL;
+
+ALTER TABLE LOG_IN ADD PRIMARY KEY (id)
+ALTER TABLE LOG_IN DROP CONSTRAINT PK_log_in
