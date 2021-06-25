@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
 using VaccinationManagement.Views;
@@ -21,6 +22,11 @@ namespace VaccinationManagement.View
                 VP.ShowDialog();
             }
             
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
