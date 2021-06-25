@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient.Server;
 using VaccinationManagement.Context;
@@ -21,29 +22,35 @@ namespace VaccinationManagement.View
             
         }
 
-        public void btnUpdateDataView_click(object Sender, EventArgs e)
+        public void btnUpdateDataView_click(object sender, EventArgs e)
         {
             using (var vaccinationProcessLogin = new FrmGetDui())
             {
+                var db = new VaccinationContext();
                 var loop = true;
+                
                 do
                 {
-                        
                     var dialogResult = vaccinationProcessLogin.ShowDialog();
-                    var dui = Int32.Parse(vaccinationProcessLogin.textBox1.Text);
                     
                     if (dialogResult == DialogResult.OK)
                     {
                         try
                         {
-                            Int32.Parse(vaccinationProcessLogin.textBox1.Text);
-                            MessageBox.Show($"DUI: {vaccinationProcessLogin.textBox1.Text}");
-                            
-                            var vaccinationProcess = new VaccinationProcess(dui); 
-                            Hide();
-                            vaccinationProcess.ShowDialog();
-                            Show();
-                            loop = false;
+                            var dui = Int32.Parse(vaccinationProcessLogin.textBox1.Text);
+                            var citizenCheck = db.Citizens.Where(w => w.Dui == dui).ToList();
+                            if (citizenCheck.Count != 0)
+                            {
+                                var vaccinationProcess = new VaccinationProcess(dui); 
+                                Hide();
+                                vaccinationProcess.ShowDialog();
+                                Show();
+                                loop = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Dui no encontrado, verifica y vuelve a intentarlo");
+                            }
                         }
                         catch (FormatException exception)
                         {
@@ -54,8 +61,6 @@ namespace VaccinationManagement.View
                 this.Show();
             }
                     
-
-
         }
          
     }
