@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D; 
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
+using VaccinationManagement.Views;
 
 namespace VaccinationManagement.View
 {
@@ -15,8 +16,8 @@ namespace VaccinationManagement.View
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             var db = new VaccinationContext();
 
@@ -32,6 +33,10 @@ namespace VaccinationManagement.View
                 if (loginData.Count != 0)
                 {
                     btnInsert_LogIn();
+                    this.Hide();
+                    frmWelcomeUser welcome = new frmWelcomeUser();
+                    welcome.ShowDialog();
+                    
                     using (var mainWindow = new FrmMainWindow(loginData.First()))
                     {
                         Hide();
@@ -50,8 +55,8 @@ namespace VaccinationManagement.View
 
             }
             
-            
         }
+        
 
         private void chkShowPasseword_Click(object sender, EventArgs e)
         {
@@ -86,7 +91,16 @@ namespace VaccinationManagement.View
                 db.LogIns.Add(RegisterLogin);
                 db.SaveChanges();
         }
-        
-        
+
+
+        private void picCloseForm_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void picMinimized_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient.Server;
+
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
 using VaccinationManagement.Views;
@@ -62,6 +63,11 @@ namespace VaccinationManagement.View
             }
                     
         }
-         
+
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
