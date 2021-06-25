@@ -26,6 +26,12 @@
       <Compile Update="Views\Login.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Views\test.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Views\FrmGetDui.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

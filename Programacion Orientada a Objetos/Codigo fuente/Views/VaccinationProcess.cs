@@ -11,7 +11,7 @@ namespace VaccinationManagement.Views
 {
     public partial class VaccinationProcess : Form
     {
-        public VaccinationProcess()
+        public VaccinationProcess(int dui)
         {
             
             var db = new VaccinationContext();
@@ -19,7 +19,7 @@ namespace VaccinationManagement.Views
             InitializeComponent();
             this.btnActualHour1.Click += new EventHandler(this.cmbTimeSelection);
             this.btnActualhour2.Click += new EventHandler(this.cmbTimeSelection);
-
+            this.dui = dui;
             Button1.Click += new EventHandler(this.Button1_Click);
             docToPrint.PrintPage += new PrintPageEventHandler(this.document_PrintPage);
 
@@ -35,7 +35,7 @@ namespace VaccinationManagement.Views
                 join E in db.Employees on B equals E.IdBoothNavigation
                 join C in db.Citizens on E equals C.IdEmployeeNavigation
                 join A in db.Appointments on C equals A.IdCitizenNavigation
-                where B.Id == LocationData.IdActualBooth
+                where B.Id == LocationData.IdActualBooth && C.Dui == dui
                 select new {id_appointment = A.Id, Dui = $"0{C.Dui}", appointmentDate = A.AppointmentDate, 
                     type = A.IdAppointmentTypeNavigation.AppointmentType1}; 
 
@@ -180,12 +180,12 @@ namespace VaccinationManagement.Views
         
         private System.Drawing.Printing.PrintDocument docToPrint = 
             new System.Drawing.Printing.PrintDocument();
-        
+
+        private int dui;
+
         // This method will set properties on the PrintDialog object and
         // then display the dialog.
-        private void Button1_Click(System.Object sender, 
-            System.EventArgs e)
-        {
+        private void Button1_Click(System.Object sender, System.EventArgs e){
             // Allow the user to choose the page range he or she would
             // like to print.
             PrintDialog1.AllowSomePages = true;

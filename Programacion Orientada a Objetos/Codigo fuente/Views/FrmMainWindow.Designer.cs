@@ -38,6 +38,7 @@ namespace VaccinationManagement.View
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnControlView = new System.Windows.Forms.Panel();
+            this.pnGrafics = new System.Windows.Forms.Panel();
             this.pnMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,15 @@ namespace VaccinationManagement.View
             this.pnMenuVertical.Location = new System.Drawing.Point(0, 0);
             this.pnMenuVertical.Name = "pnMenuVertical";
             this.pnMenuVertical.Size = new System.Drawing.Size(240, 611);
-            this.pnMenuVertical.TabIndex = 1;
+            this.pnMenuVertical.TabIndex = 1;            
+            // 
+            // pnMenuVertical
+            // 
+            this.pnGrafics.BackColor = System.Drawing.Color.White;
+            this.pnGrafics.Location = new System.Drawing.Point(500, 500);
+            this.pnGrafics.Name = "pnGrafics";
+            this.pnGrafics.Size = new System.Drawing.Size(500, 500);
+            this.pnGrafics.TabIndex = 2;
             // 
             // button3
             // 
@@ -71,6 +80,7 @@ namespace VaccinationManagement.View
             this.button3.Text = "   ACTUALIZACION DE DATOS";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += this.btnUpdateDataView_click;
             // 
             // button2
             // 
@@ -130,6 +140,7 @@ namespace VaccinationManagement.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 611);
             this.Controls.Add(this.pnControlView);
+            this.Controls.Add(this.pnGrafics);
             this.Controls.Add(this.pnMenuVertical);
             this.Name = "FrmMainWindow";
             this.Text = "FrmMainWindow";
@@ -146,9 +157,11 @@ namespace VaccinationManagement.View
 
         private System.Windows.Forms.PictureBox pictureBox1;
 
+        private System.Windows.Forms.Panel pnMenuVertical;
+        
         private System.Windows.Forms.Panel pnControlView;
 
-        private System.Windows.Forms.Panel pnMenuVertical;
+        private System.Windows.Forms.Panel pnGrafics;
 
         #endregion
     }
