@@ -8,6 +8,7 @@ using VaccinationManagement.Views;
 
 namespace VaccinationManagement
 {
+    
     static class LocationData
     {
         public static int UserId { get; set; }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using VaccinationManagement.Context;
+using VaccinationManagement.Controls;
 using VaccinationManagement.Models;
 
 namespace VaccinationManagement.Views
@@ -35,19 +36,30 @@ namespace VaccinationManagement.Views
                 join E in db.Employees on B equals E.IdBoothNavigation
                 join C in db.Citizens on E equals C.IdEmployeeNavigation
                 join A in db.Appointments on C equals A.IdCitizenNavigation
-                where B.Id == LocationData.IdActualBooth && C.Dui == dui
-                select new {id_appointment = A.Id, Dui = $"0{C.Dui}", appointmentDate = A.AppointmentDate, 
-                    type = A.IdAppointmentTypeNavigation.AppointmentType1}; 
+                where B.Id == LocationData.IdActualBooth
+                
+                select new AppointmentsVm(){
+                    Codigo_Cita = A.Id, 
+                    DUI = $"0{C.Dui}",
+                    Ciudadano = C.CitizenName,
+                    Fecha_Cita = A.AppointmentDate, 
+                    Tipo_Cita = A.IdAppointmentTypeNavigation.AppointmentType1
+                    
+                }; 
 
             dgvAppointment.DataSource = appointments.ToList();
-            updateDataMode();
+            
+            if (dgvAppointment.SelectedRows.Count != 0)
+            {
+                updateDataMode();
+            }
             
         }
 
         private void updateDataMode()
         {
-            
-            DateTime AppointmentDate = DateTime.Parse(dgvAppointment.SelectedRows[0].Cells[2].Value.ToString());
+
+            DateTime AppointmentDate = DateTime.Parse(dgvAppointment.SelectedRows[0].Cells[3].Value.ToString());
             lblAppointmentDate.Text = AppointmentDate.ToShortDateString();
             lblAppointmentDate2.Text = AppointmentDate.ToShortDateString();
 
@@ -89,20 +101,26 @@ namespace VaccinationManagement.Views
         
         private void dgvSelectionChanged (object? sender, DataGridViewCellEventArgs e)
         {
+            
             updateDataMode();
         }
 
         private void btnNowButtonStep2Event(object sender, EventArgs e)
         {
-            cmbHourStep2.SelectedItem = DateTime.Now.Hour;
-            cmbMinuteStep2.SelectedItem = DateTime.Now.Minute;
+            if (dgvAppointment.SelectedRows.Count != 0)
+            {
+                cmbHourStep2.SelectedItem = DateTime.Now.Hour;
+                cmbMinuteStep2.SelectedItem = DateTime.Now.Minute;
+            }
         }
         
         private void btnNowButtonVaccinationEvent(object sender, EventArgs e)
         {
-     
-            cmbHourVaccination.SelectedItem = DateTime.Now.Hour;
-            cmbMinuteVaccination.SelectedItem = DateTime.Now.Minute;
+            if (dgvAppointment.SelectedRows.Count != 0)
+            {
+                cmbHourVaccination.SelectedItem = DateTime.Now.Hour;
+                cmbMinuteVaccination.SelectedItem = DateTime.Now.Minute;
+            }
             
         }
 
