@@ -13,5 +13,7 @@ namespace VaccinationManagement.Models
         public int IdAppointment { get; set; }
 
         public virtual Appointment IdAppointmentNavigation { get; set; }
+
+        public Appointment Appointment { get; set; }
     }
 }

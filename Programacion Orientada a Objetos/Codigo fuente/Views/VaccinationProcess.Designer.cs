@@ -54,27 +54,30 @@ namespace VaccinationManagement.Views
             // cmbMinuteStep2
             // 
             this.cmbMinuteStep2.FormattingEnabled = true;
-            this.cmbMinuteStep2.Location = new System.Drawing.Point(334, 68);
+            this.cmbMinuteStep2.Location = new System.Drawing.Point(223, 44);
+            this.cmbMinuteStep2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMinuteStep2.Name = "cmbMinuteStep2";
-            this.cmbMinuteStep2.Size = new System.Drawing.Size(49, 28);
+            this.cmbMinuteStep2.Size = new System.Drawing.Size(34, 21);
             this.cmbMinuteStep2.TabIndex = 16;
             this.cmbMinuteStep2.DropDownClosed += new System.EventHandler(this.cmbTimeSelection);
             // 
             // cmbHourStep2
             // 
             this.cmbHourStep2.FormattingEnabled = true;
-            this.cmbHourStep2.Location = new System.Drawing.Point(279, 68);
+            this.cmbHourStep2.Location = new System.Drawing.Point(186, 44);
+            this.cmbHourStep2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbHourStep2.Name = "cmbHourStep2";
-            this.cmbHourStep2.Size = new System.Drawing.Size(49, 28);
+            this.cmbHourStep2.Size = new System.Drawing.Size(34, 21);
             this.cmbHourStep2.TabIndex = 15;
             this.cmbHourStep2.DropDownClosed += new System.EventHandler(this.cmbTimeSelection);
             // 
             // btnUpdateData
             // 
             this.btnUpdateData.Enabled = false;
-            this.btnUpdateData.Location = new System.Drawing.Point(193, 157);
+            this.btnUpdateData.Location = new System.Drawing.Point(129, 102);
+            this.btnUpdateData.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateData.Name = "btnUpdateData";
-            this.btnUpdateData.Size = new System.Drawing.Size(135, 31);
+            this.btnUpdateData.Size = new System.Drawing.Size(90, 20);
             this.btnUpdateData.TabIndex = 14;
             this.btnUpdateData.Text = "Actualizar datos";
             this.btnUpdateData.UseVisualStyleBackColor = true;
@@ -82,26 +85,29 @@ namespace VaccinationManagement.Views
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(24, 101);
+            this.label2.Location = new System.Drawing.Point(16, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 49);
+            this.label2.Size = new System.Drawing.Size(83, 32);
             this.label2.TabIndex = 13;
             this.label2.Text = "Aplicación de la vacuna";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(24, 66);
+            this.label1.Location = new System.Drawing.Point(16, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 40);
+            this.label1.Size = new System.Drawing.Size(83, 26);
             this.label1.TabIndex = 12;
             this.label1.Text = "Entrada a la Fila";
             // 
             // lbl01
             // 
             this.lbl01.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.lbl01.Location = new System.Drawing.Point(193, 13);
+            this.lbl01.Location = new System.Drawing.Point(129, 8);
+            this.lbl01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl01.Name = "lbl01";
-            this.lbl01.Size = new System.Drawing.Size(395, 49);
+            this.lbl01.Size = new System.Drawing.Size(263, 32);
             this.lbl01.TabIndex = 11;
             this.lbl01.Text = "Citas";
             this.lbl01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,56 +118,62 @@ namespace VaccinationManagement.Views
             this.dgvAppointment.AllowUserToResizeRows = false;
             this.dgvAppointment.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointment.Location = new System.Drawing.Point(14, 214);
+            this.dgvAppointment.Location = new System.Drawing.Point(9, 139);
+            this.dgvAppointment.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAppointment.MultiSelect = false;
             this.dgvAppointment.Name = "dgvAppointment";
             this.dgvAppointment.ReadOnly = true;
             this.dgvAppointment.RowTemplate.Height = 28;
             this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAppointment.ShowCellErrors = false;
-            this.dgvAppointment.Size = new System.Drawing.Size(707, 223);
+            this.dgvAppointment.Size = new System.Drawing.Size(471, 145);
             this.dgvAppointment.TabIndex = 10;
             this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSelectionChanged);
             // 
             // cmbHourVaccination
             // 
             this.cmbHourVaccination.FormattingEnabled = true;
-            this.cmbHourVaccination.Location = new System.Drawing.Point(279, 101);
+            this.cmbHourVaccination.Location = new System.Drawing.Point(186, 66);
+            this.cmbHourVaccination.Margin = new System.Windows.Forms.Padding(2);
             this.cmbHourVaccination.Name = "cmbHourVaccination";
-            this.cmbHourVaccination.Size = new System.Drawing.Size(49, 28);
+            this.cmbHourVaccination.Size = new System.Drawing.Size(34, 21);
             this.cmbHourVaccination.TabIndex = 17;
             this.cmbHourVaccination.DropDownClosed += new System.EventHandler(this.cmbTimeSelection);
             // 
             // cmbMinuteVaccination
             // 
             this.cmbMinuteVaccination.FormattingEnabled = true;
-            this.cmbMinuteVaccination.Location = new System.Drawing.Point(334, 102);
+            this.cmbMinuteVaccination.Location = new System.Drawing.Point(223, 66);
+            this.cmbMinuteVaccination.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMinuteVaccination.Name = "cmbMinuteVaccination";
-            this.cmbMinuteVaccination.Size = new System.Drawing.Size(49, 28);
+            this.cmbMinuteVaccination.Size = new System.Drawing.Size(34, 21);
             this.cmbMinuteVaccination.TabIndex = 18;
             this.cmbMinuteVaccination.DropDownClosed += new System.EventHandler(this.cmbTimeSelection);
             // 
             // lblAppointmentDate
             // 
-            this.lblAppointmentDate.Location = new System.Drawing.Point(169, 68);
+            this.lblAppointmentDate.Location = new System.Drawing.Point(113, 44);
+            this.lblAppointmentDate.Margin = new System.Windows.Forms.Padding(2);
             this.lblAppointmentDate.Name = "lblAppointmentDate";
             this.lblAppointmentDate.ReadOnly = true;
-            this.lblAppointmentDate.Size = new System.Drawing.Size(104, 26);
+            this.lblAppointmentDate.Size = new System.Drawing.Size(71, 20);
             this.lblAppointmentDate.TabIndex = 19;
             // 
             // lblAppointmentDate2
             // 
-            this.lblAppointmentDate2.Location = new System.Drawing.Point(169, 104);
+            this.lblAppointmentDate2.Location = new System.Drawing.Point(113, 68);
+            this.lblAppointmentDate2.Margin = new System.Windows.Forms.Padding(2);
             this.lblAppointmentDate2.Name = "lblAppointmentDate2";
             this.lblAppointmentDate2.ReadOnly = true;
-            this.lblAppointmentDate2.Size = new System.Drawing.Size(104, 26);
+            this.lblAppointmentDate2.Size = new System.Drawing.Size(71, 20);
             this.lblAppointmentDate2.TabIndex = 20;
             // 
             // btnActualHour1
             // 
-            this.btnActualHour1.Location = new System.Drawing.Point(389, 65);
+            this.btnActualHour1.Location = new System.Drawing.Point(259, 42);
+            this.btnActualHour1.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualHour1.Name = "btnActualHour1";
-            this.btnActualHour1.Size = new System.Drawing.Size(66, 29);
+            this.btnActualHour1.Size = new System.Drawing.Size(44, 23);
             this.btnActualHour1.TabIndex = 21;
             this.btnActualHour1.Text = "Ahora";
             this.btnActualHour1.UseVisualStyleBackColor = true;
@@ -169,9 +181,10 @@ namespace VaccinationManagement.Views
             // 
             // btnActualhour2
             // 
-            this.btnActualhour2.Location = new System.Drawing.Point(389, 102);
+            this.btnActualhour2.Location = new System.Drawing.Point(259, 66);
+            this.btnActualhour2.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualhour2.Name = "btnActualhour2";
-            this.btnActualhour2.Size = new System.Drawing.Size(66, 28);
+            this.btnActualhour2.Size = new System.Drawing.Size(44, 22);
             this.btnActualhour2.TabIndex = 22;
             this.btnActualhour2.Text = "Ahora";
             this.btnActualhour2.UseVisualStyleBackColor = true;
@@ -183,18 +196,19 @@ namespace VaccinationManagement.Views
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(576, 157);
+            this.Button1.Location = new System.Drawing.Point(384, 102);
+            this.Button1.Margin = new System.Windows.Forms.Padding(2);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(110, 30);
+            this.Button1.Size = new System.Drawing.Size(73, 19);
             this.Button1.TabIndex = 23;
-            this.Button1.Text = "Print"; 
+            this.Button1.Text = "Print";
             this.Button1.UseVisualStyleBackColor = true;
             // 
             // VaccinationProcess
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 450);
+            this.ClientSize = new System.Drawing.Size(489, 292);
             this.Controls.Add(this.Button1);
             this.Controls.Add(this.btnActualhour2);
             this.Controls.Add(this.btnActualHour1);
@@ -209,6 +223,7 @@ namespace VaccinationManagement.Views
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl01);
             this.Controls.Add(this.dgvAppointment);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VaccinationProcess";
             this.Text = "VaccinationProcess";
             this.Load += new System.EventHandler(this.VaccinationProcess_Load);
