@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Drawing;
 
 namespace VaccinationManagement.Views
 {
@@ -53,7 +54,7 @@ namespace VaccinationManagement.Views
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(130, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 31);
+            this.label1.Size = new System.Drawing.Size(170, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "DUI del Ciudadano";
             // 
@@ -82,6 +83,8 @@ namespace VaccinationManagement.Views
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
             this.Text = "DUI del ciudadano";
             this.ResumeLayout(false);
+            this.Icon = new Icon(
+                "C:/Users/oscar/Desktop/CICLO 01_2021 STUFF/PROYECTO/GestorVacunacion/Programacion Orientada a Objetos/Codigo fuente/Resources/icoGobierno.ico");
             this.PerformLayout();
         }
 

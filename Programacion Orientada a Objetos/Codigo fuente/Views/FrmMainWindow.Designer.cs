@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 using VaccinationManagement.Controls;
 
@@ -166,6 +167,8 @@ namespace VaccinationManagement.View
             this.ClientSize = new System.Drawing.Size(1184, 611);
             this.Controls.Add(this.pnControlView);
             this.Controls.Add(this.pnMenuVertical);
+            this.Icon = new Icon(
+                "./Resources/icoGobierno.ico");            
             this.Name = "FrmMainWindow";
             this.Text = "FrmMainWindow";
             this.pnMenuVertical.ResumeLayout(false);

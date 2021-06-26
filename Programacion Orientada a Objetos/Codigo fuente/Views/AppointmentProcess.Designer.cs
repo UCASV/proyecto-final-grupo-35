@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace VaccinationManagement.Views
 {
@@ -227,6 +229,7 @@ namespace VaccinationManagement.Views
             this.Save.TabIndex = 20;
             this.Save.Text = "Guargar información";
             this.Save.UseVisualStyleBackColor = true;
+            this.Save.DialogResult = DialogResult.OK;
             this.Save.Click += new System.EventHandler(this.Save_Click_1);
             // 
             // Back
@@ -317,6 +320,8 @@ namespace VaccinationManagement.Views
             this.Name = "AppointmentProcess";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proceso de cita";
+            this.Icon = new Icon(
+                "./Resources/icoGobierno.ico");
             this.Load += new System.EventHandler(this.AppointmentProcess_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
