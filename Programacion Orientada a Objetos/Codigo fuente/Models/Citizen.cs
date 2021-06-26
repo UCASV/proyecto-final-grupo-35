@@ -36,6 +36,9 @@ namespace VaccinationManagement.Models
             this.CitizenAddress = citizenAddress;
             this.Phone = phone;
             this.Email = email;
+            this.IntitutionCode = intitutionCode;
+            this.IdEmployee = idEmployee;
+            this.IdSpecialInstitution = idSpecialInstitution;
             this.IdPriorityGroup = idPriorityGroup;
 
         }

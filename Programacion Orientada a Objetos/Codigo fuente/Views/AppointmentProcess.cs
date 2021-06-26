@@ -29,20 +29,17 @@ namespace VaccinationManagement.Views
             var db = new VaccinationContext();
             var employee = db.Employees.ToList();
 
-                Citizen cyudadano = new Citizen(
-    
+            Citizen cyudadano = new Citizen(
+
                 Convert.ToInt32(Txbx_DUI.Text),
                 txtb_name.Text,
                 txtbx_addres.Text,
                 Convert.ToInt32(txtbx_phone.Text),
                 txtbx_email.Text,
-                txtb_ICode.Text,
-                //ID employee
+                Convert.ToInt32(txtb_ICode.Text),
+                LocationData.GestorId,
                 Convert.ToInt32(cbx_institution.SelectedItem),
-                Convert.ToInt32(cbx_pgroup.SelectedItem)
-                
-                
-            );
+                Convert.ToInt32(cbx_pgroup.SelectedItem));
                         
             
             db.Add(cyudadano);
@@ -59,9 +56,9 @@ namespace VaccinationManagement.Views
 
         private void btn_add_disease_Click(object sender, EventArgs e)
         {
-            int n = 0;
+           
             Disease disease = new Disease(
-                Id: n++,
+                
                 txtbx_disease.Text,
                 Convert.ToInt32(Txbx_DUI.Text));
             var db = new VaccinationContext();
