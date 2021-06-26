@@ -29,6 +29,7 @@ namespace VaccinationManagement.View
                 LocationData.UserId = loginData.First().Id;
                 LocationData.GestorName = actualEmployee.EmployeeName;
                 LocationData.IdActualBooth = actualEmployee.IdBooth;
+                LocationData.GestorId = actualEmployee.Id;
                 
                 if (loginData.Count != 0)
                 {
