@@ -17,5 +17,6 @@ namespace VaccinationManagement.Models
         public string PriorityGroup1 { get; set; }
 
         public virtual ICollection<Citizen> Citizens { get; set; }
+        
     }
 }

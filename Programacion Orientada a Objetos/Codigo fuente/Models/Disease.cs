@@ -12,5 +12,12 @@ namespace VaccinationManagement.Models
         public int? IdCitizen { get; set; }
 
         public virtual Citizen IdCitizenNavigation { get; set; }
+
+        public Disease (int Id, string disease1, int? idCitizen)
+        {
+            this.Id = Id;
+            this.Disease1 = disease1;
+            this.IdCitizen = idCitizen;
+        }
     }
 }
