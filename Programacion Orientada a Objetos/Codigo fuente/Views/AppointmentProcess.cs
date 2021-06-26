@@ -28,9 +28,10 @@ namespace VaccinationManagement.Views
         {
             var db = new VaccinationContext();
             var employee = db.Employees.ToList();
+            var specialInstitucion = (SpecialInstitution) cbx_institution.SelectedItem;
+            var priorityGroup = (PriorityGroup) cbx_pgroup.SelectedItem;
 
-            Citizen cyudadano = new Citizen(
-
+            Citizen citizen = new Citizen(
                 Convert.ToInt32(Txbx_DUI.Text),
                 txtb_name.Text,
                 txtbx_addres.Text,
@@ -38,15 +39,25 @@ namespace VaccinationManagement.Views
                 txtbx_email.Text,
                 Convert.ToInt32(txtb_ICode.Text),
                 LocationData.GestorId,
-                Convert.ToInt32(cbx_institution.SelectedItem),
-                Convert.ToInt32(cbx_pgroup.SelectedItem));
-                        
+                specialInstitucion.Id,
+                priorityGroup.Id
+            );
+
+            try
+            {
+                db.Citizens.Add(citizen);
+                db.SaveChanges();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Revisa los datos {exception}");
+            }
             
-            db.Add(cyudadano);
-            db.SaveChanges();
             MessageBox.Show("Información guardada con exito", "Guardado",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+            
         }
 
         private void Back_Click(object sender, EventArgs e)

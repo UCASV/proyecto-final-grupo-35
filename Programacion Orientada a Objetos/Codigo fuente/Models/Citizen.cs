@@ -13,11 +13,6 @@ namespace VaccinationManagement.Models
             Diseases = new HashSet<Disease>();
         }
 
-        public Citizen()
-        {
-            throw new NotImplementedException();
-        }
-
         public int Dui { get; set; }
         public string CitizenName { get; set; }
         public string CitizenAddress { get; set; }

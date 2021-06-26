@@ -32,11 +32,20 @@ namespace VaccinationManagement.View
             Hide();
             vaccinationProcessLogin.ShowDialog();
             Show();             
-          
-                    
         }
+        
+        private void btnRegister_click (object sender, EventArgs e)
+        {
+            //Se asignó al boton 
+            var appointmentProcess = new AppointmentProcess();
+           
+            // Abrir un formulario para registrar los datos del ciudadano 
+            Hide();
+            appointmentProcess.ShowDialog();
+            Show();             
+          }
 
-
+        
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

@@ -132,6 +132,8 @@ namespace VaccinationManagement.Views
             this.dgvAppointment.ShowCellErrors = false;
             this.dgvAppointment.Size = new System.Drawing.Size(471, 145);
             this.dgvAppointment.TabIndex = 10;
+            this.dgvAppointment.BorderStyle = BorderStyle.None;
+            
             this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClicked);
             // 
             // cmbHourVaccination

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 using VaccinationManagement.Controls;
 
@@ -135,6 +136,7 @@ namespace VaccinationManagement.View
             this.btnRegister.TabIndex = 1;
             this.btnRegister.Text = "REGISTRO";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new EventHandler(this.btnRegister_click);
             // 
             // picLogo
             // 
