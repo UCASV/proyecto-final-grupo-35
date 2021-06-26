@@ -99,7 +99,7 @@ namespace VaccinationManagement.View
             this.btnUpdateCitas.Name = "btnUpdateCitas";
             this.btnUpdateCitas.Size = new System.Drawing.Size(212, 67);
             this.btnUpdateCitas.TabIndex = 3;
-            this.btnUpdateCitas.Text = "   ACTUALIZACION DE DATOS";
+            this.btnUpdateCitas.Text = "ACTUALIZACION DE DATOS";
             this.btnUpdateCitas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateCitas.UseVisualStyleBackColor = true;
             this.btnUpdateCitas.Click += this.btnUpdateDataView_click;

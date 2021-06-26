@@ -38,6 +38,9 @@ namespace VaccinationManagement.Views
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(85, 72);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(236, 26);
@@ -46,6 +49,8 @@ namespace VaccinationManagement.Views
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(130, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 31);
@@ -54,6 +59,8 @@ namespace VaccinationManagement.Views
             // 
             // button1ee
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(150, 114);
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Name = "button1";
@@ -72,6 +79,7 @@ namespace VaccinationManagement.Views
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "FrmGetDui";
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
             this.Text = "DUI del ciudadano";
             this.ResumeLayout(false);
             this.PerformLayout();
