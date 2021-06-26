@@ -12,6 +12,9 @@ namespace VaccinationManagement.Views
 {
     public partial class VaccinationProcess : Form
     {
+        
+        private int dui;
+        
         public VaccinationProcess(int dui)
         {
             
@@ -19,13 +22,10 @@ namespace VaccinationManagement.Views
             this.dui = dui;
             var citizenCheck = db.Citizens.Where(w => w.Dui == dui).ToList().Count;
             
-           InitializeComponent();
+            InitializeComponent();
             this.btnActualHour1.Click += new EventHandler(this.cmbTimeSelection);
             this.btnActualhour2.Click += new EventHandler(this.cmbTimeSelection);
             
-            Button1.Click += new EventHandler(this.Button1_Click);
-            docToPrint.PrintPage += new PrintPageEventHandler(this.document_PrintPage);
-
         }
         
 
@@ -33,13 +33,11 @@ namespace VaccinationManagement.Views
         private void VaccinationProcess_Load(object sender, EventArgs e)
         {
             var db = new VaccinationContext();
-
             var appointments = from B in db.Booths
                 join E in db.Employees on B equals E.IdBoothNavigation
                 join C in db.Citizens on E equals C.IdEmployeeNavigation
                 join A in db.Appointments on C equals A.IdCitizenNavigation     
                 where B.Id == LocationData.IdActualBooth && C.Dui == dui 
-                
                 select new AppointmentsVm(){
                     Codigo_Cita = A.Id, 
                     DUI = $"0{C.Dui}",
@@ -50,35 +48,26 @@ namespace VaccinationManagement.Views
                 }; 
 
             dgvAppointment.DataSource = appointments.ToList();
-            
-            
-                updateDataMode();
-            
+            updateDataMode();
             
         }
 
         private void updateDataMode()
         {
-         
-                
                 DateTime AppointmentDate = DateTime.Parse(dgvAppointment.SelectedRows[0].Cells[3].Value.ToString());
                 lblAppointmentDate.Text = AppointmentDate.ToShortDateString();
                 lblAppointmentDate2.Text = AppointmentDate.ToShortDateString();
 
+                /*
+                    Para evitar incosistencias en los datos, se llenan las opciones de horas 
+                    desde la hora establecida por la plataforma en la cita seleccionada
+                */
                 cmbHourStep2.Items.Clear();
                 cmbHourStep2.Items.Add("hh");
                 cmbHourStep2.SelectedItem = "hh";
                 for (var i = AppointmentDate.Hour; i < 24; i++)
                 {
                     cmbHourStep2.Items.Add(i);
-                }
-
-                cmbMinuteStep2.Items.Clear();
-                cmbMinuteStep2.Items.Add("mm");
-                cmbMinuteStep2.SelectedItem = "mm";
-                for (var i = 0; i < 60; i++)
-                {
-                    cmbMinuteStep2.Items.Add(i);
                 }
 
                 cmbHourVaccination.Items.Clear();
@@ -88,6 +77,17 @@ namespace VaccinationManagement.Views
                 {
                     cmbHourVaccination.Items.Add(i);
                 }
+
+                
+                ///Se añaden los minutos a los ComboBox
+                cmbMinuteStep2.Items.Clear();
+                cmbMinuteStep2.Items.Add("mm");
+                cmbMinuteStep2.SelectedItem = "mm";
+                for (var i = 0; i < 60; i++)
+                {
+                    cmbMinuteStep2.Items.Add(i);
+                }
+
 
                 cmbMinuteVaccination.Items.Clear();
                 cmbMinuteVaccination.Items.Add("mm");
@@ -102,18 +102,19 @@ namespace VaccinationManagement.Views
 
         }
         
-        private void dgvSelectionChanged (object? sender, DataGridViewCellEventArgs e)
+        private void dgvCellClicked (object sender, DataGridViewCellEventArgs e)
         {
             
-                updateDataMode();
-            
+            // A cada click se actualizan las horas y minutos que se pueden seleccionar
+            updateDataMode();
         }
 
+        
+        ////// Eventos botones "Ahora"  
         private void btnNowButtonStep2Event(object sender, EventArgs e)
         {
-            
-                cmbHourStep2.SelectedItem = DateTime.Now.Hour;
-                cmbMinuteStep2.SelectedItem = DateTime.Now.Minute;
+            cmbHourStep2.SelectedItem = DateTime.Now.Hour;
+            cmbMinuteStep2.SelectedItem = DateTime.Now.Minute;
 
         }
         
@@ -124,63 +125,86 @@ namespace VaccinationManagement.Views
                 cmbMinuteVaccination.SelectedItem = DateTime.Now.Minute;
 
         }
+        ///////////////////////////////
 
+        
         private void btnUpdateDataClick(object sender, EventArgs e)
         {
+            DateTime? vaccineDate, step2Date;
             var r = new Random();
             var db = new VaccinationContext();
             var actualBooth = db.Booths.Where(B => B.Id == LocationData.IdActualBooth).ToList().First();
             var actualAppointmentId = Int32.Parse(dgvAppointment.SelectedCells[0].Value.ToString());
             var appointmentToChange = db.Appointments.Where(A => A.Id == actualAppointmentId).ToList()[0];
+            
 
-        DateTime? step2Date =
-            DateTime.Parse(
-                $"{lblAppointmentDate.Text} {cmbHourStep2.SelectedItem.ToString()}:{cmbMinuteStep2.SelectedItem.ToString()}");
-
-        DateTime? vaccineDate =
-            DateTime.Parse(
-                $"{lblAppointmentDate.Text} {cmbHourVaccination.SelectedItem.ToString()}:{cmbMinuteVaccination.SelectedItem.ToString()}");
-
-        //Generate Second Date
-        var secondVaccinationAppointment = new Appointment()
+            //Generar segunda cita
+            var secondVaccinationAppointment = new Appointment() 
             {
-                AppointmentLocation = actualBooth.BoothAddress,
-                AppointmentDate = appointmentToChange.AppointmentDate.AddDays(r.Next(42, 56)),
-                Step2Date = null,
-                VaccineDate = null,
-                IdAppointmentType = 2,
-                IdCitizen = appointmentToChange.IdCitizen,
-                IdAppointmentTypeNavigation = db.AppointmentTypes.Where(AT => AT.Id == 2).ToList()[0],
-                IdCitizenNavigation = db.Citizens.Where(C => C.Dui == appointmentToChange.IdCitizen).ToList()[0]
+                    AppointmentLocation = actualBooth.BoothAddress,
+                    AppointmentDate = appointmentToChange.AppointmentDate.AddDays(r.Next(42, 56)),
+                    Step2Date = null,
+                    VaccineDate = null,
+                    IdAppointmentType = 2,
+                    IdCitizen = appointmentToChange.IdCitizen,
+                    IdAppointmentTypeNavigation = db.AppointmentTypes.Where(AT => AT.Id == 2).ToList()[0],
+                    IdCitizenNavigation = db.Citizens.Where(C => C.Dui == appointmentToChange.IdCitizen).ToList()[0]
             };
 
-            try{
-            appointmentToChange.Step2Date = step2Date;
-            appointmentToChange.VaccineDate = vaccineDate;
-
-            if (appointmentToChange.IdAppointmentType == 1)
+            //Llenar los datos faltantes en citas modificandose 
+            if (!cmbHourStep2.SelectedItem.Equals("hh") && !cmbMinuteStep2.SelectedItem.Equals("mm"))
             {
-                db.Appointments.Add(secondVaccinationAppointment);
-                MessageBox.Show(
-                    $"Se ha generado la siguiente cita del paciente: {secondVaccinationAppointment.AppointmentDate}, {secondVaccinationAppointment.AppointmentLocation}",
-                    "Generado con exito", MessageBoxButtons.OK);
+                step2Date =
+                    DateTime.Parse(
+                        $"{lblAppointmentDate.Text} {cmbHourStep2.SelectedItem.ToString()}:{cmbMinuteStep2.SelectedItem.ToString()}");
             }
             else
             {
-                MessageBox.Show("El paciente ha completado su registro de vacunacion ",
-                    "Completado", MessageBoxButtons.OK);
+                step2Date = null;
             }
 
-            //Debemos volver a bloquear el boton luego de actualizar los datos a la base de datos
-            this.btnUpdateData.Enabled = false;
-
-
-        }
-        catch (Exception exception)
+            if (!cmbHourVaccination.SelectedItem.Equals("hh") && !cmbMinuteVaccination.SelectedItem.Equals("mm"))
             {
-                MessageBox.Show(appointmentToChange.Step2Date.ToString()); 
-                Console.WriteLine(exception);
-                throw;
+                vaccineDate =
+                    DateTime.Parse(
+                        $"{lblAppointmentDate.Text} {cmbHourVaccination.SelectedItem.ToString()}:{cmbMinuteVaccination.SelectedItem.ToString()}");
+            }
+            else
+            {
+                vaccineDate = null;
+            }
+            
+            
+            try 
+            {
+                appointmentToChange.Step2Date = step2Date;
+                appointmentToChange.VaccineDate = vaccineDate;
+                
+                if (appointmentToChange.IdAppointmentType == 1)
+                {
+                    db.Appointments.Add(secondVaccinationAppointment);
+                    MessageBox.Show(
+                        $"Se ha generado la siguiente cita del paciente: {secondVaccinationAppointment.AppointmentDate}, {secondVaccinationAppointment.AppointmentLocation}",
+                        "Generado con exito", MessageBoxButtons.OK);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("El paciente ha completado su registro de vacunacion ",
+                        "Completado", MessageBoxButtons.OK);
+                    Close();
+                }
+
+                //Debemos volver a bloquear el boton luego de actualizar los datos a la base de datos
+                this.btnUpdateData.Enabled = false;
+
+
+            }
+            catch (Exception exception)
+            {
+                    MessageBox.Show(appointmentToChange.Step2Date.ToString()); 
+                    Console.WriteLine(exception);
+                    throw;
             }
 
             db.SaveChanges();
@@ -190,66 +214,24 @@ namespace VaccinationManagement.Views
 
         private void cmbTimeSelection(object sender, EventArgs e)
         {
-            if (!cmbHourStep2.SelectedItem.Equals(null) && !cmbHourStep2.SelectedItem.Equals("hh") &&
+            if (
+                !cmbHourStep2.SelectedItem.Equals(null) && !cmbHourStep2.SelectedItem.Equals("hh") &&
+                !cmbMinuteStep2.SelectedItem.Equals(null) && !cmbMinuteStep2.SelectedItem.Equals("mm")
+                )
+            {
+                this.btnUpdateData.Enabled = true;
+            }
+            else if (
                 !cmbHourVaccination.SelectedItem.Equals(null) && !cmbHourVaccination.SelectedItem.Equals("hh") &&
-                !cmbMinuteStep2.SelectedItem.Equals(null) && !cmbMinuteStep2.SelectedItem.Equals("mm") &&
-                !cmbMinuteVaccination.SelectedItem.Equals(null) && !cmbMinuteVaccination.SelectedItem.Equals("mm"))
+                !cmbMinuteVaccination.SelectedItem.Equals(null) && !cmbMinuteVaccination.SelectedItem.Equals("mm")
+                )
             {
                 this.btnUpdateData.Enabled = true;
             }
 
         
         }
-        
-        private System.Drawing.Printing.PrintDocument docToPrint = 
-            new System.Drawing.Printing.PrintDocument();
 
-        private int dui;
-
-        // This method will set properties on the PrintDialog object and
-        // then display the dialog.
-        private void Button1_Click(System.Object sender, System.EventArgs e){
-            // Allow the user to choose the page range he or she would
-            // like to print.
-            PrintDialog1.AllowSomePages = true;
-
-            // Show the help button.
-            PrintDialog1.ShowHelp = true;
-
-            // Set the Document property to the PrintDocument for 
-            // which the PrintPage Event has been handled. To display the
-            // dialog, either this property or the PrinterSettings property 
-            // must be set 
-            PrintDialog1.Document = docToPrint;
-
-            DialogResult result = PrintDialog1.ShowDialog();
-
-            // If the result is OK then print the document.
-            if (result==DialogResult.OK)
-            {
-                docToPrint.Print();
-            }
-        }
-
-        // The PrintDialog will print the document
-        // by handling the document's PrintPage event.
-        private void document_PrintPage(object sender, 
-            System.Drawing.Printing.PrintPageEventArgs e)
-        {
-
-            // Insert code to render the page here.
-            // This code will be called when the control is drawn.
-
-            // The following code will render a simple
-            // message on the printed document.
-            string text = "In document_PrintPage method.";
-            System.Drawing.Font printFont = new System.Drawing.Font
-                ("Arial", 35, System.Drawing.FontStyle.Regular);
-
-            // Draw the content.
-            e.Graphics.DrawString(text, printFont, 
-                System.Drawing.Brushes.Black, 10, 10);
-        }
     }
     
 }

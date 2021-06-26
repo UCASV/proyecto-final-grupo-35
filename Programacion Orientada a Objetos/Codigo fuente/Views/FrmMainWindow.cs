@@ -23,44 +23,16 @@ namespace VaccinationManagement.View
             
         }
 
-        public void btnUpdateDataView_click(object sender, EventArgs e)
+        private void btnUpdateDataView_click(object sender, EventArgs e)
         {
-            using (var vaccinationProcessLogin = new FrmGetDui())
-            {
-                var db = new VaccinationContext();
-                var loop = true;
-                
-                do
-                {
-                    var dialogResult = vaccinationProcessLogin.ShowDialog();
-                    
-                    if (dialogResult == DialogResult.OK)
-                    {
-                        try
-                        {
-                            var dui = Int32.Parse(vaccinationProcessLogin.textBox1.Text);
-                            var citizenCheck = db.Citizens.Where(w => w.Dui == dui).ToList();
-                            if (citizenCheck.Count != 0)
-                            {
-                                var vaccinationProcess = new VaccinationProcess(dui); 
-                                Hide();
-                                vaccinationProcess.ShowDialog();
-                                Show();
-                                loop = false;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Dui no encontrado, verifica y vuelve a intentarlo");
-                            }
-                        }
-                        catch (FormatException exception)
-                        {
-                            MessageBox.Show("Vuelva a digitar el DUI del ciudadano");
-                        }
-                    }
-                } while (loop);
-                this.Show();
-            }
+            //Se asignó al boton 
+            var vaccinationProcessLogin = new FrmGetDui();
+           
+            // Abrir un formulario para verificar el Dui 
+            Hide();
+            vaccinationProcessLogin.ShowDialog();
+            Show();             
+          
                     
         }
 

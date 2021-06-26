@@ -46,8 +46,6 @@ namespace VaccinationManagement.Views
             this.lblAppointmentDate2 = new System.Windows.Forms.TextBox();
             this.btnActualHour1 = new System.Windows.Forms.Button();
             this.btnActualhour2 = new System.Windows.Forms.Button();
-            this.PrintDialog1 = new System.Windows.Forms.PrintDialog();
-            this.Button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dgvAppointment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,7 +119,7 @@ namespace VaccinationManagement.Views
             this.dgvAppointment.ShowCellErrors = false;
             this.dgvAppointment.Size = new System.Drawing.Size(707, 223);
             this.dgvAppointment.TabIndex = 10;
-            this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSelectionChanged);
+            this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClicked);
             // 
             // cmbHourVaccination
             // 
@@ -177,25 +175,11 @@ namespace VaccinationManagement.Views
             this.btnActualhour2.UseVisualStyleBackColor = true;
             this.btnActualhour2.Click += new System.EventHandler(this.btnNowButtonVaccinationEvent);
             // 
-            // PrintDialog1
-            // 
-            this.PrintDialog1.UseEXDialog = true;
-            // 
-            // Button1
-            // 
-            this.Button1.Location = new System.Drawing.Point(576, 157);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(110, 30);
-            this.Button1.TabIndex = 23;
-            this.Button1.Text = "Print"; 
-            this.Button1.UseVisualStyleBackColor = true;
-            // 
             // VaccinationProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 450);
-            this.Controls.Add(this.Button1);
             this.Controls.Add(this.btnActualhour2);
             this.Controls.Add(this.btnActualHour1);
             this.Controls.Add(this.lblAppointmentDate2);
@@ -217,10 +201,6 @@ namespace VaccinationManagement.Views
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.PrintDialog PrintDialog1;
-
-        private System.Windows.Forms.Button Button1; 
-        
         private System.Windows.Forms.Button btnUpdateData;
 
         private System.Windows.Forms.Button btnActualHour1;

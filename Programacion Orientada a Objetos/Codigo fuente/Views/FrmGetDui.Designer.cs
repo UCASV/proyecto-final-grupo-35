@@ -57,7 +57,7 @@ namespace VaccinationManagement.Views
             this.button1.Location = new System.Drawing.Point(150, 114);
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 29);
+            this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "Comprobar";
             this.button1.UseVisualStyleBackColor = true;

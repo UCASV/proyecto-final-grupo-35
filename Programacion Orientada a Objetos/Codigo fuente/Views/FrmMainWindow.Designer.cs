@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Windows.Forms;
+using VaccinationManagement.Controls;
 
 namespace VaccinationManagement.View
 {
@@ -58,13 +60,14 @@ namespace VaccinationManagement.View
             this.pnMenuVertical.Size = new System.Drawing.Size(240, 611);
             this.pnMenuVertical.TabIndex = 1;            
             // 
-            // pnMenuVertical
+            // pnGrafics
             // 
-            this.pnGrafics.BackColor = System.Drawing.Color.White;
-            this.pnGrafics.Location = new System.Drawing.Point(500, 500);
+            this.pnGrafics.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.pnGrafics.Location = new System.Drawing.Point(100, 50);
             this.pnGrafics.Name = "pnGrafics";
-            this.pnGrafics.Size = new System.Drawing.Size(500, 500);
+            this.pnGrafics.Size = new System.Drawing.Size(700, 500);
             this.pnGrafics.TabIndex = 2;
+            this.pnGrafics.Paint += new PaintEventHandler(ShowStadistics.DrawGraphics);
             // 
             // btnExit
             // 
@@ -99,6 +102,7 @@ namespace VaccinationManagement.View
             this.btnUpdateCitas.Text = "   ACTUALIZACION DE DATOS";
             this.btnUpdateCitas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateCitas.UseVisualStyleBackColor = true;
+            this.btnUpdateCitas.Click += this.btnUpdateDataView_click;
             // 
             // btnCitas
             // 
@@ -146,6 +150,7 @@ namespace VaccinationManagement.View
             // pnControlView
             // 
             this.pnControlView.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
+            this.pnControlView.Controls.Add(this.pnGrafics);
             this.pnControlView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnControlView.Location = new System.Drawing.Point(240, 0);
             this.pnControlView.Name = "pnControlView";
@@ -158,7 +163,6 @@ namespace VaccinationManagement.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 611);
             this.Controls.Add(this.pnControlView);
-            this.Controls.Add(this.pnGrafics);
             this.Controls.Add(this.pnMenuVertical);
             this.Name = "FrmMainWindow";
             this.Text = "FrmMainWindow";
