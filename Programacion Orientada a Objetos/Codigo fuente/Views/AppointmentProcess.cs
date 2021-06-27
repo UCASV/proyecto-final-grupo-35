@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using VaccinationManagement.Context;
+using VaccinationManagement.Controls;
 using VaccinationManagement.Models;
 
 
@@ -18,10 +20,27 @@ namespace VaccinationManagement.Views
         private System.Windows.Forms.ComboBox cbx_institution;
         private System.Windows.Forms.TextBox txtbx_phone;
         private System.Windows.Forms.ComboBox cbx_pgroup;
+        private int? duiToChange; 
 
         public AppointmentProcess()
         {
             InitializeComponent();
+        }
+        
+        public AppointmentProcess(Citizen citizen)
+        {
+            InitializeComponent();
+
+            duiToChange = citizen.Dui;
+            
+            Txbx_DUI.Text = $"{citizen.Dui}";
+            txtb_name.Text = citizen.CitizenName;
+            txtbx_addres.Text = citizen.CitizenAddress;
+            txtbx_email.Text = citizen.Email;
+            txtbx_phone.Text = $"{citizen.Phone}";
+            txtb_ICode.Text = $"{citizen.IntitutionCode}";
+            cbx_institution.SelectedIndex = citizen.IdSpecialInstitution;
+            cbx_pgroup.SelectedIndex = citizen.IdPriorityGroup;
         }
 
         private void Save_Click_1(object sender, EventArgs e)
@@ -31,33 +50,54 @@ namespace VaccinationManagement.Views
             var specialInstitucion = (SpecialInstitution) cbx_institution.SelectedItem;
             var priorityGroup = (PriorityGroup) cbx_pgroup.SelectedItem;
 
-            Citizen citizen = new Citizen(
-                Convert.ToInt32(Txbx_DUI.Text),
-                txtb_name.Text,
-                txtbx_addres.Text,
-                Convert.ToInt32(txtbx_phone.Text),
-                txtbx_email.Text,
-                Convert.ToInt32(txtb_ICode.Text),
-                LocationData.GestorId,
-                specialInstitucion.Id,
-                priorityGroup.Id
-            );
-
             try
             {
+                if (!duiToChange.HasValue)
+                {
+                    Citizen citizen = new Citizen(
+                     Convert.ToInt32(Txbx_DUI.Text),
+                        txtb_name.Text,
+                    txtbx_addres.Text,
+                    Convert.ToInt32(txtbx_phone.Text),
+                        txtbx_email.Text, 
+                        Convert.ToInt32(txtb_ICode.Text),
+                    LocationData.GestorId,
+                    specialInstitucion.Id,
+                        priorityGroup.Id
+                    );
+
                 db.Citizens.Add(citizen);
                 db.SaveChanges();
+                
+                MessageBox.Show("Información guardada con exito", "Guardado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var citizenToChange = db.Citizens.Where(c => c.Dui == duiToChange).ToList()[0];
+
+                    citizenToChange.Dui = Int32.Parse(Txbx_DUI.Text);
+                    citizenToChange.CitizenName = txtb_name.Text;
+                    citizenToChange.CitizenAddress = txtbx_addres.Text;
+                    citizenToChange.Email = txtbx_email.Text;
+                    citizenToChange.Phone = Int32.Parse(txtbx_phone.Text);
+                    citizenToChange  .IntitutionCode = Int32.Parse(txtb_ICode.Text);
+                    citizenToChange.IdSpecialInstitution = cbx_institution.SelectedIndex;
+                    citizenToChange.IdPriorityGroup = cbx_pgroup.SelectedIndex;
+                }
+                
 
             }
-            catch (Exception exception)
+            catch (FormatException exception)
             {
-                MessageBox.Show($"Revisa los datos {exception}");
+                MessageBox.Show($"Revisa los datos");
             }
-            
-            MessageBox.Show("Información guardada con exito", "Guardado",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            
+            catch (DbUpdateException exception)
+            {
+                MessageBox.Show($"Revisa los datos");
+            }
+
         }
 
         private void Back_Click(object sender, EventArgs e)
