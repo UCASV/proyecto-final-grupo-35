@@ -10,18 +10,29 @@ using VaccinationManagement.Views;
 
 namespace VaccinationManagement.Controls
 {
+    public class sideEffectsStatisticsClass
+    {
+        public string EffectName { set; get; }
+        public int EffectFrequency { set; get; }
+        
+    }
     public static  class ShowStadistics
     {
         private static List<Citizen> citizensTotalVaccinated;
         private static List<Citizen> citizensSecondVaccinated;
+        private static List<SideEffect> sideEffects;
+        private static List<sideEffectsStatisticsClass> sideEffectsStatistics;
+        
         public static void DrawGraphics(object sender, PaintEventArgs e)
         {
-            GetData();
+            GetData();      
             var brush = new SolidBrush(Color.White);
             var penBar = new Pen(brush, 50); 
             var font = new Font(FontFamily.GenericSansSerif, 16, FontStyle.Bold);
+            var fontGraphics = new Font(FontFamily.GenericSansSerif, 10, FontStyle.Bold);
             var canva = e.Graphics;
 
+            //////////////////////////////////////////
             //Abre un contenedor para dibujar los datos
             var DataContainer = canva.BeginContainer();
             
@@ -30,12 +41,34 @@ namespace VaccinationManagement.Controls
             canva.DrawString($"Personas vacunadas (Ambas dosis) : {citizensSecondVaccinated.Count}", font, brush , 10,65);
             canva.EndContainer(DataContainer);        
             ///////////////////////////////////////////
+            
 
+            ///////////////////////////////////////////
+            /// A 
             var Graphic = canva.BeginContainer();
             
-            canva.DrawLine(penBar, 35, 100, 35, 400 );
+            canva.DrawString("Favor, estar antentos ante los efectos secundario con mas frecuencia", font, brush, 10, 85);
             
+            var x0 = 60;
+            var x0EffectName = 28;
+            
+            var lblFormat = new StringFormat(StringFormatFlags.DirectionVertical);
+
+
+            sideEffectsStatistics.ForEach(frequency =>
+            {
+                canva.DrawString(frequency.EffectName, fontGraphics,
+                    brush, new RectangleF(x0EffectName, 425, x0 + 150, 750), lblFormat);
+                
+                canva.DrawLine(penBar, x0 , 400, x0, 405);
+                canva.DrawLine(penBar, x0 , 400, x0, 400-frequency.EffectFrequency);
+                x0 += 70;       
+                x0EffectName += 70;                        
+
+            });
+                       
             canva.EndContainer(Graphic);        
+            ///////////////////////////////////////////
 
 
         }
@@ -56,6 +89,21 @@ namespace VaccinationManagement.Controls
                 join A in db.Appointments on C equals A.IdCitizenNavigation
                 where  A.VaccineDate != null && A.IdAppointmentType == 2
                 select C;
+
+            var sideEffectsType = db.SideEffectTypes.ToList();
+            sideEffectsStatistics = new List<sideEffectsStatisticsClass>();
+            
+            sideEffectsType.ForEach(sideEffectsType =>
+            {
+                var typeFrecuency = db.SideEffects.Where(sideEffect => sideEffect.IdEffect == sideEffectsType.Id)
+                    .ToList();
+                sideEffectsStatistics.Add(new sideEffectsStatisticsClass()
+                {
+                    EffectFrequency = typeFrecuency.Count,
+                    EffectName = sideEffectsType.Effect
+                });
+
+            });
             
         citizensTotalVaccinated = appointments.ToList();
         citizensSecondVaccinated = appointmentsSecondType.ToList();

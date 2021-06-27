@@ -16,6 +16,5 @@ namespace VaccinationManagement.Models
         public string AppointmentType1 { get; set; }
 
         public virtual ICollection<Appointment> Appointments { get; set; }
-       
     }
 }

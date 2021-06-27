@@ -13,10 +13,8 @@ namespace VaccinationManagement.Models
         }
 
         public int Id { get; set; }
-        
         public string PriorityGroup1 { get; set; }
 
         public virtual ICollection<Citizen> Citizens { get; set; }
-        
     }
 }

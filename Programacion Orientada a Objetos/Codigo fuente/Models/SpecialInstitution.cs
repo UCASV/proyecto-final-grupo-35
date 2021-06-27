@@ -12,14 +12,9 @@ namespace VaccinationManagement.Models
             Citizens = new HashSet<Citizen>();
         }
 
-        public SpecialInstitution(string instName)
-        {
-            this.InstName = instName;
-        }
         public int Id { get; set; }
         public string InstName { get; set; }
 
         public virtual ICollection<Citizen> Citizens { get; set; }
-        
     }
 }

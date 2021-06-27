@@ -7,7 +7,7 @@ namespace VaccinationManagement.Models
 {
     public partial class Citizen
     {
-        public Citizen(int toInt32)
+        public Citizen()
         {
             Appointments = new HashSet<Appointment>();
             Diseases = new HashSet<Disease>();
@@ -23,6 +23,12 @@ namespace VaccinationManagement.Models
         public int IdSpecialInstitution { get; set; }
         public int IdPriorityGroup { get; set; }
 
+        public virtual Employee IdEmployeeNavigation { get; set; }
+        public virtual PriorityGroup IdPriorityGroupNavigation { get; set; }
+        public virtual SpecialInstitution IdSpecialInstitutionNavigation { get; set; }
+        public virtual ICollection<Appointment> Appointments { get; set; }
+        public virtual ICollection<Disease> Diseases { get; set; }
+        
         public Citizen(int Dui, string citizenName, string citizenAddress, int phone, string email, int intitutionCode, int idEmployee,
             int idSpecialInstitution, int idPriorityGroup)
         {
@@ -37,11 +43,5 @@ namespace VaccinationManagement.Models
             this.IdPriorityGroup = idPriorityGroup;
 
         }
-
-        public virtual Employee IdEmployeeNavigation { get; set; }
-        public virtual PriorityGroup IdPriorityGroupNavigation { get; set; }
-        public virtual SpecialInstitution IdSpecialInstitutionNavigation { get; set; }
-        public virtual ICollection<Appointment> Appointments { get; set; }
-        public virtual ICollection<Disease> Diseases { get; set; }
     }
 }
