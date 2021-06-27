@@ -47,6 +47,7 @@ namespace VaccinationManagement.Views
             this.lblAppointmentDate2 = new System.Windows.Forms.TextBox();
             this.btnActualHour1 = new System.Windows.Forms.Button();
             this.btnActualhour2 = new System.Windows.Forms.Button();
+            this.btnSideEffects = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dgvAppointment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,17 +93,17 @@ namespace VaccinationManagement.Views
             // label2
             // 
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(26, 94);
+            this.label2.Location = new System.Drawing.Point(11, 94);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 32);
+            this.label2.Size = new System.Drawing.Size(98, 32);
             this.label2.TabIndex = 13;
             this.label2.Text = "Aplicación de la vacuna";
             // 
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 53);
+            this.label1.Location = new System.Drawing.Point(11, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 20);
@@ -212,10 +213,22 @@ namespace VaccinationManagement.Views
             this.btnActualhour2.UseVisualStyleBackColor = true;
             this.btnActualhour2.Click += new System.EventHandler(this.btnNowButtonVaccinationEvent);
             // 
+            // btnSideEffects
+            // 
+            this.btnSideEffects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideEffects.ForeColor = System.Drawing.Color.White;
+            this.btnSideEffects.Location = new System.Drawing.Point(143, 359);
+            this.btnSideEffects.Name = "btnSideEffects";
+            this.btnSideEffects.Size = new System.Drawing.Size(215, 31);
+            this.btnSideEffects.TabIndex = 23;
+            this.btnSideEffects.Text = "Efectos secundarios";
+            this.btnSideEffects.UseVisualStyleBackColor = true;
+            // 
             // VaccinationProcess
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
-            this.ClientSize = new System.Drawing.Size(501, 326);
+            this.ClientSize = new System.Drawing.Size(501, 431);
+            this.Controls.Add(this.btnSideEffects);
             this.Controls.Add(this.btnActualhour2);
             this.Controls.Add(this.btnActualHour1);
             this.Controls.Add(this.lblAppointmentDate2);
@@ -238,6 +251,8 @@ namespace VaccinationManagement.Views
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btnSideEffects;
 
         private System.Windows.Forms.Button btnUpdateData;
 
