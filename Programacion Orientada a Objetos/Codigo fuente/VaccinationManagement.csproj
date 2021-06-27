@@ -39,6 +39,9 @@
       <Compile Update="Views\AppointmentProcess.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Views\FrnSideEffects.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

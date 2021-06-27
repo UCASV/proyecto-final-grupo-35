@@ -8,7 +8,7 @@ namespace VaccinationManagement.Models
     public partial class SideEffect
     {
         public int Id { get; set; }
-        public DateTime EffectTime { get; set; }
+        public DateTime? EffectTime { get; set; }
         public int IdAppointment { get; set; }
         public int? IdEffect { get; set; }
 
