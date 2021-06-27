@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+using VaccinationManagement.Context;
+using VaccinationManagement.Models;
 
 namespace VaccinationManagement.Views
 {
@@ -12,30 +17,25 @@ namespace VaccinationManagement.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            borrarmensajeerror();
-            if (validarcampos())
+            var db = new VaccinationContext();
+            var Citizen = db.Citizens.Where(w => Int32.Parse(textBox1.Text) == w.Dui).ToList();
+            if(Citizen.Count != 0)
             {
-                MessageBox.Show("datos bien ingresados");
+                MessageBox.Show($"su cita esta confirmada");
             }
-                
+            else
+            {
+                MessageBox.Show($"usted no tiene una cita");
+            }
+            
+
+
         }
 
-        private bool validarcampos()
+
+        private void label2_Click(object sender, EventArgs e)
         {
-            bool ok = true;
-
-            if (textBox1 == "")
-            {
-                ok = false;
-                ErrorProvider.SetError(textBox1, "ingresar su nombre")
-            }
-
-            return ok;
-        }
-
-        private void borrarmensajeerror()
-        {
-            ErrorProvider.SetError(textBox1, "")
+            throw new System.NotImplementedException();
         }
     }
 }

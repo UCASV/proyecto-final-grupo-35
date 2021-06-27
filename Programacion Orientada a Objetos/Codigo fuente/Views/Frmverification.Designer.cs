@@ -67,9 +67,10 @@ namespace VaccinationManagement.Views
             // 
             this.label2.Location = new System.Drawing.Point(14, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 16);
+            this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "nombre";
+            this.label2.Text = "DUI";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 

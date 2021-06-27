@@ -132,6 +132,7 @@ namespace VaccinationManagement.View
             // 
             // picCloseForm
             // 
+            this.picCloseForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picCloseForm.Image = ((System.Drawing.Image) (resources.GetObject("picCloseForm.Image")));
             this.picCloseForm.Location = new System.Drawing.Point(632, 12);
             this.picCloseForm.Name = "picCloseForm";
@@ -143,6 +144,7 @@ namespace VaccinationManagement.View
             // 
             // picMinimized
             // 
+            this.picMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMinimized.Image = ((System.Drawing.Image) (resources.GetObject("picMinimized.Image")));
             this.picMinimized.Location = new System.Drawing.Point(606, 12);
             this.picMinimized.Name = "picMinimized";

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 using VaccinationManagement.Controls;
 
@@ -33,160 +35,256 @@ namespace VaccinationManagement.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainWindow));
-            this.pnMenuVertical = new System.Windows.Forms.Panel();
+            this.pnlCentral = new System.Windows.Forms.Panel();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblHour = new System.Windows.Forms.Label();
+            this.pnlLateral = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnUpdateCitas = new System.Windows.Forms.Button();
-            this.btnCitas = new System.Windows.Forms.Button();
+            this.btnVerificationCita = new System.Windows.Forms.Button();
+            this.UpdateDataView = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.pnControlView = new System.Windows.Forms.Panel();
-            this.pnGrafics = new System.Windows.Forms.Panel();
-            this.pnMenuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.picLogo)).BeginInit();
+            this.picLogoGobierno = new System.Windows.Forms.PictureBox();
+            this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picMinimized = new System.Windows.Forms.PictureBox();
+            this.picCloseForm = new System.Windows.Forms.PictureBox();
+            this.tmrHour = new System.Windows.Forms.Timer(this.components);
+            this.pnlCentral.SuspendLayout();
+            this.pnlLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.picLogoGobierno)).BeginInit();
+            this.pnlSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.picMinimized)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.picCloseForm)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnMenuVertical
+            // pnlCentral
             // 
-            this.pnMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
-            this.pnMenuVertical.Controls.Add(this.btnExit);
-            this.pnMenuVertical.Controls.Add(this.btnUpdateCitas);
-            this.pnMenuVertical.Controls.Add(this.btnCitas);
-            this.pnMenuVertical.Controls.Add(this.btnRegister);
-            this.pnMenuVertical.Controls.Add(this.picLogo);
-            this.pnMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnMenuVertical.Location = new System.Drawing.Point(0, 0);
-            this.pnMenuVertical.Name = "pnMenuVertical";
-            this.pnMenuVertical.Size = new System.Drawing.Size(240, 611);
-            this.pnMenuVertical.TabIndex = 1;            
+            this.pnlCentral.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
+            this.pnlCentral.Controls.Add(this.lblFecha);
+            this.pnlCentral.Controls.Add(this.lblHour);
+            this.pnlCentral.Controls.Add(this.pnlLateral);
+            this.pnlCentral.Controls.Add(this.pnlSuperior);
+            this.pnlCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCentral.Location = new System.Drawing.Point(0, 0);
+            this.pnlCentral.Name = "pnlCentral";
+            this.pnlCentral.Size = new System.Drawing.Size(1000, 650);
+            this.pnlCentral.TabIndex = 0;
             // 
-            // pnGrafics
+            // lblFecha
             // 
-            this.pnGrafics.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
-            this.pnGrafics.Location = new System.Drawing.Point(100, 50);
-            this.pnGrafics.Name = "pnGrafics";
-            this.pnGrafics.Size = new System.Drawing.Size(700, 500);
-            this.pnGrafics.TabIndex = 2;
-            this.pnGrafics.Paint += new PaintEventHandler(ShowStadistics.DrawGraphics);
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.White;
+            this.lblFecha.Location = new System.Drawing.Point(339, 326);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(168, 44);
+            this.lblFecha.TabIndex = 3;
+            this.lblFecha.Text = "label1";
+            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHour
+            // 
+            this.lblHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lblHour.ForeColor = System.Drawing.Color.White;
+            this.lblHour.Location = new System.Drawing.Point(285, 251);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(270, 75);
+            this.lblHour.TabIndex = 2;
+            this.lblHour.Text = "label1";
+            this.lblHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlLateral
+            // 
+            this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.pnlLateral.Controls.Add(this.btnExit);
+            this.pnlLateral.Controls.Add(this.btnVerificationCita);
+            this.pnlLateral.Controls.Add(this.UpdateDataView);
+            this.pnlLateral.Controls.Add(this.btnRegister);
+            this.pnlLateral.Controls.Add(this.picLogoGobierno);
+            this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLateral.Location = new System.Drawing.Point(0, 35);
+            this.pnlLateral.Name = "pnlLateral";
+            this.pnlLateral.Size = new System.Drawing.Size(231, 615);
+            this.pnlLateral.TabIndex = 1;
             // 
             // btnExit
             // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = ((System.Drawing.Image) (resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(11, 532);
+            this.btnExit.Location = new System.Drawing.Point(12, 550);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(157, 67);
+            this.btnExit.Size = new System.Drawing.Size(149, 53);
             this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "  Cerrar Sesión";
+            this.btnExit.Text = "Cerrar Sesion";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnUpdateCitas
+            // btnVerificationCita
             // 
-            this.btnUpdateCitas.FlatAppearance.BorderSize = 0;
-            this.btnUpdateCitas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
-            this.btnUpdateCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateCitas.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnUpdateCitas.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateCitas.Image = ((System.Drawing.Image) (resources.GetObject("btnUpdateCitas.Image")));
-            this.btnUpdateCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateCitas.Location = new System.Drawing.Point(12, 362);
-            this.btnUpdateCitas.Name = "btnUpdateCitas";
-            this.btnUpdateCitas.Size = new System.Drawing.Size(212, 67);
-            this.btnUpdateCitas.TabIndex = 3;
-            this.btnUpdateCitas.Text = "   ACTUALIZACION DE DATOS";
-            this.btnUpdateCitas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateCitas.UseVisualStyleBackColor = true;
-            this.btnUpdateCitas.Click += this.btnUpdateDataView_click;
+            this.btnVerificationCita.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerificationCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerificationCita.ForeColor = System.Drawing.Color.White;
+            this.btnVerificationCita.Image = ((System.Drawing.Image) (resources.GetObject("btnVerificationCita.Image")));
+            this.btnVerificationCita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerificationCita.Location = new System.Drawing.Point(12, 292);
+            this.btnVerificationCita.Name = "btnVerificationCita";
+            this.btnVerificationCita.Size = new System.Drawing.Size(205, 53);
+            this.btnVerificationCita.TabIndex = 3;
+            this.btnVerificationCita.Text = "VERIFICACION DE CITA";
+            this.btnVerificationCita.UseVisualStyleBackColor = true;
+            this.btnVerificationCita.Click += new System.EventHandler(this.btnVerificationCita_Click);
             // 
-            // btnCitas
+            // UpdateDataView
             // 
-            this.btnCitas.FlatAppearance.BorderSize = 0;
-            this.btnCitas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
-            this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCitas.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnCitas.ForeColor = System.Drawing.Color.White;
-            this.btnCitas.Image = ((System.Drawing.Image) (resources.GetObject("btnCitas.Image")));
-            this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCitas.Location = new System.Drawing.Point(11, 289);
-            this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Size = new System.Drawing.Size(223, 67);
-            this.btnCitas.TabIndex = 2;
-            this.btnCitas.Text = "  VERIFICACION DE CITAS";
-            this.btnCitas.UseVisualStyleBackColor = true;
+            this.UpdateDataView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateDataView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateDataView.ForeColor = System.Drawing.Color.White;
+            this.UpdateDataView.Image = ((System.Drawing.Image) (resources.GetObject("UpdateDataView.Image")));
+            this.UpdateDataView.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.UpdateDataView.Location = new System.Drawing.Point(12, 372);
+            this.UpdateDataView.Name = "UpdateDataView";
+            this.UpdateDataView.Size = new System.Drawing.Size(205, 53);
+            this.UpdateDataView.TabIndex = 2;
+            this.UpdateDataView.Text = "   ACTUALIZACION DE CITAS";
+            this.UpdateDataView.UseVisualStyleBackColor = true;
+            this.UpdateDataView.Click += new System.EventHandler(this.UpdateDataView_Click);
             // 
             // btnRegister
             // 
-            this.btnRegister.FlatAppearance.BorderSize = 0;
-            this.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Image = ((System.Drawing.Image) (resources.GetObject("btnRegister.Image")));
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(12, 216);
+            this.btnRegister.Location = new System.Drawing.Point(12, 207);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(222, 67);
+            this.btnRegister.Size = new System.Drawing.Size(205, 53);
             this.btnRegister.TabIndex = 1;
             this.btnRegister.Text = "REGISTRO";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // picLogo
+            // picLogoGobierno
             // 
-            this.picLogo.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLogo.Image = ((System.Drawing.Image) (resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(11, 12);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(223, 154);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
+            this.picLogoGobierno.Image = ((System.Drawing.Image) (resources.GetObject("picLogoGobierno.Image")));
+            this.picLogoGobierno.Location = new System.Drawing.Point(12, 6);
+            this.picLogoGobierno.Name = "picLogoGobierno";
+            this.picLogoGobierno.Size = new System.Drawing.Size(194, 143);
+            this.picLogoGobierno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogoGobierno.TabIndex = 0;
+            this.picLogoGobierno.TabStop = false;
             // 
-            // pnControlView
+            // pnlSuperior
             // 
-            this.pnControlView.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
-            this.pnControlView.Controls.Add(this.pnGrafics);
-            this.pnControlView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnControlView.Location = new System.Drawing.Point(240, 0);
-            this.pnControlView.Name = "pnControlView";
-            this.pnControlView.Size = new System.Drawing.Size(944, 611);
-            this.pnControlView.TabIndex = 2;
+            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.pnlSuperior.Controls.Add(this.picClose);
+            this.pnlSuperior.Controls.Add(this.picMinimized);
+            this.pnlSuperior.Controls.Add(this.picCloseForm);
+            this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperior.Name = "pnlSuperior";
+            this.pnlSuperior.Size = new System.Drawing.Size(1000, 35);
+            this.pnlSuperior.TabIndex = 0;
+            this.pnlSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseDown);
+            // 
+            // picClose
+            // 
+            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picClose.Image = ((System.Drawing.Image) (resources.GetObject("picClose.Image")));
+            this.picClose.Location = new System.Drawing.Point(952, 3);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(45, 27);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picClose.TabIndex = 2;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // picMinimized
+            // 
+            this.picMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMinimized.Image = ((System.Drawing.Image) (resources.GetObject("picMinimized.Image")));
+            this.picMinimized.Location = new System.Drawing.Point(914, 5);
+            this.picMinimized.Name = "picMinimized";
+            this.picMinimized.Size = new System.Drawing.Size(32, 27);
+            this.picMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinimized.TabIndex = 1;
+            this.picMinimized.TabStop = false;
+            this.picMinimized.Click += new System.EventHandler(this.picMinimized_Click);
+            // 
+            // picCloseForm
+            // 
+            this.picCloseForm.Image = ((System.Drawing.Image) (resources.GetObject("picCloseForm.Image")));
+            this.picCloseForm.Location = new System.Drawing.Point(1243, 8);
+            this.picCloseForm.Name = "picCloseForm";
+            this.picCloseForm.Size = new System.Drawing.Size(45, 24);
+            this.picCloseForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCloseForm.TabIndex = 0;
+            this.picCloseForm.TabStop = false;
+            // 
+            // tmrHour
+            // 
+            this.tmrHour.Enabled = true;
+            this.tmrHour.Tick += new System.EventHandler(this.tmrHour_Tick);
             // 
             // FrmMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 611);
-            this.Controls.Add(this.pnControlView);
-            this.Controls.Add(this.pnMenuVertical);
+            this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.pnlCentral);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "FrmMainWindow";
-            this.Text = "FrmMainWindow";
-            this.pnMenuVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.picLogo)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Frm";
+            this.pnlCentral.ResumeLayout(false);
+            this.pnlLateral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize) (this.picLogoGobierno)).EndInit();
+            this.pnlSuperior.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize) (this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.picMinimized)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.picCloseForm)).EndInit();
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.Timer tmrHour;
+
+        private System.Windows.Forms.Label lblHour;
+        private System.Windows.Forms.Label lblFecha;
+
+        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.PictureBox picClose;
+
+        private System.Windows.Forms.Panel pnlCentral;
+        private System.Windows.Forms.Panel pnlSuperior;
+        private System.Windows.Forms.Panel pnlLateral;
+
+        private System.Windows.Forms.PictureBox picMinimized;
+
+        private System.Windows.Forms.PictureBox picCloseForm;
+
         private System.Windows.Forms.Button btnExit;
 
-        private System.Windows.Forms.Button btnCitas;
+        private System.Windows.Forms.Button UpdateDataView;
+        private System.Windows.Forms.Button btnVerificationCita;
 
+        private System.Windows.Forms.PictureBox picLogoGobierno;
         private System.Windows.Forms.Button btnRegister;
-        
+        private System.Windows.Forms.Button button1;
 
-        private System.Windows.Forms.Button btnUpdateCitas;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
-        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Panel panel3;
 
-        private System.Windows.Forms.Panel pnMenuVertical;
-        
-        private System.Windows.Forms.Panel pnControlView;
+        private System.Windows.Forms.Panel panel2;
 
-        private System.Windows.Forms.Panel pnGrafics;
+        private System.Windows.Forms.Panel panel1;
 
         #endregion
     }

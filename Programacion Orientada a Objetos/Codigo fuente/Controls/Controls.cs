@@ -18,6 +18,7 @@ namespace VaccinationManagement.Controls
         {
             GetData();
             var brush = new SolidBrush(Color.White);
+            var penBar = new Pen(brush, 50); 
             var font = new Font(FontFamily.GenericSansSerif, 16, FontStyle.Bold);
             var canva = e.Graphics;
 
@@ -27,9 +28,15 @@ namespace VaccinationManagement.Controls
             canva.DrawString($"Total de personas vacunadas: {citizensTotalVaccinated.Count}", font, brush , 10,25);
             canva.DrawString($"Personas vacunadas (Solo primera dosis) : {citizensTotalVaccinated.Count}", font, brush , 10,45);
             canva.DrawString($"Personas vacunadas (Ambas dosis) : {citizensSecondVaccinated.Count}", font, brush , 10,65);
-            
-            canva.EndContainer(DataContainer);            
+            canva.EndContainer(DataContainer);        
             ///////////////////////////////////////////
+
+            var Graphic = canva.BeginContainer();
+            
+            canva.DrawLine(penBar, 35, 100, 35, 400 );
+            
+            canva.EndContainer(Graphic);        
+
 
         }
 
@@ -53,7 +60,6 @@ namespace VaccinationManagement.Controls
         citizensTotalVaccinated = appointments.ToList();
         citizensSecondVaccinated = appointmentsSecondType.ToList();
         }
-        
         
         
     }

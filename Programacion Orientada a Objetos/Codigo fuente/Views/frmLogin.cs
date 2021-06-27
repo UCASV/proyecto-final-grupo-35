@@ -29,6 +29,7 @@ namespace VaccinationManagement.View
                 LocationData.UserId = loginData.First().Id;
                 LocationData.GestorName = actualEmployee.EmployeeName;
                 LocationData.IdActualBooth = actualEmployee.IdBooth;
+                LocationData.GestorId = actualEmployee.Id;
                 
                 if (loginData.Count != 0)
                 {
@@ -95,6 +96,7 @@ namespace VaccinationManagement.View
 
         private void picCloseForm_Click(object sender, EventArgs e)
         {
+            
             Application.Exit();
         }
 
