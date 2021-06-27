@@ -92,6 +92,7 @@ namespace VaccinationManagement.View
             // 
             // chkShowPasseword
             // 
+            this.chkShowPasseword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkShowPasseword.Location = new System.Drawing.Point(573, 144);
             this.chkShowPasseword.Name = "chkShowPasseword";
             this.chkShowPasseword.Size = new System.Drawing.Size(27, 18);
@@ -156,6 +157,7 @@ namespace VaccinationManagement.View
             // 
             // btnLogin
             // 
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(366, 205);

@@ -53,12 +53,12 @@ namespace VaccinationManagement.View
             }
             catch (InvalidOperationException exception)
             {
-                using (var cancel = new FrmInvalidData())
+                using (var invalid = new FrmInvalidData())
                 {
-                    var result = cancel.ShowDialog();
+                    var result = invalid.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        this.Close();
+                        
                     }
                                         
                 }

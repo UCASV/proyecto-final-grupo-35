@@ -92,6 +92,7 @@ namespace VaccinationManagement.View
             // 
             // btnMore
             // 
+            this.btnMore.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMore.FlatAppearance.BorderSize = 0;
             this.btnMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -148,6 +149,7 @@ namespace VaccinationManagement.View
             // 
             // btnExit
             // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
@@ -213,9 +215,9 @@ namespace VaccinationManagement.View
             // picLogoGobierno
             // 
             this.picLogoGobierno.Image = ((System.Drawing.Image) (resources.GetObject("picLogoGobierno.Image")));
-            this.picLogoGobierno.Location = new System.Drawing.Point(12, 6);
+            this.picLogoGobierno.Location = new System.Drawing.Point(3, 6);
             this.picLogoGobierno.Name = "picLogoGobierno";
-            this.picLogoGobierno.Size = new System.Drawing.Size(216, 281);
+            this.picLogoGobierno.Size = new System.Drawing.Size(225, 281);
             this.picLogoGobierno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogoGobierno.TabIndex = 0;
             this.picLogoGobierno.TabStop = false;

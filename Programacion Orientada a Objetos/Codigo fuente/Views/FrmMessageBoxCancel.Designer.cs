@@ -62,6 +62,7 @@ namespace VaccinationManagement.Views
             // 
             // btnYes
             // 
+            this.btnYes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYes.ForeColor = System.Drawing.Color.White;
@@ -71,11 +72,11 @@ namespace VaccinationManagement.Views
             this.btnYes.TabIndex = 2;
             this.btnYes.Text = "SI";
             this.btnYes.UseVisualStyleBackColor = true;
-            
             // 
             // btnNo
             // 
             this.btnNo.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
+            this.btnNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNo.ForeColor = System.Drawing.Color.White;
@@ -85,7 +86,6 @@ namespace VaccinationManagement.Views
             this.btnNo.TabIndex = 3;
             this.btnNo.Text = "NO";
             this.btnNo.UseVisualStyleBackColor = false;
-          
             // 
             // FrmMessageBoxCancel
             // 
