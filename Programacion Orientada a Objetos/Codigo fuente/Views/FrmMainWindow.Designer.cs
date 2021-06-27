@@ -38,6 +38,7 @@ namespace VaccinationManagement.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainWindow));
             this.pnlCentral = new System.Windows.Forms.Panel();
+            this.btnMore = new System.Windows.Forms.Button();
             this.pnlGraphics = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHour = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@ namespace VaccinationManagement.View
             this.picMinimized = new System.Windows.Forms.PictureBox();
             this.picCloseForm = new System.Windows.Forms.PictureBox();
             this.tmrHour = new System.Windows.Forms.Timer(this.components);
-            this.btnMore = new System.Windows.Forms.Button();
             this.pnlCentral.SuspendLayout();
             this.pnlLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.picLogoGobierno)).BeginInit();
@@ -77,21 +77,33 @@ namespace VaccinationManagement.View
             this.pnlCentral.Size = new System.Drawing.Size(1000, 650);
             this.pnlCentral.TabIndex = 0;
             // 
+            // btnMore
+            // 
+            this.btnMore.FlatAppearance.BorderSize = 0;
+            this.btnMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnMore.ForeColor = System.Drawing.Color.White;
+            this.btnMore.Location = new System.Drawing.Point(865, 509);
+            this.btnMore.Name = "btnMore";
+            this.btnMore.Size = new System.Drawing.Size(123, 30);
+            this.btnMore.TabIndex = 5;
+            this.btnMore.Text = "Mostras mas";
+            this.btnMore.UseVisualStyleBackColor = true;
+            // 
             // pnlGraphics
             // 
-            this.pnlGraphics.Location = new System.Drawing.Point(395, 70);
+            this.pnlGraphics.Location = new System.Drawing.Point(246, 70);
             this.pnlGraphics.Name = "pnlGraphics";
-            this.pnlGraphics.Size = new System.Drawing.Size(580, 513);
+            this.pnlGraphics.Size = new System.Drawing.Size(729, 433);
             this.pnlGraphics.TabIndex = 4;
-            this.pnlGraphics.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGraphics_Paint);
             // 
             // lblFecha
             // 
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(237, 336);
+            this.lblFecha.Location = new System.Drawing.Point(447, 585);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(152, 44);
+            this.lblFecha.Size = new System.Drawing.Size(270, 44);
             this.lblFecha.TabIndex = 3;
             this.lblFecha.Text = "label1";
             this.lblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,9 +112,9 @@ namespace VaccinationManagement.View
             // 
             this.lblHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblHour.ForeColor = System.Drawing.Color.White;
-            this.lblHour.Location = new System.Drawing.Point(237, 258);
+            this.lblHour.Location = new System.Drawing.Point(447, 506);
             this.lblHour.Name = "lblHour";
-            this.lblHour.Size = new System.Drawing.Size(152, 88);
+            this.lblHour.Size = new System.Drawing.Size(270, 88);
             this.lblHour.TabIndex = 2;
             this.lblHour.Text = "label1";
             this.lblHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -246,18 +258,6 @@ namespace VaccinationManagement.View
             // 
             this.tmrHour.Enabled = true;
             this.tmrHour.Tick += new System.EventHandler(this.tmrHour_Tick);
-            // 
-            // btnMore
-            // 
-            this.btnMore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnMore.ForeColor = System.Drawing.Color.White;
-            this.btnMore.Location = new System.Drawing.Point(852, 599);
-            this.btnMore.Name = "btnMore";
-            this.btnMore.Size = new System.Drawing.Size(123, 30);
-            this.btnMore.TabIndex = 5;
-            this.btnMore.Text = "Mostras mas";
-            this.btnMore.UseVisualStyleBackColor = true;
             // 
             // FrmMainWindow
             // 

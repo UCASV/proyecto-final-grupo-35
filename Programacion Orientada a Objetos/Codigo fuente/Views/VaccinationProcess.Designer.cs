@@ -55,7 +55,7 @@ namespace VaccinationManagement.Views
             // 
             this.cmbMinuteStep2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
             this.cmbMinuteStep2.FormattingEnabled = true;
-            this.cmbMinuteStep2.Location = new System.Drawing.Point(358, 50);
+            this.cmbMinuteStep2.Location = new System.Drawing.Point(358, 53);
             this.cmbMinuteStep2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMinuteStep2.Name = "cmbMinuteStep2";
             this.cmbMinuteStep2.Size = new System.Drawing.Size(41, 21);
@@ -66,7 +66,7 @@ namespace VaccinationManagement.Views
             // 
             this.cmbHourStep2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
             this.cmbHourStep2.FormattingEnabled = true;
-            this.cmbHourStep2.Location = new System.Drawing.Point(307, 50);
+            this.cmbHourStep2.Location = new System.Drawing.Point(307, 53);
             this.cmbHourStep2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbHourStep2.Name = "cmbHourStep2";
             this.cmbHourStep2.Size = new System.Drawing.Size(47, 21);
@@ -136,7 +136,7 @@ namespace VaccinationManagement.Views
             this.dgvAppointment.RowTemplate.Height = 28;
             this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAppointment.ShowCellErrors = false;
-            this.dgvAppointment.Size = new System.Drawing.Size(479, 145);
+            this.dgvAppointment.Size = new System.Drawing.Size(479, 168);
             this.dgvAppointment.TabIndex = 10;
             this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClicked);
             // 
@@ -221,7 +221,7 @@ namespace VaccinationManagement.Views
             this.btnSideEffects.Name = "btnSideEffects";
             this.btnSideEffects.Size = new System.Drawing.Size(215, 31);
             this.btnSideEffects.TabIndex = 23;
-            this.btnSideEffects.Text = "Efectos secundarios";
+            this.btnSideEffects.Text = "Agregar Efectos Secundarios";
             this.btnSideEffects.UseVisualStyleBackColor = true;
             // 
             // VaccinationProcess

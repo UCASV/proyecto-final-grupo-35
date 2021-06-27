@@ -66,12 +66,14 @@ namespace VaccinationManagement.View
         
         private void picClose_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro(a) que desea salir del sistema?",
-                "Consulta",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
+            using (var cancel = new FrmClose())
             {
-                Application.Exit();
+                var result = cancel.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+                                        
             }
             
         }

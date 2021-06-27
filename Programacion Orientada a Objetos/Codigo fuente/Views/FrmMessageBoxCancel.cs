@@ -11,17 +11,6 @@ namespace VaccinationManagement.Views
             InitializeComponent();
         }
 
-        private void btnYes_Click(object sender, EventArgs e)
-        {
-            AppointmentProcess yes = new AppointmentProcess();
-            yes.Show();
-            yes.Close();
-
-        }
-
-        private void btnNo_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
     }
 }

@@ -62,8 +62,15 @@ namespace VaccinationManagement.Views
 
         private void Back_Click(object sender, EventArgs e)
         {
-            FrmMessageBoxCancel cancel = new FrmMessageBoxCancel();
-            cancel.Show();
+            using (var cancel = new FrmMessageBoxCancel())
+            {
+                var result = cancel.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                
+            }
         }
 
         private void btn_add_disease_Click(object sender, EventArgs e)
