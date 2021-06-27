@@ -41,6 +41,7 @@ namespace VaccinationManagement.Views
         private void frmWelcomeUser_Load(object sender, EventArgs e)
         {
             
+            
             this.Opacity = 0.0;
             tmrOne.Start();
 

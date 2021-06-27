@@ -96,6 +96,7 @@ namespace VaccinationManagement.View
 
         private void picCloseForm_Click(object sender, EventArgs e)
         {
+            
             Application.Exit();
         }
 

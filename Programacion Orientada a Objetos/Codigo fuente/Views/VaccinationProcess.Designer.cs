@@ -73,15 +73,15 @@ namespace VaccinationManagement.Views
             // btnUpdateData
             // 
             this.btnUpdateData.Enabled = false;
+            this.btnUpdateData.FlatAppearance.BorderSize = 0;
+            this.btnUpdateData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
+            this.btnUpdateData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateData.ForeColor = System.Drawing.Color.White;
             this.btnUpdateData.Location = new System.Drawing.Point(129, 102);
             this.btnUpdateData.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateData.Name = "btnUpdateData";
             this.btnUpdateData.Size = new System.Drawing.Size(90, 20);
             this.btnUpdateData.TabIndex = 14;
-            this.btnUpdateData.FlatAppearance.BorderSize = 0;
-            this.btnUpdateData.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
-            this.btnUpdateData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateData.Text = "Actualizar datos";
             this.btnUpdateData.UseVisualStyleBackColor = true;
             this.btnUpdateData.Click += new System.EventHandler(this.btnUpdateDataClick);
@@ -93,28 +93,27 @@ namespace VaccinationManagement.Views
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 32);
             this.label2.TabIndex = 13;
-            this.label1.ForeColor = System.Drawing.Color.White;
             this.label2.Text = "Aplicación de la vacuna";
             // 
             // label1
             // 
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(16, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 40);
-            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.TabIndex = 12;
             this.label1.Text = "Entrada a la Fila";
             // 
             // lbl01
             // 
             this.lbl01.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl01.ForeColor = System.Drawing.Color.White;
             this.lbl01.Location = new System.Drawing.Point(129, 8);
             this.lbl01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl01.Name = "lbl01";
             this.lbl01.Size = new System.Drawing.Size(263, 32);
             this.lbl01.TabIndex = 11;
-            this.lbl01.ForeColor = System.Drawing.Color.White;
             this.lbl01.Text = "Citas";
             this.lbl01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -176,36 +175,38 @@ namespace VaccinationManagement.Views
             // 
             // btnActualHour1
             // 
+            this.btnActualHour1.FlatAppearance.BorderSize = 0;
+            this.btnActualHour1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
+            this.btnActualHour1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualHour1.ForeColor = System.Drawing.Color.White;
             this.btnActualHour1.Location = new System.Drawing.Point(259, 42);
             this.btnActualHour1.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualHour1.Name = "btnActualHour1";
             this.btnActualHour1.Size = new System.Drawing.Size(44, 23);
             this.btnActualHour1.TabIndex = 21;
             this.btnActualHour1.Text = "Ahora";
-            this.btnActualHour1.ForeColor = System.Drawing.Color.White;
             this.btnActualHour1.UseVisualStyleBackColor = true;
-            this.btnActualHour1.FlatAppearance.BorderSize = 0;
-            this.btnActualHour1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
-            this.btnActualHour1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualHour1.Click += new System.EventHandler(this.btnNowButtonStep2Event);
             // 
             // btnActualhour2
             // 
+            this.btnActualhour2.FlatAppearance.BorderSize = 0;
+            this.btnActualhour2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
+            this.btnActualhour2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualhour2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnActualhour2.ForeColor = System.Drawing.Color.White;
             this.btnActualhour2.Location = new System.Drawing.Point(259, 66);
             this.btnActualhour2.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualhour2.Name = "btnActualhour2";
             this.btnActualhour2.Size = new System.Drawing.Size(44, 22);
             this.btnActualhour2.TabIndex = 22;
-            this.btnActualhour2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnActualhour2.ForeColor = System.Drawing.Color.White;
             this.btnActualhour2.Text = "Ahora";
             this.btnActualhour2.UseVisualStyleBackColor = true;
             this.btnActualhour2.Click += new System.EventHandler(this.btnNowButtonVaccinationEvent);
-            this.btnActualhour2.FlatAppearance.BorderSize = 0;
-            this.btnActualhour2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
-            this.btnActualhour2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Icon = new Icon(
-                "./Resources/icoGobierno.ico");            
+            // 
+            // VaccinationProcess
+            // 
+            this.ClientSize = new System.Drawing.Size(324, 261);
             this.Controls.Add(this.btnActualhour2);
             this.Controls.Add(this.btnActualHour1);
             this.Controls.Add(this.lblAppointmentDate2);

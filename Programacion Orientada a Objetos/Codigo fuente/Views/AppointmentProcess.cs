@@ -11,8 +11,8 @@ namespace VaccinationManagement.Views
 {
     public partial class AppointmentProcess : Form
     {
-        private TextBox txtb_name;
-        private TextBox txtbx_addres;
+        private System.Windows.Forms.TextBox txtb_name;
+        private System.Windows.Forms.TextBox txtbx_addres;
         private System.Windows.Forms.TextBox txtbx_email;
         private System.Windows.Forms.TextBox txtbx_disease;
         private System.Windows.Forms.ComboBox cbx_institution;

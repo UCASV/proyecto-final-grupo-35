@@ -52,14 +52,14 @@ namespace VaccinationManagement.Views
             this.pnUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnUser.Location = new System.Drawing.Point(0, 0);
             this.pnUser.Name = "pnUser";
-            this.pnUser.Size = new System.Drawing.Size(1000, 82);
+            this.pnUser.Size = new System.Drawing.Size(800, 82);
             this.pnUser.TabIndex = 0;
             // 
             // lblSystem
             // 
             this.lblSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblSystem.ForeColor = System.Drawing.Color.White;
-            this.lblSystem.Location = new System.Drawing.Point(34, 27);
+            this.lblSystem.Location = new System.Drawing.Point(221, 20);
             this.lblSystem.Name = "lblSystem";
             this.lblSystem.Size = new System.Drawing.Size(347, 37);
             this.lblSystem.TabIndex = 0;
@@ -69,9 +69,9 @@ namespace VaccinationManagement.Views
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 119);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 119);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(347, 312);
+            this.pictureBox1.Size = new System.Drawing.Size(285, 312);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -80,7 +80,7 @@ namespace VaccinationManagement.Views
             // 
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(574, 146);
+            this.lblWelcome.Location = new System.Drawing.Point(420, 119);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(253, 37);
             this.lblWelcome.TabIndex = 1;
@@ -91,7 +91,7 @@ namespace VaccinationManagement.Views
             // 
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblUserName.ForeColor = System.Drawing.Color.White;
-            this.lblUserName.Location = new System.Drawing.Point(574, 210);
+            this.lblUserName.Location = new System.Drawing.Point(420, 172);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(253, 51);
             this.lblUserName.TabIndex = 2;
@@ -110,9 +110,9 @@ namespace VaccinationManagement.Views
             // 
             // pgrLoad
             // 
-            this.pgrLoad.Location = new System.Drawing.Point(435, 342);
+            this.pgrLoad.Location = new System.Drawing.Point(318, 379);
             this.pgrLoad.Name = "pgrLoad";
-            this.pgrLoad.Size = new System.Drawing.Size(540, 43);
+            this.pgrLoad.Size = new System.Drawing.Size(459, 43);
             this.pgrLoad.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pgrLoad.TabIndex = 3;
             // 
@@ -121,7 +121,7 @@ namespace VaccinationManagement.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
-            this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.pgrLoad);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblWelcome);
@@ -129,6 +129,7 @@ namespace VaccinationManagement.Views
             this.Controls.Add(this.pnUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmWelcomeUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmWelcomeUser";
             this.Load += new System.EventHandler(this.frmWelcomeUser_Load);
             this.pnUser.ResumeLayout(false);
