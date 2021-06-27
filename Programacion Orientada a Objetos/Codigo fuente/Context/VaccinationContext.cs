@@ -28,6 +28,7 @@ namespace VaccinationManagement.Context
         public virtual DbSet<LogIn> LogIns { get; set; }
         public virtual DbSet<PriorityGroup> PriorityGroups { get; set; }
         public virtual DbSet<SideEffect> SideEffects { get; set; }
+        public virtual DbSet<SideEffectType> SideEffectTypes { get; set; }
         public virtual DbSet<SpecialInstitution> SpecialInstitutions { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -319,23 +320,37 @@ namespace VaccinationManagement.Context
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Effect)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false)
-                    .HasColumnName("effect");
-
                 entity.Property(e => e.EffectTime)
                     .HasColumnType("datetime")
                     .HasColumnName("effect_time");
 
                 entity.Property(e => e.IdAppointment).HasColumnName("id_appointment");
 
+                entity.Property(e => e.IdEffect).HasColumnName("id_effect");
+
                 entity.HasOne(d => d.IdAppointmentNavigation)
                     .WithMany(p => p.SideEffects)
                     .HasForeignKey(d => d.IdAppointment)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__SIDE_EFFE__id_ap__5441852A");
+
+                entity.HasOne(d => d.IdEffectNavigation)
+                    .WithMany(p => p.SideEffects)
+                    .HasForeignKey(d => d.IdEffect)
+                    .HasConstraintName("FK__SIDE_EFFE__id_ef__5DCAEF64");
+            });
+
+            modelBuilder.Entity<SideEffectType>(entity =>
+            {
+                entity.ToTable("SIDE_EFFECT_TYPE");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Effect)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("effect");
             });
 
             modelBuilder.Entity<SpecialInstitution>(entity =>

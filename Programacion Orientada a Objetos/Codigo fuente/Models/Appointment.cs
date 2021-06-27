@@ -23,7 +23,5 @@ namespace VaccinationManagement.Models
         public virtual AppointmentType IdAppointmentTypeNavigation { get; set; }
         public virtual Citizen IdCitizenNavigation { get; set; }
         public virtual ICollection<SideEffect> SideEffects { get; set; }
-      
-        
     }
 }
