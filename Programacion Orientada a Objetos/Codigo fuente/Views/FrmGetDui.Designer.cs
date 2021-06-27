@@ -106,6 +106,7 @@ namespace VaccinationManagement.Views
             this.Name = "FrmGetDui";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DUI del ciudadano";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmGetDui_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

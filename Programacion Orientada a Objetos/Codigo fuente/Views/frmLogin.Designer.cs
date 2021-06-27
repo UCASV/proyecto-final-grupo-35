@@ -187,6 +187,7 @@ namespace VaccinationManagement.View
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.picCloseForm)).EndInit();

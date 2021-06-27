@@ -359,6 +359,7 @@ namespace VaccinationManagement.Views
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proceso de cita";
             this.Load += new System.EventHandler(this.AppointmentProcess_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AppointmentProcess_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.picUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
