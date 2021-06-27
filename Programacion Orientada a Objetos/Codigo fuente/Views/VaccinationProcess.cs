@@ -14,7 +14,8 @@ namespace VaccinationManagement.Views
     {
         
         private int dui;
-        
+        private Appointment appointmentToChange;
+
         public VaccinationProcess(int dui)
         {
             
@@ -54,9 +55,13 @@ namespace VaccinationManagement.Views
 
         private void updateDataMode()
         {
-                DateTime AppointmentDate = DateTime.Parse(dgvAppointment.SelectedRows[0].Cells[3].Value.ToString());
-                lblAppointmentDate.Text = AppointmentDate.ToShortDateString();
-                lblAppointmentDate2.Text = AppointmentDate.ToShortDateString();
+            var db = new VaccinationContext();
+            DateTime AppointmentDate = DateTime.Parse(dgvAppointment.SelectedRows[0].Cells[3].Value.ToString());
+            lblAppointmentDate.Text = AppointmentDate.ToShortDateString();
+            lblAppointmentDate2.Text = AppointmentDate.ToShortDateString();
+            
+            var actualAppointmentId = Int32.Parse(dgvAppointment.SelectedCells[0].Value.ToString());
+            appointmentToChange = db.Appointments.Where(A => A.Id == actualAppointmentId).ToList()[0];
 
                 /*
                     Para evitar incosistencias en los datos, se llenan las opciones de horas 
@@ -104,18 +109,15 @@ namespace VaccinationManagement.Views
         
         private void dgvCellClicked (object sender, DataGridViewCellEventArgs e)
         {
-            
             // A cada click se actualizan las horas y minutos que se pueden seleccionar
             updateDataMode();
         }
-
         
         ////// Eventos botones "Ahora"  
         private void btnNowButtonStep2Event(object sender, EventArgs e)
         {
             cmbHourStep2.SelectedItem = DateTime.Now.Hour;
             cmbMinuteStep2.SelectedItem = DateTime.Now.Minute;
-
         }
         
         private void btnNowButtonVaccinationEvent(object sender, EventArgs e)
@@ -127,7 +129,16 @@ namespace VaccinationManagement.Views
         }
         ///////////////////////////////
 
-        
+        private void btnSideEffectsClick(object sender, EventArgs e)
+        {
+            using (var sideEffectForm = new FrnSideEffects(appointmentToChange))
+            {
+                Hide();
+                sideEffectForm.ShowDialog();
+                Show();
+            }
+        }
+     
         private void btnUpdateDataClick(object sender, EventArgs e)
         {
             DateTime? vaccineDate, step2Date;
@@ -135,8 +146,8 @@ namespace VaccinationManagement.Views
             var db = new VaccinationContext();
             var actualBooth = db.Booths.Where(B => B.Id == LocationData.IdActualBooth).ToList().First();
             var actualAppointmentId = Int32.Parse(dgvAppointment.SelectedCells[0].Value.ToString());
-            var appointmentToChange = db.Appointments.Where(A => A.Id == actualAppointmentId).ToList()[0];
-            
+            appointmentToChange = db.Appointments.Where(A => A.Id == actualAppointmentId).ToList()[0];
+
 
             //Generar segunda cita
             var secondVaccinationAppointment = new Appointment() 
@@ -215,15 +226,15 @@ namespace VaccinationManagement.Views
         private void cmbTimeSelection(object sender, EventArgs e)
         {
             if (
-                !cmbHourStep2.SelectedItem.Equals(null) && !cmbHourStep2.SelectedItem.Equals("hh") &&
-                !cmbMinuteStep2.SelectedItem.Equals(null) && !cmbMinuteStep2.SelectedItem.Equals("mm")
+                !cmbHourStep2.SelectedItem.Equals("hh") &&
+                !cmbMinuteStep2.SelectedItem.Equals("mm")
                 )
             {
                 this.btnUpdateData.Enabled = true;
             }
             else if (
-                !cmbHourVaccination.SelectedItem.Equals(null) && !cmbHourVaccination.SelectedItem.Equals("hh") &&
-                !cmbMinuteVaccination.SelectedItem.Equals(null) && !cmbMinuteVaccination.SelectedItem.Equals("mm")
+                !cmbHourVaccination.SelectedItem.Equals("hh") &&
+                !cmbMinuteVaccination.SelectedItem.Equals("mm")
                 )
             {
                 this.btnUpdateData.Enabled = true;

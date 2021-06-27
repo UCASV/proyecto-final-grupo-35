@@ -24,24 +24,43 @@
       <Compile Update="Views\FrmMainWindow.cs">
         <SubType>Form</SubType>
       </Compile>
+        
       <Compile Update="Views\frmLogin.cs">
         <SubType>Form</SubType>
       </Compile>
+        
       <Compile Update="Views\frmWelcomeUser.cs">
         <SubType>Form</SubType>
       </Compile>
+        
       <Compile Update="Views\test.cs">
         <SubType>Form</SubType>
       </Compile>
+        
       <Compile Update="Views\FrmGetDui.cs">
         <SubType>Form</SubType>
       </Compile>
+        
       <Compile Update="Views\AppointmentProcess.cs">
         <SubType>Form</SubType>
       </Compile>
+        
       <Compile Update="Views\FrnSideEffects.cs">
+          <SubType>Form</SubType>
+      </Compile>
+        
+      <Compile Update="Views\FrmMessageBoxCancel.cs">
         <SubType>Form</SubType>
       </Compile>
+        
+      <Compile Update="Views\FrmClose.cs">
+        <SubType>Form</SubType>
+      </Compile>
+        
+      <Compile Update="Views\FrmInvalidData.cs">
+        <SubType>Form</SubType>
+      </Compile>
+        
     </ItemGroup>
 
     <ItemGroup>

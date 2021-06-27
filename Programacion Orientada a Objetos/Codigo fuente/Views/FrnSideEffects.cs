@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
 
@@ -28,41 +29,61 @@ namespace VaccinationManagement.Views
             cmbEffectTypess.DisplayMember = "Effect";
         }
 
+      
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            var db = new VaccinationContext();
-            sideEffects.ForEach(effect =>
+            try
             {
-                db.SideEffects.Add(effect);
-            });
+                var db = new VaccinationContext();
+                sideEffects.ForEach(effect =>
+                {
+                    db.SideEffects.Add(effect);
+                });
 
-            db.SaveChanges();
+                db.SaveChanges();
+                
+                MessageBox.Show("Se agregaron los efectos secundario desarrolados por el paciente.",
+                    "Datos actualizados", MessageBoxButtons.OK);
+                
+                Close();
+            }
+            catch (DbUpdateException exception)
+            {
+                MessageBox.Show($"{exception}");
+            }
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (selectedAppointment.VaccineDate != null)
-            {
-                var vaccinationDate = (DateTime) selectedAppointment.VaccineDate;
+         
+            var vaccinationDate = (DateTime) selectedAppointment.VaccineDate;
 
                 try
                 {
                     var sideEffect = new SideEffect()
                     {
-                        IdAppointmentNavigation = selectedAppointment,
-                        EffectTime =  vaccinationDate.AddMinutes(
-                            Int32.Parse(txtMinutes.Text)), 
-                        IdEffectNavigation = (SideEffectType)cmbEffectTypess.SelectedItem
+                        IdAppointment = selectedAppointment.Id,
+                        EffectTime = vaccinationDate.AddMinutes(
+                            Int32.Parse(txtMinutes.Text)),
+                        IdEffect = ((SideEffectType) cmbEffectTypess.SelectedItem).Id
                     };
-                
+
                     sideEffects.Add(sideEffect);
-            
+                    
+                    MessageBox.Show("Se agrego este registro. \n Presiona Terminar para cerrar y guardar",
+                        "Se agrego", MessageBoxButtons.OK);
+
                 }
-                catch (Exception exception)
+                catch (FormatException exception)
                 {
                     MessageBox.Show("Revisa los datos");
                 }
-            }
+                finally
+                {
+                    txtMinutes.Text = "";
+                }
+            
         }
 
     }

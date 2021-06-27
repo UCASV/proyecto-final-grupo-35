@@ -52,7 +52,15 @@ namespace VaccinationManagement.View
             }
             catch (InvalidOperationException exception)
             {
-                MessageBox.Show("Error: Introduce datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                using (var cancel = new FrmInvalidData())
+                {
+                    var result = cancel.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        this.Close();
+                    }
+                                        
+                }
 
             }
             
@@ -96,14 +104,16 @@ namespace VaccinationManagement.View
 
         private void picCloseForm_Click(object sender, EventArgs e)
         {
-            
-            if (MessageBox.Show("¿Seguro(a) que desea salir?",
-                "Consulta",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
+            using (var cancel = new FrmClose())
             {
-                Application.Exit();
+                var result = cancel.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                                        
             }
+           
         }
 
         private void picMinimized_Click(object sender, EventArgs e)

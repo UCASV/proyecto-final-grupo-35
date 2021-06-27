@@ -53,5 +53,18 @@ namespace VaccinationManagement.Views
                 }
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            using (var cancel = new FrmMessageBoxCancel())
+             {
+                var result = cancel.ShowDialog();
+                 if (result == DialogResult.Yes)
+                {
+                   this.Close();
+                }
+                            
+             }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace VaccinationManagement.Controls
     }
     public static  class ShowStadistics
     {
+        private static Graphics canva;
         private static List<Citizen> citizensTotalVaccinated;
         private static List<Citizen> citizensSecondVaccinated;
         private static List<SideEffect> sideEffects;
@@ -25,43 +27,62 @@ namespace VaccinationManagement.Controls
         
         public static void DrawGraphics(object sender, PaintEventArgs e)
         {
-            GetData();      
+            // 
+            GetData();  
+            //
+            
             var brush = new SolidBrush(Color.White);
             var penBar = new Pen(brush, 50); 
             var font = new Font(FontFamily.GenericSansSerif, 16, FontStyle.Bold);
             var fontGraphics = new Font(FontFamily.GenericSansSerif, 10, FontStyle.Bold);
-            var canva = e.Graphics;
+            canva = e.Graphics;
 
-            //////////////////////////////////////////
+            
             //Abre un contenedor para dibujar los datos
-            var DataContainer = canva.BeginContainer();
+            var dataContainer = canva.BeginContainer();
             
             canva.DrawString($"Total de personas vacunadas: {citizensTotalVaccinated.Count}", font, brush , 10,25);
             canva.DrawString($"Personas vacunadas (Solo primera dosis) : {citizensTotalVaccinated.Count}", font, brush , 10,45);
             canva.DrawString($"Personas vacunadas (Ambas dosis) : {citizensSecondVaccinated.Count}", font, brush , 10,65);
-            canva.EndContainer(DataContainer);        
+            canva.EndContainer(dataContainer);        
             ///////////////////////////////////////////
             
-
+            
+            //Abre un contenedor para dibujar los datos
+            DrawRule();
             ///////////////////////////////////////////
-            /// A 
+            
+            
+            
+            /// Genera los graficos de barras
             var Graphic = canva.BeginContainer();
             
             canva.DrawString("Favor, estar antentos ante los efectos secundario con mas frecuencia", font, brush, 10, 85);
             
-            var x0 = 60;
-            var x0EffectName = 28;
+            var x0 = 75;
+            var x0EffectName = 68;
+            
+            var y0 = 400;
+            var y0EffectFrequency = 350;
             
             var lblFormat = new StringFormat(StringFormatFlags.DirectionVertical);
-
-
-            sideEffectsStatistics.ForEach(frequency =>
-            {
+            var mostFrequencyEffects = sideEffectsStatistics.OrderByDescending(w => w.EffectFrequency).ToList();
+            var mostFrequencyEffect = mostFrequencyEffects[0];
+            var xMax = mostFrequencyEffect.EffectFrequency;
+                
+            mostFrequencyEffects.ForEach(frequency => { 
+                
+                
+                var TopY = Map(frequency.EffectFrequency, xMax);
+                
                 canva.DrawString(frequency.EffectName, fontGraphics,
                     brush, new RectangleF(x0EffectName, 425, x0 + 150, 750), lblFormat);
                 
-                canva.DrawLine(penBar, x0 , 400, x0, 405);
-                canva.DrawLine(penBar, x0 , 400, x0, 400-frequency.EffectFrequency);
+                canva.DrawString($"{frequency.EffectFrequency}", fontGraphics, brush, x0, TopY-25);
+                
+                
+                canva.DrawLine(penBar, x0 , y0, x0, y0+5);
+                canva.DrawLine(penBar, x0 , y0, x0, TopY);
                 x0 += 70;       
                 x0EffectName += 70;                        
 
@@ -73,6 +94,29 @@ namespace VaccinationManagement.Controls
 
         }
 
+        private static int Map(int x, int max)
+        {
+            var y = 0;
+            var bottomY = 400;
+            
+            y = 400 - (250 * x)/max;
+            return y;
+        }
+        
+        private static void DrawRule()
+        {
+            var ruleContainer = canva.BeginContainer();
+            var mostFrecuenceStat = sideEffectsStatistics.First();
+            
+            for (int i = mostFrecuenceStat.EffectFrequency ; i >= 0; i--)
+            {
+                
+            }
+            
+            
+            canva.EndContainer(ruleContainer); 
+        }
+        
         private static void GetData()
         {
             var db = new VaccinationContext();
