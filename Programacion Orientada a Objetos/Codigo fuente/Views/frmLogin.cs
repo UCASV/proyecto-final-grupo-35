@@ -97,7 +97,13 @@ namespace VaccinationManagement.View
         private void picCloseForm_Click(object sender, EventArgs e)
         {
             
-            Application.Exit();
+            if (MessageBox.Show("¿Seguro(a) que desea salir?",
+                "Consulta",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void picMinimized_Click(object sender, EventArgs e)

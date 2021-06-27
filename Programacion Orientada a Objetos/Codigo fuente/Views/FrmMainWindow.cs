@@ -6,6 +6,7 @@ using VaccinationManagement.Context;
 using VaccinationManagement.Models;
 using VaccinationManagement.Views;
 using System.Runtime.InteropServices;
+using VaccinationManagement.Controls;
 
 namespace VaccinationManagement.View
 {
@@ -53,7 +54,7 @@ namespace VaccinationManagement.View
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro(a) que desea salir del sistema?",
+            if (MessageBox.Show("¿Seguro(a) que desea regresar al inicio de sesion?",
                 "Consulta",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
@@ -65,7 +66,14 @@ namespace VaccinationManagement.View
         
         private void picClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Seguro(a) que desea salir del sistema?",
+                "Consulta",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
 
         private void picMinimized_Click(object sender, EventArgs e)
@@ -90,6 +98,11 @@ namespace VaccinationManagement.View
         {
             lblHour.Text = DateTime.Now.ToLongTimeString();
             lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void pnlGraphics_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }

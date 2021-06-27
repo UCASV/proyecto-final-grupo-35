@@ -50,6 +50,7 @@ namespace VaccinationManagement.Views
             this.btn_add_disease = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picUser = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Save = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
@@ -58,10 +59,9 @@ namespace VaccinationManagement.Views
             this.cbx_pgroup = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtb_ICode = new System.Windows.Forms.TextBox();
-            this.picUser = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.picUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -228,6 +228,16 @@ namespace VaccinationManagement.Views
             this.panel1.Size = new System.Drawing.Size(165, 577);
             this.panel1.TabIndex = 19;
             // 
+            // picUser
+            // 
+            this.picUser.Image = ((System.Drawing.Image) (resources.GetObject("picUser.Image")));
+            this.picUser.Location = new System.Drawing.Point(3, 232);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(159, 194);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUser.TabIndex = 1;
+            this.picUser.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
@@ -314,16 +324,6 @@ namespace VaccinationManagement.Views
             this.txtb_ICode.Size = new System.Drawing.Size(144, 20);
             this.txtb_ICode.TabIndex = 26;
             // 
-            // picUser
-            // 
-            this.picUser.Image = ((System.Drawing.Image) (resources.GetObject("picUser.Image")));
-            this.picUser.Location = new System.Drawing.Point(3, 232);
-            this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(159, 194);
-            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUser.TabIndex = 1;
-            this.picUser.TabStop = false;
-            // 
             // AppointmentProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,14 +353,15 @@ namespace VaccinationManagement.Views
             this.Controls.Add(this.Txbx_DUI);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "AppointmentProcess";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proceso de cita";
             this.Load += new System.EventHandler(this.AppointmentProcess_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.picUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
