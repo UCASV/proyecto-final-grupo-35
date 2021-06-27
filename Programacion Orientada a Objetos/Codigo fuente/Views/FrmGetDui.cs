@@ -53,5 +53,16 @@ namespace VaccinationManagement.Views
                 }
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro(a) que desea salir?",
+                "Consulta",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
