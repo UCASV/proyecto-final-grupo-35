@@ -62,13 +62,8 @@ namespace VaccinationManagement.Views
 
         private void Back_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro(a) que desea cancelar el proceso de registro?",
-                "Consulta",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            FrmMessageBoxCancel cancel = new FrmMessageBoxCancel();
+            cancel.Show();
         }
 
         private void btn_add_disease_Click(object sender, EventArgs e)
