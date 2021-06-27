@@ -36,6 +36,10 @@
       <Compile Update="Views\FrmGetDui.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Views\Frmverification.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Remove="Models\connections.cs" />
     </ItemGroup>
 
     <ItemGroup>
