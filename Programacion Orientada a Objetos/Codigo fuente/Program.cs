@@ -26,10 +26,11 @@ namespace VaccinationManagement
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-
             
-            
+            if (db.Database.CanConnect())
+                Application.Run(new Login());
+            else 
+                Application.Run(new Form());
         }
     }
 }

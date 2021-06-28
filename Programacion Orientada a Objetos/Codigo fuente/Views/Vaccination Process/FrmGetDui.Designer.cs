@@ -64,7 +64,6 @@ namespace VaccinationManagement.Views
             // 
             // btnVerification
             // 
-<<<<<<< HEAD:Programacion Orientada a Objetos/Codigo fuente/Views/Vaccination Process/FrmGetDui.Designer.cs
             this.btnVerification.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnVerification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerification.ForeColor = System.Drawing.Color.White;

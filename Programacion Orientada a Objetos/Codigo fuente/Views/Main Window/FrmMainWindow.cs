@@ -20,7 +20,7 @@ namespace VaccinationManagement.View
             this.userData = userData;
             
             InitializeComponent();
-            //this.pnlGraphics.Paint += new PaintEventHandler(ShowStadistics.DrawGraphics);
+            this.pnlGraphics.Paint += new PaintEventHandler(ShowStadistics.DrawGraphics);
 
             
         }
