@@ -92,6 +92,7 @@ namespace VaccinationManagement.View
             // 
             // chkShowPasseword
             // 
+            this.chkShowPasseword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkShowPasseword.Location = new System.Drawing.Point(573, 144);
             this.chkShowPasseword.Name = "chkShowPasseword";
             this.chkShowPasseword.Size = new System.Drawing.Size(27, 18);
@@ -156,6 +157,7 @@ namespace VaccinationManagement.View
             // 
             // btnLogin
             // 
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(366, 205);
@@ -187,6 +189,7 @@ namespace VaccinationManagement.View
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.picCloseForm)).EndInit();

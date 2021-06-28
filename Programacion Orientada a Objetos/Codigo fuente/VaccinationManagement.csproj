@@ -63,14 +63,6 @@
             <SubType>Form</SubType>
         </Compile>
         
-        <Compile Update="Views\FrmGetDui.cs">
-            <SubType>Form</SubType>
-        </Compile>
-        
-        <Compile Update="Views\AppointmentProcess.cs">
-            <SubType>Form</SubType>
-        </Compile>
-        
         <Compile Update="Views\Appointment process\AppointmentProcess.cs">
           <SubType>Form</SubType>
         </Compile>

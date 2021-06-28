@@ -20,7 +20,7 @@ namespace VaccinationManagement.View
             this.userData = userData;
             
             InitializeComponent();
-            this.pnlGraphics.Paint += new PaintEventHandler(ShowStadistics.DrawGraphics);
+            //this.pnlGraphics.Paint += new PaintEventHandler(ShowStadistics.DrawGraphics);
 
             
         }
@@ -59,12 +59,14 @@ namespace VaccinationManagement.View
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro(a) que desea regresar al inicio de sesion?",
-                "Consulta",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
+            using (var LogOut = new FrmLogOut())
             {
-                this.Close();
+                var result = LogOut.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                                        
             }
             
         }

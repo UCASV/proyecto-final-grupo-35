@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using VaccinationManagement.Context;
 using VaccinationManagement.Controls;
 using VaccinationManagement.Models;
+using System.Runtime.InteropServices;
 
 namespace VaccinationManagement.Views
 {
@@ -244,7 +245,40 @@ namespace VaccinationManagement.Views
 
         
         }
+        
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        
+        
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+
+        private void VaccinationProcess_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        
+        
+        private void picClose_Click_1(object sender, EventArgs e)
+        {
+            using (var cancel = new FrmClose())
+            {
+                var result = cancel.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                                                    
+            }
+        }
+
+        private void picMinimized_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
     
 }

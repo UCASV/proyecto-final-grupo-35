@@ -64,6 +64,7 @@ namespace VaccinationManagement.Views
             // 
             // btnVerification
             // 
+<<<<<<< HEAD:Programacion Orientada a Objetos/Codigo fuente/Views/Vaccination Process/FrmGetDui.Designer.cs
             this.btnVerification.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnVerification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerification.ForeColor = System.Drawing.Color.White;
@@ -75,9 +76,11 @@ namespace VaccinationManagement.Views
             this.btnVerification.Text = "Comprobar";
             this.btnVerification.UseVisualStyleBackColor = true;
             this.btnVerification.Click += new System.EventHandler(this.btnVerification_Click);
+
             // 
             // btnCancel
             // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
@@ -106,6 +109,7 @@ namespace VaccinationManagement.Views
             this.Name = "FrmGetDui";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DUI del ciudadano";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmGetDui_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
