@@ -2,7 +2,7 @@
 
 namespace VaccinationManagement.Views
 {
-    partial class FrmMessageBoxCancel
+    partial class FrmCitesDui
     {
         /// <summary>
         /// Required designer variable.
@@ -31,20 +31,19 @@ namespace VaccinationManagement.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMessageBoxCancel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCitesDui));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnYes = new System.Windows.Forms.Button();
-            this.btnNo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(70, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(88, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 46);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -53,60 +52,44 @@ namespace VaccinationManagement.Views
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 76);
+            this.label1.Location = new System.Drawing.Point(23, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 28);
+            this.label1.Size = new System.Drawing.Size(207, 44);
             this.label1.TabIndex = 1;
-            this.label1.Text = "¿Desea cancelar el evento?";
+            this.label1.Text = "No se encontraron citas para este número de DUI";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnYes
+            // button1
             // 
-            this.btnYes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYes.ForeColor = System.Drawing.Color.White;
-            this.btnYes.Location = new System.Drawing.Point(162, 125);
-            this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(72, 26);
-            this.btnYes.TabIndex = 2;
-            this.btnYes.Text = "SI";
-            this.btnYes.UseVisualStyleBackColor = true;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(109, 102);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 32);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnNo
-            // 
-            this.btnNo.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
-            this.btnNo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNo.ForeColor = System.Drawing.Color.White;
-            this.btnNo.Location = new System.Drawing.Point(25, 125);
-            this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(72, 26);
-            this.btnNo.TabIndex = 3;
-            this.btnNo.Text = "NO";
-            this.btnNo.UseVisualStyleBackColor = false;
-            // 
-            // FrmMessageBoxCancel
+            // FrmCitesDui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
-            this.ClientSize = new System.Drawing.Size(254, 163);
-            this.Controls.Add(this.btnNo);
-            this.Controls.Add(this.btnYes);
+            this.ClientSize = new System.Drawing.Size(247, 156);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmMessageBoxCancel";
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Name = "FrmCitesDui";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmMessageBoxCancel";
+            this.Text = "FrmCitesDui";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button btnYes;
-        private System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.Label label1;
 

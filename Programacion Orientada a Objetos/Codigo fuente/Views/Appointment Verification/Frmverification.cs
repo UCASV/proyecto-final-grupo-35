@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
+using System.Runtime.InteropServices;
 
 namespace VaccinationManagement.Views
 {
@@ -22,8 +23,12 @@ namespace VaccinationManagement.Views
 
             if (textBox1.Text.Equals(""))
             {
-                MessageBox.Show("Ingrese un numero de Dui", "ERROR");
-                return;
+                using (var invalid = new FrmInvalidData())
+                {
+                    var result = invalid.ShowDialog();
+                    if (result == DialogResult.OK) ;
+                    
+                }
             }
             
             try
@@ -36,8 +41,12 @@ namespace VaccinationManagement.Views
                     select C).ToList().First();
 
 
-                MessageBox.Show($"Este numero de Dui fue encontrado para este local, a continuacion se verificaran sus datos: ",
-                    "Encontrado", MessageBoxButtons.OK);
+                using (var citeFound = new FrmCitationFound())
+                {
+                    var result = citeFound.ShowDialog();
+                    if (result == DialogResult.OK) ;
+                    
+                }
 
                 var appointmentProcess = new AppointmentProcess(citizen);
                 
@@ -47,8 +56,11 @@ namespace VaccinationManagement.Views
             }
             catch (InvalidOperationException exception)
             {
-                var result = MessageBox.Show($"No hay datos registrados para este numero de Dui, ¿Desea registrarlo?",
-                    "Cita no encontrada", MessageBoxButtons.OKCancel);
+                var cita = new FrmCitesInTheFound();
+
+                var result = cita.ShowDialog();
+                if(result == DialogResult.OK)
+                
 
                 using (var appointmentProcess = new AppointmentProcess())
                 {
@@ -66,9 +78,40 @@ namespace VaccinationManagement.Views
             }
             catch (FormatException exception)
             {
-                MessageBox.Show("Porfavor revise los datos ingresados", "Error", MessageBoxButtons.OK);
+                using (var invalid = new FrmInvalidData())
+                {
+                    var result = invalid.ShowDialog();
+                    if (result == DialogResult.OK) ;
+                    
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            using (var cancel = new FrmClose())
+            {
+                var result = cancel.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                                                    
             }
         }
         
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+
+        private void Frmverification_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

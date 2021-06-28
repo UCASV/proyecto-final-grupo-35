@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
+using VaccinationManagement.Controls;
 
 
 
@@ -13,6 +14,7 @@ namespace VaccinationManagement.Views
         {
             
             InitializeComponent();
+            lblUserName.Text = LocationData.GestorName;
             
         }
         

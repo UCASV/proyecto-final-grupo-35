@@ -187,7 +187,7 @@ namespace VaccinationManagement.Views
             {
                 vaccineDate = null;
             }
-            
+            //Se ha generado la siguiente cita del paciente: {secondVaccinationAppointment.AppointmentDate}, {secondVaccinationAppointment.AppointmentLocation}
             
             try 
             {
@@ -197,15 +197,25 @@ namespace VaccinationManagement.Views
                 if (appointmentToChange.IdAppointmentType == 1)
                 {
                     db.Appointments.Add(secondVaccinationAppointment);
-                    MessageBox.Show(
-                        $"Se ha generado la siguiente cita del paciente: {secondVaccinationAppointment.AppointmentDate}, {secondVaccinationAppointment.AppointmentLocation}",
-                        "Generado con exito", MessageBoxButtons.OK);
+                    
+                    using (var citeDates = new FrmCiteDates($"Se ha generado la siguiente cita del paciente: {secondVaccinationAppointment.AppointmentDate}, {secondVaccinationAppointment.AppointmentLocation}"))
+                    {
+                        var result = citeDates.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                                         
+                        }
+                    }
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("El paciente ha completado su registro de vacunacion ",
-                        "Completado", MessageBoxButtons.OK);
+                    using (var vaccinationComplete = new FrmVaccinationComplete())
+                    {
+                        var result = vaccinationComplete.ShowDialog();
+                        if (result == DialogResult.OK) ;
+                                    
+                    }
                     Close();
                 }
 

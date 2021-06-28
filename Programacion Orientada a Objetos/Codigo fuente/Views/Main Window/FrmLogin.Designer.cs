@@ -185,6 +185,7 @@ namespace VaccinationManagement.View
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

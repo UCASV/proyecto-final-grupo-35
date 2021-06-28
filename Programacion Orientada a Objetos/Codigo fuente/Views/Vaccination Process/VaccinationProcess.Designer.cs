@@ -65,6 +65,7 @@ namespace VaccinationManagement.Views
             // cmbMinuteStep2
             // 
             this.cmbMinuteStep2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.cmbMinuteStep2.ForeColor = System.Drawing.Color.White;
             this.cmbMinuteStep2.FormattingEnabled = true;
             this.cmbMinuteStep2.Location = new System.Drawing.Point(573, 124);
             this.cmbMinuteStep2.Margin = new System.Windows.Forms.Padding(2);
@@ -76,6 +77,7 @@ namespace VaccinationManagement.Views
             // cmbHourStep2
             // 
             this.cmbHourStep2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.cmbHourStep2.ForeColor = System.Drawing.Color.White;
             this.cmbHourStep2.FormattingEnabled = true;
             this.cmbHourStep2.Location = new System.Drawing.Point(522, 125);
             this.cmbHourStep2.Margin = new System.Windows.Forms.Padding(2);
@@ -88,17 +90,15 @@ namespace VaccinationManagement.Views
             // 
             this.btnUpdateData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdateData.Enabled = false;
-            this.btnUpdateData.FlatAppearance.BorderSize = 0;
             this.btnUpdateData.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
             this.btnUpdateData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnUpdateData.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateData.Image = ((System.Drawing.Image) (resources.GetObject("btnUpdateData.Image")));
             this.btnUpdateData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateData.Location = new System.Drawing.Point(350, 197);
+            this.btnUpdateData.Location = new System.Drawing.Point(229, 224);
             this.btnUpdateData.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateData.Name = "btnUpdateData";
-            this.btnUpdateData.Size = new System.Drawing.Size(223, 34);
+            this.btnUpdateData.Size = new System.Drawing.Size(140, 34);
             this.btnUpdateData.TabIndex = 14;
             this.btnUpdateData.Text = "Actualizar datos";
             this.btnUpdateData.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@ namespace VaccinationManagement.Views
             // 
             this.lbl01.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lbl01.ForeColor = System.Drawing.Color.White;
-            this.lbl01.Location = new System.Drawing.Point(333, 41);
+            this.lbl01.Location = new System.Drawing.Point(306, 39);
             this.lbl01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl01.Name = "lbl01";
             this.lbl01.Size = new System.Drawing.Size(263, 60);
@@ -144,7 +144,7 @@ namespace VaccinationManagement.Views
             this.dgvAppointment.AllowUserToResizeRows = false;
             this.dgvAppointment.BackgroundColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
             this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointment.Location = new System.Drawing.Point(193, 235);
+            this.dgvAppointment.Location = new System.Drawing.Point(193, 276);
             this.dgvAppointment.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAppointment.MultiSelect = false;
             this.dgvAppointment.Name = "dgvAppointment";
@@ -152,13 +152,14 @@ namespace VaccinationManagement.Views
             this.dgvAppointment.RowTemplate.Height = 28;
             this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAppointment.ShowCellErrors = false;
-            this.dgvAppointment.Size = new System.Drawing.Size(488, 168);
+            this.dgvAppointment.Size = new System.Drawing.Size(488, 189);
             this.dgvAppointment.TabIndex = 10;
             this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClicked);
             // 
             // cmbHourVaccination
             // 
             this.cmbHourVaccination.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.cmbHourVaccination.ForeColor = System.Drawing.Color.White;
             this.cmbHourVaccination.FormattingEnabled = true;
             this.cmbHourVaccination.Location = new System.Drawing.Point(522, 160);
             this.cmbHourVaccination.Margin = new System.Windows.Forms.Padding(2);
@@ -170,6 +171,7 @@ namespace VaccinationManagement.Views
             // cmbMinuteVaccination
             // 
             this.cmbMinuteVaccination.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.cmbMinuteVaccination.ForeColor = System.Drawing.Color.White;
             this.cmbMinuteVaccination.FormattingEnabled = true;
             this.cmbMinuteVaccination.Location = new System.Drawing.Point(573, 160);
             this.cmbMinuteVaccination.Margin = new System.Windows.Forms.Padding(2);
@@ -181,6 +183,7 @@ namespace VaccinationManagement.Views
             // lblAppointmentDate
             // 
             this.lblAppointmentDate.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.lblAppointmentDate.ForeColor = System.Drawing.Color.White;
             this.lblAppointmentDate.Location = new System.Drawing.Point(328, 125);
             this.lblAppointmentDate.Margin = new System.Windows.Forms.Padding(2);
             this.lblAppointmentDate.Name = "lblAppointmentDate";
@@ -191,6 +194,7 @@ namespace VaccinationManagement.Views
             // lblAppointmentDate2
             // 
             this.lblAppointmentDate2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.lblAppointmentDate2.ForeColor = System.Drawing.Color.White;
             this.lblAppointmentDate2.Location = new System.Drawing.Point(328, 160);
             this.lblAppointmentDate2.Margin = new System.Windows.Forms.Padding(2);
             this.lblAppointmentDate2.Name = "lblAppointmentDate2";
@@ -201,15 +205,14 @@ namespace VaccinationManagement.Views
             // btnActualHour1
             // 
             this.btnActualHour1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualHour1.FlatAppearance.BorderSize = 0;
             this.btnActualHour1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
             this.btnActualHour1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualHour1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnActualHour1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnActualHour1.ForeColor = System.Drawing.Color.White;
-            this.btnActualHour1.Location = new System.Drawing.Point(618, 120);
+            this.btnActualHour1.Location = new System.Drawing.Point(618, 124);
             this.btnActualHour1.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualHour1.Name = "btnActualHour1";
-            this.btnActualHour1.Size = new System.Drawing.Size(55, 31);
+            this.btnActualHour1.Size = new System.Drawing.Size(63, 25);
             this.btnActualHour1.TabIndex = 21;
             this.btnActualHour1.Text = "Ahora";
             this.btnActualHour1.UseVisualStyleBackColor = true;
@@ -218,15 +221,14 @@ namespace VaccinationManagement.Views
             // btnActualhour2
             // 
             this.btnActualhour2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualhour2.FlatAppearance.BorderSize = 0;
             this.btnActualhour2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int) (((byte) (58)))), ((int) (((byte) (59)))), ((int) (((byte) (61)))));
             this.btnActualhour2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualhour2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnActualhour2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnActualhour2.ForeColor = System.Drawing.Color.White;
-            this.btnActualhour2.Location = new System.Drawing.Point(618, 155);
+            this.btnActualhour2.Location = new System.Drawing.Point(618, 156);
             this.btnActualhour2.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualhour2.Name = "btnActualhour2";
-            this.btnActualhour2.Size = new System.Drawing.Size(55, 32);
+            this.btnActualhour2.Size = new System.Drawing.Size(63, 26);
             this.btnActualhour2.TabIndex = 22;
             this.btnActualhour2.Text = "Ahora";
             this.btnActualhour2.UseVisualStyleBackColor = true;
@@ -238,9 +240,9 @@ namespace VaccinationManagement.Views
             this.btnSideEffects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideEffects.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnSideEffects.ForeColor = System.Drawing.Color.White;
-            this.btnSideEffects.Location = new System.Drawing.Point(324, 427);
+            this.btnSideEffects.Location = new System.Drawing.Point(436, 224);
             this.btnSideEffects.Name = "btnSideEffects";
-            this.btnSideEffects.Size = new System.Drawing.Size(290, 31);
+            this.btnSideEffects.Size = new System.Drawing.Size(211, 31);
             this.btnSideEffects.TabIndex = 23;
             this.btnSideEffects.Text = "Agregar Efectos Secundarios";
             this.btnSideEffects.UseVisualStyleBackColor = true;
@@ -248,10 +250,11 @@ namespace VaccinationManagement.Views
             // 
             // picClose
             // 
+            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picClose.Image = ((System.Drawing.Image) (resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(644, 0);
+            this.picClose.Location = new System.Drawing.Point(644, 3);
             this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(52, 28);
+            this.picClose.Size = new System.Drawing.Size(43, 25);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picClose.TabIndex = 24;
             this.picClose.TabStop = false;
@@ -259,10 +262,11 @@ namespace VaccinationManagement.Views
             // 
             // picMinimized
             // 
+            this.picMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMinimized.Image = ((System.Drawing.Image) (resources.GetObject("picMinimized.Image")));
-            this.picMinimized.Location = new System.Drawing.Point(618, 0);
+            this.picMinimized.Location = new System.Drawing.Point(606, 3);
             this.picMinimized.Name = "picMinimized";
-            this.picMinimized.Size = new System.Drawing.Size(32, 28);
+            this.picMinimized.Size = new System.Drawing.Size(32, 25);
             this.picMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMinimized.TabIndex = 25;
             this.picMinimized.TabStop = false;
@@ -325,6 +329,7 @@ namespace VaccinationManagement.Views
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VaccinationProcess";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VaccinationProcess";
             this.Load += new System.EventHandler(this.VaccinationProcess_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.VaccinationProcess_MouseDown);

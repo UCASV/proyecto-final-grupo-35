@@ -2,7 +2,7 @@
 
 namespace VaccinationManagement.Views
 {
-    partial class FrmInvalidData
+    partial class FrmDUIError
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace VaccinationManagement.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInvalidData));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDUIError));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,9 +41,9 @@ namespace VaccinationManagement.Views
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(70, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(71, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -52,39 +52,37 @@ namespace VaccinationManagement.Views
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 47);
+            this.label1.Location = new System.Drawing.Point(15, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 24);
+            this.label1.Size = new System.Drawing.Size(201, 40);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ERROR: Datos no validos";
+            this.label1.Text = "Ingrese un numero de Dui";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(89, 84);
+            this.button1.Location = new System.Drawing.Point(92, 106);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 28);
+            this.button1.Size = new System.Drawing.Size(44, 36);
             this.button1.TabIndex = 2;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // FrmInvalidData
+            // FrmDUIError
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
-            this.ClientSize = new System.Drawing.Size(238, 124);
+            this.ClientSize = new System.Drawing.Size(228, 168);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmInvalidData";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmInvalidData";
+            this.Name = "FrmDUIError";
+            this.Text = "FrmDUIError";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }

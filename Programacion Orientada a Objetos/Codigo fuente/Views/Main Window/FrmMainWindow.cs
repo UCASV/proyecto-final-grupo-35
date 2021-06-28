@@ -22,7 +22,9 @@ namespace VaccinationManagement.View
             InitializeComponent();
             this.pnlGraphics.Paint += new PaintEventHandler(ShowStadistics.DrawGraphics);
 
-            
+            lblUser.Text = LocationData.GestorName;
+
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

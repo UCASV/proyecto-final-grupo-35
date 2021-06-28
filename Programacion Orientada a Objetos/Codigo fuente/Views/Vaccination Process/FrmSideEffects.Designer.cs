@@ -43,13 +43,13 @@ namespace VaccinationManagement.Views
             this.picClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlLateral = new System.Windows.Forms.Panel();
-            this.picAdd = new System.Windows.Forms.PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.picAdd = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.pnlLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.picAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.picAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbEffectTypess
@@ -67,6 +67,7 @@ namespace VaccinationManagement.Views
             // txtMinutes
             // 
             this.txtMinutes.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.txtMinutes.ForeColor = System.Drawing.Color.White;
             this.txtMinutes.Location = new System.Drawing.Point(241, 218);
             this.txtMinutes.Margin = new System.Windows.Forms.Padding(2);
             this.txtMinutes.Name = "txtMinutes";
@@ -152,7 +153,7 @@ namespace VaccinationManagement.Views
             // 
             this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picClose.Image = ((System.Drawing.Image) (resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(424, 0);
+            this.picClose.Location = new System.Drawing.Point(424, 12);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(32, 23);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -164,7 +165,7 @@ namespace VaccinationManagement.Views
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(396, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(396, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(22, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,16 +184,6 @@ namespace VaccinationManagement.Views
             this.pnlLateral.Size = new System.Drawing.Size(148, 378);
             this.pnlLateral.TabIndex = 11;
             // 
-            // picAdd
-            // 
-            this.picAdd.Image = ((System.Drawing.Image) (resources.GetObject("picAdd.Image")));
-            this.picAdd.Location = new System.Drawing.Point(31, 205);
-            this.picAdd.Name = "picAdd";
-            this.picAdd.Size = new System.Drawing.Size(89, 127);
-            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAdd.TabIndex = 0;
-            this.picAdd.TabStop = false;
-            // 
             // picLogo
             // 
             this.picLogo.Image = ((System.Drawing.Image) (resources.GetObject("picLogo.Image")));
@@ -202,6 +193,16 @@ namespace VaccinationManagement.Views
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 1;
             this.picLogo.TabStop = false;
+            // 
+            // picAdd
+            // 
+            this.picAdd.Image = ((System.Drawing.Image) (resources.GetObject("picAdd.Image")));
+            this.picAdd.Location = new System.Drawing.Point(31, 205);
+            this.picAdd.Name = "picAdd";
+            this.picAdd.Size = new System.Drawing.Size(89, 127);
+            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAdd.TabIndex = 0;
+            this.picAdd.TabStop = false;
             // 
             // FrnSideEffects
             // 
@@ -224,14 +225,15 @@ namespace VaccinationManagement.Views
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrnSideEffects";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Efectos Secundarios";
             this.Load += new System.EventHandler(this.FrnSideEffects_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrnSideEffects_MouseDown);
             ((System.ComponentModel.ISupportInitialize) (this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.pnlLateral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.picAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.picAdd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }

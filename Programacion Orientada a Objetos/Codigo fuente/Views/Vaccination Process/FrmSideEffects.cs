@@ -43,10 +43,20 @@ namespace VaccinationManagement.Views
 
                 db.SaveChanges();
                 
-                MessageBox.Show("Se agregaron los efectos secundario desarrollados por el paciente.",
-                    "Datos actualizados", MessageBoxButtons.OK);
-                
+                using (var register = new FrmRegister())
+                {
+                    var result = register.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        
+                    }
+                    
+                    
+                }
+
                 Close();
+
+
             }
             catch (DbUpdateException exception)
             {
@@ -73,13 +83,24 @@ namespace VaccinationManagement.Views
 
                     sideEffects.Add(sideEffect);
                     
-                    MessageBox.Show("Se agrego este registro. \n Presiona Terminar para cerrar y guardar",
-                        "Se agrego", MessageBoxButtons.OK);
+                    using (var add = new FrmDatesEffectsUpdate())
+                    {
+                        var result = add.ShowDialog();
+                        if (result == DialogResult.OK) ;
 
+
+                    }
+
+                   
                 }
                 catch (FormatException exception)
                 {
-                    MessageBox.Show("Revisa los datos");
+                    using (var invalid = new FrmInvalidData())
+                    {
+                        var result = invalid.ShowDialog();
+                        if (result == DialogResult.OK) ;
+                                                    
+                    }
                 }
                 finally
                 {
@@ -88,8 +109,12 @@ namespace VaccinationManagement.Views
             }
             else
             {
-                MessageBox.Show("Para agregar estos datos debe registrar la hora de vacunacion del paciente", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                using (var RegisterVaccination = new FrmRegisterVaccination())
+                {
+                    var result = RegisterVaccination.ShowDialog();
+                    if (result == DialogResult.OK) ;
+                                                    
+                }
             }
         }
 

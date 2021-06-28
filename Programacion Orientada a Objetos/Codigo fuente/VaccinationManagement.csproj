@@ -35,18 +35,6 @@
 
     <ItemGroup>
         
-      <Compile Update="Views\FrmMessageBoxCancel.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
-      <Compile Update="Views\FrmClose.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
-      <Compile Update="Views\FrmInvalidData.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
         <Compile Update="Views\FrmMainWindow.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -88,6 +76,70 @@
         </Compile>
         
         <Compile Update="Views\Main Window\frmWelcomeUser.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmClose.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmInvalidData.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmMessageBoxCancel.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmCitesInTheFound.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmCitationFound.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmReviewData.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmAddDiseases.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmDUIError.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmCitesDui.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmDatesEffectsUpdate.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmRegister.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmRegisterVaccination.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmVaccinationComplete.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmCiteDates.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmInformationSave.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\MessageBox\FrmInformationUpdate.cs">
           <SubType>Form</SubType>
         </Compile>
     </ItemGroup>

@@ -15,8 +15,7 @@ namespace VaccinationManagement.Views
         {
             var allBoxsFilled = !Txbx_DUI.Text.Equals("") &&
                                  !txtb_name.Text.Equals("") && 
-                                 !txtbx_addres.Text.Equals("") && 
-                                 !txtbx_email.Text.Equals("") && 
+                                 !txtbx_addres.Text.Equals("") &&                           
                                  !txtbx_phone.Text.Equals("") &&
                                  !txtb_ICode.Text.Equals("");
 
@@ -64,9 +63,15 @@ namespace VaccinationManagement.Views
                 citizenToChange.IdPriorityGroup = priorityGroup.Id;
 
 
-                MessageBox.Show("Información actualizada con exito", "Actualizado",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                using (var update = new FrmInformationUpdate())
+                {
+                  var result = update.ShowDialog();
+                  if (result == DialogResult.Yes)
+                  {
+                                                   
+                  }
+                                                                       
+                 }
 
                 db.SaveChanges();
                 Close();
@@ -88,11 +93,17 @@ namespace VaccinationManagement.Views
 
                 db.Citizens.Add(citizen);
                 db.SaveChanges();
-
-                MessageBox.Show("Información guardada con exito", "Guardado",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
                 
+                using (var save = new FrmInformationSave())
+                {
+                    var result = save.ShowDialog();
+                    if (result == DialogResult.Yes)
+                    {
+                                    
+                    }
+                                                        
+                }
+                              
                 /*
                 * Generar primera cita 
                 */
@@ -109,15 +120,20 @@ namespace VaccinationManagement.Views
 
                 db.Appointments.Add(newAppointment);
                 db.SaveChanges();
-        
-                MessageBox.Show(
-                    $"Se ha generado una cita nueva para el dui {Txbx_DUI.Text} \n Presiona 'Aceptar' para imprimir una hoja con los datos de la nueva cita",
-                    "Nueva cita",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
 
-                Printer.PrintPdf(newAppointment);
+                using (var CiteDates = new FrmCiteDates($"Se ha generado una cita nueva para el dui {Txbx_DUI.Text} \n Presiona 'OK' para imprimir una hoja con los datos de la nueva cita"))
+                {
+                    var result = CiteDates.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        Printer.PrintPdf(newAppointment);                 
+                    }
+                }
+               
+                    
+ 
+
+                
             }
         }
     }

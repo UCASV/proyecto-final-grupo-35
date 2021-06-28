@@ -50,6 +50,8 @@ namespace VaccinationManagement.View
             this.btnRegister = new System.Windows.Forms.Button();
             this.picLogoGobierno = new System.Windows.Forms.PictureBox();
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimized = new System.Windows.Forms.PictureBox();
             this.picCloseForm = new System.Windows.Forms.PictureBox();
@@ -83,7 +85,7 @@ namespace VaccinationManagement.View
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(328, 41);
+            this.label1.Location = new System.Drawing.Point(329, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(543, 37);
             this.label1.TabIndex = 6;
@@ -106,7 +108,7 @@ namespace VaccinationManagement.View
             // 
             // pnlGraphics
             // 
-            this.pnlGraphics.Location = new System.Drawing.Point(246, 81);
+            this.pnlGraphics.Location = new System.Drawing.Point(237, 102);
             this.pnlGraphics.Name = "pnlGraphics";
             this.pnlGraphics.Size = new System.Drawing.Size(729, 433);
             this.pnlGraphics.TabIndex = 4;
@@ -115,7 +117,7 @@ namespace VaccinationManagement.View
             // 
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(433, 576);
+            this.lblFecha.Location = new System.Drawing.Point(429, 586);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(289, 44);
             this.lblFecha.TabIndex = 3;
@@ -126,7 +128,7 @@ namespace VaccinationManagement.View
             // 
             this.lblHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lblHour.ForeColor = System.Drawing.Color.White;
-            this.lblHour.Location = new System.Drawing.Point(413, 509);
+            this.lblHour.Location = new System.Drawing.Point(414, 520);
             this.lblHour.Name = "lblHour";
             this.lblHour.Size = new System.Drawing.Size(334, 88);
             this.lblHour.TabIndex = 2;
@@ -225,6 +227,8 @@ namespace VaccinationManagement.View
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
+            this.pnlSuperior.Controls.Add(this.lblUser);
+            this.pnlSuperior.Controls.Add(this.label2);
             this.pnlSuperior.Controls.Add(this.picClose);
             this.pnlSuperior.Controls.Add(this.picMinimized);
             this.pnlSuperior.Controls.Add(this.picCloseForm);
@@ -234,6 +238,27 @@ namespace VaccinationManagement.View
             this.pnlSuperior.Size = new System.Drawing.Size(1000, 35);
             this.pnlSuperior.TabIndex = 0;
             this.pnlSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseDown);
+            // 
+            // lblUser
+            // 
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.Location = new System.Drawing.Point(63, 5);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(83, 27);
+            this.lblUser.TabIndex = 4;
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 30);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Usuario: ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picClose
             // 
@@ -294,6 +319,10 @@ namespace VaccinationManagement.View
             ((System.ComponentModel.ISupportInitialize) (this.picCloseForm)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label lblUser;
+
+        private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.Label label1;
 

@@ -21,7 +21,12 @@ namespace VaccinationManagement.Views
             ////Primero se verifica que no este vacio le txtBox
             if (txtDui.Text.Equals(""))
             {
-                MessageBox.Show("Ingreso un numero de Dui ", "ERROR");
+                using (var duiError = new FrmDUIError())
+                {
+                    var result = duiError.ShowDialog();
+                    if (result == DialogResult.OK);
+                                    
+                }
                 return;
             }
             
@@ -32,7 +37,12 @@ namespace VaccinationManagement.Views
             }
             catch (FormatException exception)
             {
-                MessageBox.Show("Revise los datos ingresados", "ERROR");
+                using (var invalid = new FrmInvalidData())
+                {
+                    var result = invalid.ShowDialog();
+                    if (result == DialogResult.OK) ;
+                                    
+                }
                 txtDui.Text = "";
             }
             //
@@ -55,7 +65,13 @@ namespace VaccinationManagement.Views
             }
             else
             {
-                MessageBox.Show("No se encontraron citas para este número de DUI");
+                using (var citesNull = new FrmCitesDui())
+                {
+                    var result = citesNull.ShowDialog();
+                    if (result == DialogResult.OK) ;
+                                    
+                }
+                
             }
             
         }

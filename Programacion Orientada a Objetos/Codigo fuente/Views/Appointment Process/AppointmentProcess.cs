@@ -60,10 +60,14 @@ namespace VaccinationManagement.Views
              */
             if (!CheckForAllBox())
             {
-                MessageBox.Show("Revisa que se hayan llenado todos los campos",
-                    "ERROR", MessageBoxButtons.OK);
+                var ErrorData = new FrmReviewData();
+                
+                var result = ErrorData.ShowDialog();
+                if(result == DialogResult.OK)
+                
                 return;
             }
+            
                 
             try
             {
@@ -71,11 +75,11 @@ namespace VaccinationManagement.Views
             }
             catch (FormatException exception)
             {
-                MessageBox.Show($"Revisa los datos {exception}");
+                MessageBox.Show($"Revisa los datos ");
             }
             catch (DbUpdateException exception)
             {
-                MessageBox.Show($"Revisa los datos {exception}");
+                MessageBox.Show($"Revisa los datos");
             }
             finally
             {
@@ -114,9 +118,17 @@ namespace VaccinationManagement.Views
                     Convert.ToInt32(Txbx_DUI.Text)
                     );
                     
-                diseases.Add(disease);
-                MessageBox.Show("Agregado a la lista de enfermedades", "", MessageBoxButtons.OK);
-                txtbx_disease.Text = "";
+                 diseases.Add(disease);
+                 using (var add = new FrmAddDiseases())
+                 {
+                     var result = add.ShowDialog();
+                     if (result == DialogResult.OK)
+                     {
+                         
+                     }
+                
+                 }
+                 txtbx_disease.Text = "";
                 
             }
             catch (FormatException exception)
