@@ -250,7 +250,6 @@ namespace VaccinationManagement.Views
             // 
             // Save
             // 
-            this.Save.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.ForeColor = System.Drawing.Color.White;
             this.Save.Location = new System.Drawing.Point(421, 492);

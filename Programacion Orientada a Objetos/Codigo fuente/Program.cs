@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VaccinationManagement.View;
+using VaccinationManagement.Context;
 using VaccinationManagement.Views;
 
 namespace VaccinationManagement
@@ -18,11 +19,16 @@ namespace VaccinationManagement
         static void Main()
         {
                    //Gestor_7
-                   //25t07myi
+                   //25t07my
+
+            var db = new VaccinationContext();
+            
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frmverification());
+            Application.Run(new Login());
+
+            
             
         }
     }

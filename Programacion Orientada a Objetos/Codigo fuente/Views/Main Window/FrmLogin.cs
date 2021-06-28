@@ -26,10 +26,13 @@ namespace VaccinationManagement.View
                 loginData = db.Users.Where(w =>
                     w.Users == txtUser.Text && w.PasswordUser == txtPassword.Text).ToList();
                 var actualEmployee = db.Employees.Where(E => E.IdUser == loginData.First().Id).ToList().First();
+                var actualBooth = db.Booths.Where(B => B.Id == actualEmployee.IdBooth).ToList().First();
+                
                 LocationData.UserId = loginData.First().Id;
                 LocationData.GestorName = actualEmployee.EmployeeName;
-                LocationData.IdActualBooth = actualEmployee.IdBooth;
+                LocationData.IdActualBooth = actualBooth.Id;
                 LocationData.GestorId = actualEmployee.Id;
+                LocationData.LocationActualBooth = actualBooth.BoothAddress;
                 
                 if (loginData.Count != 0)
                 {

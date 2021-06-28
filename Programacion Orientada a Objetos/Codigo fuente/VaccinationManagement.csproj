@@ -4,8 +4,21 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>net5.0-windows</TargetFramework>
         <UseWindowsForms>true</UseWindowsForms>
+        <AssemblyName>SRV</AssemblyName>
+        <Version>1.0.0.0</Version>
+        <Authors>Grupo 35</Authors>
+        <Product>Sistema para registros de vacunacion</Product>
+        <Description>Sistema para registros de vacunacion</Description>
+        <PackageId>SRV</PackageId>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+        <NeutralLanguage>es</NeutralLanguage>
+        <RepositoryUrl>Repo URL</RepositoryUrl>
+        <RepositoryType> https://github.com/juarezgonz02/GestorVacunacion</RepositoryType>
     </PropertyGroup>
-
+    <PropertyGroup>
+        <ApplicationIcon>Resources\icoGobierno.ico</ApplicationIcon>
+    </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="CircularProgressBar" Version="2.8.0.16" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
@@ -21,33 +34,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Views\FrmMainWindow.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
-      <Compile Update="Views\frmLogin.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
-      <Compile Update="Views\frmWelcomeUser.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
-      <Compile Update="Views\test.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
-      <Compile Update="Views\FrmGetDui.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
-      <Compile Update="Views\AppointmentProcess.cs">
-        <SubType>Form</SubType>
-      </Compile>
-        
-      <Compile Update="Views\FrnSideEffects.cs">
-          <SubType>Form</SubType>
-      </Compile>
         
       <Compile Update="Views\FrmMessageBoxCancel.cs">
         <SubType>Form</SubType>
@@ -83,6 +69,34 @@
         
         <Compile Update="Views\AppointmentProcess.cs">
             <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\Appointment process\AppointmentProcess.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\Vaccination Process\FrmGetDui.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\Vaccination Process\FrmSideEffects.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\Vaccination Process\VaccinationProcess.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\Main Window\FrmMainWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\Main Window\FrmLogin.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        
+        <Compile Update="Views\Main Window\frmWelcomeUser.cs">
+          <SubType>Form</SubType>
         </Compile>
     </ItemGroup>
 

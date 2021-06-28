@@ -24,8 +24,8 @@ namespace VaccinationManagement.Views
             var citizenCheck = db.Citizens.Where(w => w.Dui == dui).ToList().Count;
             
             InitializeComponent();
-            this.btnActualHour1.Click += new EventHandler(this.cmbTimeSelection);
-            this.btnActualhour2.Click += new EventHandler(this.cmbTimeSelection);
+            btnActualHour1.Click += cmbTimeSelection_Event;
+            btnActualhour2.Click += cmbTimeSelection_Event;
             
         }
         
@@ -33,6 +33,10 @@ namespace VaccinationManagement.Views
         ///// Event Handlers
         private void VaccinationProcess_Load(object sender, EventArgs e)
         {
+            
+            ///Cuando se carga el formulario es necesario llenar el DataGridView con las
+            /// citas encontradas
+            /// 
             var db = new VaccinationContext();
             var appointments = from B in db.Booths
                 join E in db.Employees on B equals E.IdBoothNavigation
@@ -49,11 +53,11 @@ namespace VaccinationManagement.Views
                 }; 
 
             dgvAppointment.DataSource = appointments.ToList();
-            updateDataMode();
+            cmbsUpdateOptionsOfTime();
             
         }
 
-        private void updateDataMode()
+        private void cmbsUpdateOptionsOfTime()
         {
             var db = new VaccinationContext();
             DateTime AppointmentDate = DateTime.Parse(dgvAppointment.SelectedRows[0].Cells[3].Value.ToString());
@@ -90,7 +94,7 @@ namespace VaccinationManagement.Views
                 cmbMinuteStep2.SelectedItem = "mm";
                 for (var i = 0; i < 60; i++)
                 {
-                    cmbMinuteStep2.Items.Add(i);
+                    cmbMinuteStep2.Items.Add(i);    
                 }
 
 
@@ -110,7 +114,7 @@ namespace VaccinationManagement.Views
         private void dgvCellClicked (object sender, DataGridViewCellEventArgs e)
         {
             // A cada click se actualizan las horas y minutos que se pueden seleccionar
-            updateDataMode();
+            cmbsUpdateOptionsOfTime();
         }
         
         ////// Eventos botones "Ahora"  
@@ -122,10 +126,8 @@ namespace VaccinationManagement.Views
         
         private void btnNowButtonVaccinationEvent(object sender, EventArgs e)
         {
-            
-                cmbHourVaccination.SelectedItem = DateTime.Now.Hour;
-                cmbMinuteVaccination.SelectedItem = DateTime.Now.Minute;
-
+            cmbHourVaccination.SelectedItem = DateTime.Now.Hour;
+            cmbMinuteVaccination.SelectedItem = DateTime.Now.Minute;
         }
         ///////////////////////////////
 
@@ -223,7 +225,7 @@ namespace VaccinationManagement.Views
 
         }
 
-        private void cmbTimeSelection(object sender, EventArgs e)
+        private void cmbTimeSelection_Event(object sender, EventArgs e)
         {
             if (
                 !cmbHourStep2.SelectedItem.Equals("hh") &&
@@ -231,7 +233,7 @@ namespace VaccinationManagement.Views
                 )
             {
                 this.btnUpdateData.Enabled = true;
-            }
+            } 
             else if (
                 !cmbHourVaccination.SelectedItem.Equals("hh") &&
                 !cmbMinuteVaccination.SelectedItem.Equals("mm")

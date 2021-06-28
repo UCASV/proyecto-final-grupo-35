@@ -36,10 +36,14 @@ namespace VaccinationManagement.View
             Show();
         }
         
-        
         private void btnVerificationCita_Click(object sender, EventArgs e)
         {
-          
+            using (var verification = new Frmverification())
+            {
+                Hide();
+                verification.ShowDialog();
+                Show();
+            }
         }
 
         private void UpdateDataView_Click(object sender, EventArgs e)
@@ -84,6 +88,9 @@ namespace VaccinationManagement.View
             this.WindowState = FormWindowState.Minimized;
         }
         
+        
+        
+        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -102,10 +109,6 @@ namespace VaccinationManagement.View
             lblHour.Text = DateTime.Now.ToLongTimeString();
             lblFecha.Text = DateTime.Now.ToLongDateString();
         }
-
-        private void pnlGraphics_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+        
     }
 }

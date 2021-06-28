@@ -33,7 +33,7 @@ namespace VaccinationManagement.Views
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVerification = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -53,15 +53,15 @@ namespace VaccinationManagement.Views
             this.textBox1.Size = new System.Drawing.Size(237, 20);
             this.textBox1.TabIndex = 1;
             // 
-            // button1
+            // btnVerification
             // 
-            this.button1.Location = new System.Drawing.Point(31, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 37);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "verificar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnVerification.Location = new System.Drawing.Point(31, 117);
+            this.btnVerification.Name = "btnVerification";
+            this.btnVerification.Size = new System.Drawing.Size(153, 37);
+            this.btnVerification.TabIndex = 2;
+            this.btnVerification.Text = "verificar";
+            this.btnVerification.UseVisualStyleBackColor = true;
+            this.btnVerification.Click += new System.EventHandler(this.btnVerification_Click);
             // 
             // label2
             // 
@@ -70,7 +70,6 @@ namespace VaccinationManagement.Views
             this.label2.Size = new System.Drawing.Size(39, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "DUI";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -87,7 +86,7 @@ namespace VaccinationManagement.Views
             this.ClientSize = new System.Drawing.Size(340, 197);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVerification);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Frmverification";
@@ -100,7 +99,7 @@ namespace VaccinationManagement.Views
 
         private System.Windows.Forms.Label label2;
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVerification;
 
         private System.Windows.Forms.TextBox textBox1;
 

@@ -13,6 +13,7 @@ namespace VaccinationManagement.Models
         }
 
         public int Id { get; set; }
+        
         public string AppointmentLocation { get; set; }
         public DateTime AppointmentDate { get; set; }
         public DateTime? Step2Date { get; set; }

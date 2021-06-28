@@ -269,7 +269,7 @@ namespace VaccinationManagement.View
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "FrmMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm";
+            this.Text = "Sistema de registro de vacunacion";
             this.pnlCentral.ResumeLayout(false);
             this.pnlLateral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.picLogoGobierno)).EndInit();

@@ -11,19 +11,14 @@ using VaccinationManagement.Views;
 
 namespace VaccinationManagement.Controls
 {
-    public class sideEffectsStatisticsClass
-    {
-        public string EffectName { set; get; }
-        public int EffectFrequency { set; get; }
-        
-    }
+
     public static  class ShowStadistics
     {
         private static Graphics canva;
         private static List<Citizen> citizensTotalVaccinated;
         private static List<Citizen> citizensSecondVaccinated;
         private static List<SideEffect> sideEffects;
-        private static List<sideEffectsStatisticsClass> sideEffectsStatistics;
+        private static List<SideEffectVm> sideEffectsStatistics;
         
         public static void DrawGraphics(object sender, PaintEventArgs e)
         {
@@ -46,14 +41,7 @@ namespace VaccinationManagement.Controls
             canva.DrawString($"Personas vacunadas (Ambas dosis) : {citizensSecondVaccinated.Count}", font, brush , 10,65);
             canva.EndContainer(dataContainer);        
             ///////////////////////////////////////////
-            
-            
-            //Abre un contenedor para dibujar los datos
-            DrawRule();
-            ///////////////////////////////////////////
-            
-            
-            
+
             /// Genera los graficos de barras
             var Graphic = canva.BeginContainer();
             
@@ -94,27 +82,17 @@ namespace VaccinationManagement.Controls
 
         }
 
-        private static int Map(int x, int max)
+        private static float Map(int x, int max)
         {
-            var y = 0;
-            var bottomY = 400;
+            const float topY = 250f;
+            const float bottomY = 400f;
+
+            if (max == 0)
+                return bottomY;
             
-            y = 400 - (250 * x)/max;
+            var y = bottomY - (topY * x)/max;
             return y;
-        }
-        
-        private static void DrawRule()
-        {
-            var ruleContainer = canva.BeginContainer();
-            var mostFrecuenceStat = sideEffectsStatistics.First();
-            
-            for (int i = mostFrecuenceStat.EffectFrequency ; i >= 0; i--)
-            {
-                
-            }
-            
-            
-            canva.EndContainer(ruleContainer); 
+
         }
         
         private static void GetData()
@@ -135,13 +113,13 @@ namespace VaccinationManagement.Controls
                 select C;
 
             var sideEffectsType = db.SideEffectTypes.ToList();
-            sideEffectsStatistics = new List<sideEffectsStatisticsClass>();
+            sideEffectsStatistics = new List<SideEffectVm>();
             
             sideEffectsType.ForEach(sideEffectsType =>
             {
                 var typeFrecuency = db.SideEffects.Where(sideEffect => sideEffect.IdEffect == sideEffectsType.Id)
                     .ToList();
-                sideEffectsStatistics.Add(new sideEffectsStatisticsClass()
+                sideEffectsStatistics.Add(new SideEffectVm()
                 {
                     EffectFrequency = typeFrecuency.Count,
                     EffectName = sideEffectsType.Effect

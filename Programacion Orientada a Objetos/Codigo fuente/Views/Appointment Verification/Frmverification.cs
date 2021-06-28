@@ -16,10 +16,16 @@ namespace VaccinationManagement.Views
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnVerification_Click(object sender, EventArgs e)
         {
             var db = new VaccinationContext();
 
+            if (textBox1.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese un numero de Dui", "ERROR");
+                return;
+            }
+            
             try
             {
                 var citizen = (from B in db.Booths
@@ -34,9 +40,10 @@ namespace VaccinationManagement.Views
                     "Encontrado", MessageBoxButtons.OK);
 
                 var appointmentProcess = new AppointmentProcess(citizen);
-
-
-
+                
+                Hide();
+                appointmentProcess.ShowDialog();
+                Close();
             }
             catch (InvalidOperationException exception)
             {
@@ -62,11 +69,6 @@ namespace VaccinationManagement.Views
                 MessageBox.Show("Porfavor revise los datos ingresados", "Error", MessageBoxButtons.OK);
             }
         }
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

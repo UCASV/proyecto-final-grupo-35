@@ -60,7 +60,7 @@ namespace VaccinationManagement.Views
             this.cmbMinuteStep2.Name = "cmbMinuteStep2";
             this.cmbMinuteStep2.Size = new System.Drawing.Size(41, 21);
             this.cmbMinuteStep2.TabIndex = 16;
-            this.cmbMinuteStep2.DropDownClosed += new System.EventHandler(this.cmbTimeSelection);
+            this.cmbMinuteStep2.DropDownClosed += new System.EventHandler(this.cmbTimeSelection_Event);
             // 
             // cmbHourStep2
             // 
@@ -71,7 +71,7 @@ namespace VaccinationManagement.Views
             this.cmbHourStep2.Name = "cmbHourStep2";
             this.cmbHourStep2.Size = new System.Drawing.Size(47, 21);
             this.cmbHourStep2.TabIndex = 15;
-            this.cmbHourStep2.DropDownClosed += new System.EventHandler(this.cmbTimeSelection);
+            this.cmbHourStep2.DropDownClosed += new System.EventHandler(this.cmbTimeSelection_Event);
             // 
             // btnUpdateData
             // 
@@ -149,7 +149,7 @@ namespace VaccinationManagement.Views
             this.cmbHourVaccination.Name = "cmbHourVaccination";
             this.cmbHourVaccination.Size = new System.Drawing.Size(47, 21);
             this.cmbHourVaccination.TabIndex = 17;
-            this.cmbHourVaccination.DropDownClosed += new System.EventHandler(this.cmbTimeSelection);
+            this.cmbHourVaccination.DropDownClosed += new System.EventHandler(this.cmbTimeSelection_Event);
             // 
             // cmbMinuteVaccination
             // 
@@ -160,7 +160,7 @@ namespace VaccinationManagement.Views
             this.cmbMinuteVaccination.Name = "cmbMinuteVaccination";
             this.cmbMinuteVaccination.Size = new System.Drawing.Size(41, 21);
             this.cmbMinuteVaccination.TabIndex = 18;
-            this.cmbMinuteVaccination.DropDownClosed += new System.EventHandler(this.cmbTimeSelection);
+            this.cmbMinuteVaccination.DropDownClosed += new System.EventHandler(this.cmbTimeSelection_Event);
             // 
             // lblAppointmentDate
             // 

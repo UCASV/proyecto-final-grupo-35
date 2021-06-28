@@ -12,6 +12,7 @@ namespace VaccinationManagement.Views
     {
         private List<SideEffect> sideEffects;
         private Appointment selectedAppointment; 
+        
         public FrnSideEffects(Appointment selectedAppointment)
         {
             this.selectedAppointment = selectedAppointment;
@@ -28,7 +29,6 @@ namespace VaccinationManagement.Views
             cmbEffectTypess.DataSource = sideEffectsTypes;
             cmbEffectTypess.DisplayMember = "Effect";
         }
-
       
         private void btnFinish_Click(object sender, EventArgs e)
         {
@@ -42,7 +42,7 @@ namespace VaccinationManagement.Views
 
                 db.SaveChanges();
                 
-                MessageBox.Show("Se agregaron los efectos secundario desarrolados por el paciente.",
+                MessageBox.Show("Se agregaron los efectos secundario desarrollados por el paciente.",
                     "Datos actualizados", MessageBoxButtons.OK);
                 
                 Close();
@@ -56,8 +56,9 @@ namespace VaccinationManagement.Views
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-         
-            var vaccinationDate = (DateTime) selectedAppointment.VaccineDate;
+            if (selectedAppointment.VaccineDate != null)
+            {
+                var vaccinationDate = (DateTime) selectedAppointment.VaccineDate;
 
                 try
                 {
@@ -83,7 +84,12 @@ namespace VaccinationManagement.Views
                 {
                     txtMinutes.Text = "";
                 }
-            
+            }
+            else
+            {
+                MessageBox.Show("Para agregar estos datos debe registrar la hora de vacunacion del paciente", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }
