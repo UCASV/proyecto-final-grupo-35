@@ -46,27 +46,19 @@ namespace VaccinationManagement.View
             //Show();
         }
         
-        private void btnRegister_Click2(object sender, EventArgs e)
-                {
-                    //Se asignó al boton 
-                    
-                    FormHija(new AppointmentProcess(fh2.vf));
-                    //var appointmentProcess = new AppointmentProcess();
-                               
-                    // Abrir un formulario para registrar los datos del ciudadano 
-                    //Hide();
-                    //appointmentProcess.ShowDialog();
-                    //Show();
-                }
+        private void btnVerificationFrm_Click(object sender, EventArgs e)
+        {
+            //Se asignó al boton
+            FormHija(new AppointmentProcess(fh2.CitizenToChange));
+        }
         
         private void btnVerificationCita_Click(object sender, EventArgs e)
         {
           
           FormHija2(new Frmverification());
-          fh2.btnVerification.Click += btnRegister_Click2;
-
-
-
+          fh2.btnVerification.Click += btnVerificationFrm_Click;
+          fh2.btnVerificationPrint.Click += btnVerificationFrm_Click;
+          
         }
         
         private void UpdateDataView_Click2(object sender, EventArgs e)

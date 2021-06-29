@@ -39,6 +39,7 @@ namespace VaccinationManagement.Views
             this.Txbx_DUI = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtb_name = new System.Windows.Forms.TextBox();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.label6 = new System.Windows.Forms.Label();
             this.txtbx_addres = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,6 +61,10 @@ namespace VaccinationManagement.Views
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.picUser)).BeginInit();
             this.SuspendLayout();
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // label2
             // 
@@ -390,6 +395,8 @@ namespace VaccinationManagement.Views
         private System.Windows.Forms.Label label3;
 
         private System.Windows.Forms.Label label2;
+        
+        private System.Windows.Forms.PrintDialog printDialog1;
 
         #endregion
     }

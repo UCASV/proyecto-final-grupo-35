@@ -21,7 +21,7 @@ namespace VaccinationManagement
         static void Main()
         {
                    //Gestor_7
-                   //25t07my
+                   //25t07myi
 
             var db = new VaccinationContext();
             

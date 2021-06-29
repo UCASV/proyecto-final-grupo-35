@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 using VaccinationManagement.Context;
@@ -11,6 +12,7 @@ namespace VaccinationManagement.Views
     [SuppressMessage("ReSharper", "InvalidXmlDocComment")]
     public partial class AppointmentProcess
     {
+        public Appointment NewAppointment;
         private bool CheckForAllBox()
         {
             var allBoxsFilled = !Txbx_DUI.Text.Equals("") &&
@@ -43,10 +45,10 @@ namespace VaccinationManagement.Views
 
         private void AddOrUpdateCitizenData()
         {
-            var db = new VaccinationContext(); 
+            var db = new VaccinationContext();
             var priorityGroup = (PriorityGroup) cbx_pgroup.SelectedItem;
             var specialInstitucion = (SpecialInstitution) cbx_institution.SelectedItem;
-            
+
             ///La variable UpdateMode determina si se va a actualizar los datos
             /// o a crear nuevo registro   
             if (updateMode)
@@ -63,19 +65,12 @@ namespace VaccinationManagement.Views
                 citizenToChange.IdPriorityGroup = priorityGroup.Id;
 
 
-                using (var update = new FrmInformationUpdate())
-                {
-                  var result = update.ShowDialog();
-                  if (result == DialogResult.Yes)
-                  {
-                                                   
-                  }
-                                                                       
-                 }
+                var update = new FrmInformationUpdate().ShowDialog();
+                
 
                 db.SaveChanges();
                 Close();
-                
+
             }
             else
             {
@@ -93,23 +88,16 @@ namespace VaccinationManagement.Views
 
                 db.Citizens.Add(citizen);
                 db.SaveChanges();
+
+                var save = new FrmInformationSave().ShowDialog();
                 
-                using (var save = new FrmInformationSave())
-                {
-                    var result = save.ShowDialog();
-                    if (result == DialogResult.Yes)
-                    {
-                                    
-                    }
-                                                        
-                }
-                              
+
                 /*
                 * Generar primera cita 
                 */
 
                 var r = new Random();
-                var newAppointment = new Appointment()
+                NewAppointment = new Appointment()
                 {
                     AppointmentLocation = LocationData.LocationActualBooth,
                     AppointmentDate = DateTime.Now.AddDays(r.Next(14, 21)),
@@ -118,23 +106,52 @@ namespace VaccinationManagement.Views
 
                 };
 
-                db.Appointments.Add(newAppointment);
+                db.Appointments.Add(NewAppointment);
                 db.SaveChanges();
 
-                using (var CiteDates = new FrmCiteDates($"Se ha generado una cita nueva para el dui {Txbx_DUI.Text} \n Presiona 'OK' para imprimir una hoja con los datos de la nueva cita"))
+                using (var citeDates =
+                    new FrmCiteDates(
+                        $"Se ha generado una cita nueva para el dui {Txbx_DUI.Text} \n Presiona 'OK' para imprimir una hoja con los datos de la nueva cita"))
                 {
-                    var result = CiteDates.ShowDialog();
+                    var result = citeDates.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        Printer.PrintPdf(newAppointment);                 
+                        Printer.AppointmentData = NewAppointment;
+                        OpenPrinter();
                     }
                 }
-               
-                    
- 
 
-                
             }
         }
+
+        private PrintDocument docToPrint;
+
+        private void OpenPrinter()
+        {
+            docToPrint = new PrintDocument();
+            
+            docToPrint.PrintPage += Printer.PrintPdf; 
+            // Allow the user to choose the page range he or she would
+            // like to print.
+            printDialog1.AllowSomePages = true;
+
+            // Show the help button.
+            printDialog1.ShowHelp = true;
+
+            // Set the Document property to the PrintDocument for 
+            // which the PrintPage Event has been handled. To display the
+            // dialog, either this property or the PrinterSettings property 
+            // must be set 
+            printDialog1.Document = docToPrint;
+
+            DialogResult result = printDialog1.ShowDialog();
+
+            // If the result is OK then print the document.
+            if (result==DialogResult.OK)
+            {
+                docToPrint.Print();
+            }
+        }
+        
     }
 }

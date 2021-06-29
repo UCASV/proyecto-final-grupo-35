@@ -34,12 +34,17 @@ namespace VaccinationManagement.Views
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmverification));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.btnVerification = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnVerificationPrint = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // label1
             // 
@@ -99,7 +104,7 @@ namespace VaccinationManagement.Views
             this.btnVerificationPrint.TabIndex = 4;
             this.btnVerificationPrint.Text = "Verificar e Imprimir";
             this.btnVerificationPrint.UseVisualStyleBackColor = true;
-            this.btnVerificationPrint.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnVerificationPrint.Click += new System.EventHandler(this.btnVerification_Click);
             // 
             // pictureBox1
             // 
@@ -133,12 +138,10 @@ namespace VaccinationManagement.Views
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Button btnVerificationPrint;
+        //private System.Windows.Forms.Button btnVerificationPrint;
 
         private System.Windows.Forms.PictureBox pictureBox1;
-
-        private System.Windows.Forms.Button btnCancel;
-
+        
         private System.Windows.Forms.Label label2;
 
         //private System.Windows.Forms.Button btnVerification;
@@ -146,6 +149,9 @@ namespace VaccinationManagement.Views
         private System.Windows.Forms.TextBox textBox1;
 
         private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.PrintDialog printDialog1;
+
 
         #endregion
     }
