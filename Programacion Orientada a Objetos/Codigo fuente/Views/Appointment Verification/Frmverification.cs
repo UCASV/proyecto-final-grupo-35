@@ -6,12 +6,14 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
-using System.Runtime.InteropServices;
+using VaccinationManagement.View;
 
 namespace VaccinationManagement.Views
 {
     public partial class Frmverification : Form
     {
+        public System.Windows.Forms.Button btnVerification;
+        public Citizen vf;
         public Frmverification()
         {
             InitializeComponent();
@@ -50,8 +52,9 @@ namespace VaccinationManagement.Views
 
                 var appointmentProcess = new AppointmentProcess(citizen);
                 
+                
                 Hide();
-                appointmentProcess.ShowDialog();
+                vf = citizen;
                 Close();
             }
             catch (InvalidOperationException exception)
@@ -67,7 +70,7 @@ namespace VaccinationManagement.Views
                     if (result == DialogResult.OK)
                     {
                         Hide();
-                        appointmentProcess.ShowDialog();
+                        vf = null;
                         Close();
                     }
                     else
@@ -100,18 +103,9 @@ namespace VaccinationManagement.Views
             }
         }
         
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-
-        private void Frmverification_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        
+        
+        
+        
     }
 }

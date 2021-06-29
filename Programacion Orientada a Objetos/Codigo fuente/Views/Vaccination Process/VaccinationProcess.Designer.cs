@@ -49,16 +49,10 @@ namespace VaccinationManagement.Views
             this.btnActualHour1 = new System.Windows.Forms.Button();
             this.btnActualhour2 = new System.Windows.Forms.Button();
             this.btnSideEffects = new System.Windows.Forms.Button();
-            this.picClose = new System.Windows.Forms.PictureBox();
-            this.picMinimized = new System.Windows.Forms.PictureBox();
             this.pnlLateral = new System.Windows.Forms.Panel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.picAdd = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.dgvAppointment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.picClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.picMinimized)).BeginInit();
             this.pnlLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.picAdd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +89,7 @@ namespace VaccinationManagement.Views
             this.btnUpdateData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnUpdateData.ForeColor = System.Drawing.Color.White;
             this.btnUpdateData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateData.Location = new System.Drawing.Point(229, 224);
+            this.btnUpdateData.Location = new System.Drawing.Point(270, 256);
             this.btnUpdateData.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateData.Name = "btnUpdateData";
             this.btnUpdateData.Size = new System.Drawing.Size(140, 34);
@@ -130,7 +124,7 @@ namespace VaccinationManagement.Views
             // 
             this.lbl01.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lbl01.ForeColor = System.Drawing.Color.White;
-            this.lbl01.Location = new System.Drawing.Point(306, 39);
+            this.lbl01.Location = new System.Drawing.Point(339, 41);
             this.lbl01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl01.Name = "lbl01";
             this.lbl01.Size = new System.Drawing.Size(263, 60);
@@ -144,7 +138,7 @@ namespace VaccinationManagement.Views
             this.dgvAppointment.AllowUserToResizeRows = false;
             this.dgvAppointment.BackgroundColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
             this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointment.Location = new System.Drawing.Point(193, 276);
+            this.dgvAppointment.Location = new System.Drawing.Point(193, 325);
             this.dgvAppointment.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAppointment.MultiSelect = false;
             this.dgvAppointment.Name = "dgvAppointment";
@@ -152,7 +146,7 @@ namespace VaccinationManagement.Views
             this.dgvAppointment.RowTemplate.Height = 28;
             this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAppointment.ShowCellErrors = false;
-            this.dgvAppointment.Size = new System.Drawing.Size(488, 189);
+            this.dgvAppointment.Size = new System.Drawing.Size(565, 198);
             this.dgvAppointment.TabIndex = 10;
             this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCellClicked);
             // 
@@ -240,7 +234,7 @@ namespace VaccinationManagement.Views
             this.btnSideEffects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideEffects.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnSideEffects.ForeColor = System.Drawing.Color.White;
-            this.btnSideEffects.Location = new System.Drawing.Point(436, 224);
+            this.btnSideEffects.Location = new System.Drawing.Point(470, 258);
             this.btnSideEffects.Name = "btnSideEffects";
             this.btnSideEffects.Size = new System.Drawing.Size(211, 31);
             this.btnSideEffects.TabIndex = 23;
@@ -248,55 +242,20 @@ namespace VaccinationManagement.Views
             this.btnSideEffects.UseVisualStyleBackColor = true;
             this.btnSideEffects.Click += new System.EventHandler(this.btnSideEffectsClick);
             // 
-            // picClose
-            // 
-            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picClose.Image = ((System.Drawing.Image) (resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(644, 3);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(43, 25);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picClose.TabIndex = 24;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click_1);
-            // 
-            // picMinimized
-            // 
-            this.picMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picMinimized.Image = ((System.Drawing.Image) (resources.GetObject("picMinimized.Image")));
-            this.picMinimized.Location = new System.Drawing.Point(606, 3);
-            this.picMinimized.Name = "picMinimized";
-            this.picMinimized.Size = new System.Drawing.Size(32, 25);
-            this.picMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMinimized.TabIndex = 25;
-            this.picMinimized.TabStop = false;
-            this.picMinimized.Click += new System.EventHandler(this.picMinimized_Click_1);
-            // 
             // pnlLateral
             // 
-            this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
-            this.pnlLateral.Controls.Add(this.picLogo);
+            this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
             this.pnlLateral.Controls.Add(this.picAdd);
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLateral.Location = new System.Drawing.Point(0, 0);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(170, 498);
+            this.pnlLateral.Size = new System.Drawing.Size(170, 615);
             this.pnlLateral.TabIndex = 26;
-            // 
-            // picLogo
-            // 
-            this.picLogo.Image = ((System.Drawing.Image) (resources.GetObject("picLogo.Image")));
-            this.picLogo.Location = new System.Drawing.Point(3, 3);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(164, 215);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 1;
-            this.picLogo.TabStop = false;
             // 
             // picAdd
             // 
             this.picAdd.Image = ((System.Drawing.Image) (resources.GetObject("picAdd.Image")));
-            this.picAdd.Location = new System.Drawing.Point(25, 224);
+            this.picAdd.Location = new System.Drawing.Point(26, 203);
             this.picAdd.Name = "picAdd";
             this.picAdd.Size = new System.Drawing.Size(122, 179);
             this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -306,10 +265,8 @@ namespace VaccinationManagement.Views
             // VaccinationProcess
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
-            this.ClientSize = new System.Drawing.Size(692, 498);
+            this.ClientSize = new System.Drawing.Size(769, 615);
             this.Controls.Add(this.pnlLateral);
-            this.Controls.Add(this.picMinimized);
-            this.Controls.Add(this.picClose);
             this.Controls.Add(this.btnSideEffects);
             this.Controls.Add(this.btnActualhour2);
             this.Controls.Add(this.btnActualHour1);
@@ -332,28 +289,19 @@ namespace VaccinationManagement.Views
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VaccinationProcess";
             this.Load += new System.EventHandler(this.VaccinationProcess_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.VaccinationProcess_MouseDown);
             ((System.ComponentModel.ISupportInitialize) (this.dgvAppointment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.picClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.picMinimized)).EndInit();
             this.pnlLateral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.picAdd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.PictureBox picAdd;
 
        
 
         private System.Windows.Forms.Panel pnlLateral;
 
-        private System.Windows.Forms.PictureBox picClose;
-        private System.Windows.Forms.PictureBox picMinimized;
-
-        
 
         private System.Windows.Forms.Button btnSideEffects;
 

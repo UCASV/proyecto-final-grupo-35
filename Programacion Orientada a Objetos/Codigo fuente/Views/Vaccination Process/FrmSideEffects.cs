@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using VaccinationManagement.Context;
 using VaccinationManagement.Models;
-using System.Runtime.InteropServices;
+
 
 namespace VaccinationManagement.Views
 {
@@ -118,36 +118,8 @@ namespace VaccinationManagement.Views
             }
         }
 
-        private void picClose_Click(object sender, EventArgs e)
-        {
-            using (var cancel = new FrmClose())
-            {
-                var result = cancel.ShowDialog();
-                if (result == DialogResult.Yes)
-                {
-                    this.Close();
-                }
-                                                                
-            }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
         
         
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-
-        private void FrnSideEffects_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        
     }
 }

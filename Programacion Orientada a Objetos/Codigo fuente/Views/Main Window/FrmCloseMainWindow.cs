@@ -1,23 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
-using VaccinationManagement.Context;
-using VaccinationManagement.Models;
-using VaccinationManagement.Controls;
 
-
-
-namespace VaccinationManagement.Views
+namespace VaccinationManagement.Views.Main_Window
 {
-    public partial class frmWelcomeUser : Form
+    public partial class FrmCloseMainWindow : Form
     {
-        public frmWelcomeUser()
+        public FrmCloseMainWindow()
         {
-            
             InitializeComponent();
-            lblUserName.Text = LocationData.GestorName;
-            
+            lblUser.Text = LocationData.GestorName;
         }
-        
 
         private void tmrOne_Tick(object sender, EventArgs e)
         {
@@ -25,11 +17,12 @@ namespace VaccinationManagement.Views
             circularProgressBar1.Value += 1;
             circularProgressBar1.Text = circularProgressBar1.Value.ToString();
             if(circularProgressBar1.Value == 100){
-             tmrOne.Stop();
-             tmrTwo.Start();
+                tmrOne.Stop();
+                tmrTwo.Start();
             }
         }
-        
+
+
         private void tmrTwo_Tick(object sender, EventArgs e)
         {
             this.Opacity -= 0.1;
@@ -38,20 +31,15 @@ namespace VaccinationManagement.Views
                 tmrTwo.Stop();
                 this.Close();
             }
-            
         }
-        
-        private void frmWelcomeUser_Load(object sender, EventArgs e)
+
+        private void FrmCloseMainWindow_Load(object sender, EventArgs e)
         {
-            
-            
             this.Opacity = 0.0;
             circularProgressBar1.Value= 0;
             circularProgressBar1.Minimum= 0;
             circularProgressBar1.Maximum = 100; 
             tmrOne.Start();
-
         }
-        
     }
 }

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using VaccinationManagement.Context;
+using VaccinationManagement.Models;
 
 namespace VaccinationManagement.Views
 {
     public partial class FrmGetDui : Form
     {
+        public System.Windows.Forms.Button btnVerification;
+        public int vf;
         public FrmGetDui()
         {
             InitializeComponent();
@@ -60,7 +62,7 @@ namespace VaccinationManagement.Views
             {
                 var vaccinationProcess = new VaccinationProcess(appointments.ToList()[0]);
                 Hide();
-                vaccinationProcess.ShowDialog();
+                vf = appointments.ToList().First();
                 Close();
             }
             else
@@ -76,30 +78,8 @@ namespace VaccinationManagement.Views
             
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            using (var cancel = new FrmMessageBoxCancel())
-            {
-                var result = cancel.ShowDialog();
-                if (result == DialogResult.Yes)
-                {
-                    this.Close();
-                }
-                            
-            }
-        }
         
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void FrmGetDui_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        
+        
     }
 }

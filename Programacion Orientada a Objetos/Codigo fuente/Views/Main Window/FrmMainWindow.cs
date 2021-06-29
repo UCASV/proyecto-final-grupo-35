@@ -7,6 +7,7 @@ using VaccinationManagement.Models;
 using VaccinationManagement.Views;
 using System.Runtime.InteropServices;
 using VaccinationManagement.Controls;
+using VaccinationManagement.Views.Main_Window;
 
 namespace VaccinationManagement.View
 {
@@ -20,43 +21,76 @@ namespace VaccinationManagement.View
             this.userData = userData;
             
             InitializeComponent();
-            this.pnlGraphics.Paint += new PaintEventHandler(ShowStadistics.DrawGraphics);
-
+            
             lblUser.Text = LocationData.GestorName;
+            
+            FormHija(new FrmGraphics());
 
-
+        }
+        
+        private void picLogoGobierno_Click(object sender, EventArgs e)
+        {
+              FormHija(new FrmGraphics());
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             //Se asignó al boton 
-            var appointmentProcess = new AppointmentProcess();
+            
+            FormHija(new AppointmentProcess());
+            //var appointmentProcess = new AppointmentProcess();
                        
             // Abrir un formulario para registrar los datos del ciudadano 
-            Hide();
-            appointmentProcess.ShowDialog();
-            Show();
+            //Hide();
+            //appointmentProcess.ShowDialog();
+            //Show();
         }
+        
+        private void btnRegister_Click2(object sender, EventArgs e)
+                {
+                    //Se asignó al boton 
+                    
+                    FormHija(new AppointmentProcess(fh2.vf));
+                    //var appointmentProcess = new AppointmentProcess();
+                               
+                    // Abrir un formulario para registrar los datos del ciudadano 
+                    //Hide();
+                    //appointmentProcess.ShowDialog();
+                    //Show();
+                }
         
         private void btnVerificationCita_Click(object sender, EventArgs e)
         {
-            using (var verification = new Frmverification())
-            {
-                Hide();
-                verification.ShowDialog();
-                Show();
-            }
+          
+          FormHija2(new Frmverification());
+          fh2.btnVerification.Click += btnRegister_Click2;
+
+
+
+        }
+        
+        private void UpdateDataView_Click2(object sender, EventArgs e)
+        {
+            //Se asignó al boton 
+            //var vaccinationProcessLogin = new FrmGetDui();
+            FormHija(new VaccinationProcess(fh3.vf));
+            
+            // Abrir un formulario para verificar el Dui 
+            //Hide();
+            //vaccinationProcessLogin.ShowDialog();
+            //Show();
         }
 
         private void UpdateDataView_Click(object sender, EventArgs e)
         {
            //Se asignó al boton 
-           var vaccinationProcessLogin = new FrmGetDui();
-                   
+           //var vaccinationProcessLogin = new FrmGetDui();
+           FormHija3(new FrmGetDui());
+           fh3.btnVerification.Click += UpdateDataView_Click2;
            // Abrir un formulario para verificar el Dui 
-           Hide();
-           vaccinationProcessLogin.ShowDialog();
-           Show();
+           //Hide();
+           //vaccinationProcessLogin.ShowDialog();
+           //Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -67,6 +101,9 @@ namespace VaccinationManagement.View
                 if (result == DialogResult.Yes)
                 {
                     this.Close();
+                    Hide();
+                    FrmCloseMainWindow close = new FrmCloseMainWindow();
+                    close.ShowDialog();
                 }
                                         
             }
@@ -108,11 +145,48 @@ namespace VaccinationManagement.View
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void tmrHour_Tick(object sender, EventArgs e)
-        {
-            lblHour.Text = DateTime.Now.ToLongTimeString();
-            lblFecha.Text = DateTime.Now.ToLongDateString();
-        }
         
+
+        private Form fh;
+          private void  FormHija(object formhija)
+          {
+                if (this.pnlPrincipal.Controls.Count > 0)
+                    this.pnlPrincipal.Controls.RemoveAt(0);
+                fh = formhija as Form;
+                fh.TopLevel = false;
+                fh.Dock = DockStyle.Fill;
+                this.pnlPrincipal.Controls.Add(fh);
+                this.pnlPrincipal.Tag = fh;
+                fh.Show();
+          }
+          private Frmverification fh2;
+          private void  FormHija2(Frmverification formhija2)
+          {
+             if (this.pnlPrincipal.Controls.Count > 0)
+             this.pnlPrincipal.Controls.RemoveAt(0);
+             fh2 = formhija2;
+             fh2.TopLevel = false;
+             fh2.Dock = DockStyle.Fill;
+             this.pnlPrincipal.Controls.Add(fh2);
+             this.pnlPrincipal.Tag = fh2;
+             fh2.Show();
+          }
+          
+          private FrmGetDui fh3;
+          
+          private void  FormHija3(FrmGetDui formhija3)
+          {
+            if (this.pnlPrincipal.Controls.Count > 0)
+            this.pnlPrincipal.Controls.RemoveAt(0);
+            fh3 = formhija3;
+            fh3.TopLevel = false;
+            fh3.Dock = DockStyle.Fill;
+            this.pnlPrincipal.Controls.Add(fh3);
+            this.pnlPrincipal.Tag = fh3;
+            fh3.Show();
+          }
+
+
+          
     }
 }

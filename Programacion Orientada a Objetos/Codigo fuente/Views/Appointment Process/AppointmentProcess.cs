@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -32,7 +31,7 @@ namespace VaccinationManagement.Views
             InitializeComponent();
         }
         
-        public AppointmentProcess(Citizen citizen)
+        public AppointmentProcess(Citizen? citizen)
         {            
             diseases = new List<Disease>();
             var db = new VaccinationContext();
@@ -46,8 +45,9 @@ namespace VaccinationManagement.Views
             var institutions = db.SpecialInstitutions.ToList();
             cbx_institution.DataSource = institutions;
             cbx_institution.DisplayMember = "InstName";
-
-            FillBoxes(citizen);
+            
+            if(citizen != null)
+                FillBoxes(citizen);
         }
 
         private void Save_Click_1(object sender, EventArgs e)
@@ -89,23 +89,12 @@ namespace VaccinationManagement.Views
                     db.Diseases.Add(d);
                     db.SaveChanges();
                 });
-                Close();
+               
             }
 
         }
 
-        private void Back_Click(object sender, EventArgs e)
-        {
-            using (var cancel = new FrmMessageBoxCancel())
-            {
-                var result = cancel.ShowDialog();
-                if (result == DialogResult.Yes)
-                {
-                    this.Close();
-                }
-                
-            }
-        }
+        
 
         private void btn_add_disease_Click(object sender, EventArgs e)
         {
@@ -150,19 +139,7 @@ namespace VaccinationManagement.Views
             
         }
         
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-
-        private void AppointmentProcess_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        
     }
     
 }
