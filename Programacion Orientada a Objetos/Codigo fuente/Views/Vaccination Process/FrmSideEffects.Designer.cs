@@ -52,7 +52,7 @@ namespace VaccinationManagement.Views
             this.cmbEffectTypess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbEffectTypess.ForeColor = System.Drawing.Color.White;
             this.cmbEffectTypess.FormattingEnabled = true;
-            this.cmbEffectTypess.Location = new System.Drawing.Point(423, 243);
+            this.cmbEffectTypess.Location = new System.Drawing.Point(314, 182);
             this.cmbEffectTypess.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEffectTypess.Name = "cmbEffectTypess";
             this.cmbEffectTypess.Size = new System.Drawing.Size(199, 21);
@@ -62,7 +62,7 @@ namespace VaccinationManagement.Views
             // 
             this.txtMinutes.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
             this.txtMinutes.ForeColor = System.Drawing.Color.White;
-            this.txtMinutes.Location = new System.Drawing.Point(483, 316);
+            this.txtMinutes.Location = new System.Drawing.Point(361, 248);
             this.txtMinutes.Margin = new System.Windows.Forms.Padding(2);
             this.txtMinutes.Name = "txtMinutes";
             this.txtMinutes.Size = new System.Drawing.Size(39, 20);
@@ -70,23 +70,23 @@ namespace VaccinationManagement.Views
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(423, 205);
+            this.label1.Location = new System.Drawing.Point(288, 147);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 18);
+            this.label1.Size = new System.Drawing.Size(245, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Efecto secundario desarrollado";
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(453, 289);
+            this.label2.Location = new System.Drawing.Point(342, 221);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 25);
+            this.label2.Size = new System.Drawing.Size(158, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Retraso de aparicion";
             // 
@@ -94,12 +94,12 @@ namespace VaccinationManagement.Views
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(607, 365);
+            this.btnAdd.Location = new System.Drawing.Point(442, 326);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(80, 31);
+            this.btnAdd.Size = new System.Drawing.Size(107, 40);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Agregar ";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -109,12 +109,12 @@ namespace VaccinationManagement.Views
             // 
             this.btnFinish.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnFinish.ForeColor = System.Drawing.Color.White;
-            this.btnFinish.Location = new System.Drawing.Point(405, 365);
+            this.btnFinish.Location = new System.Drawing.Point(268, 326);
             this.btnFinish.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(81, 31);
+            this.btnFinish.Size = new System.Drawing.Size(104, 40);
             this.btnFinish.TabIndex = 5;
             this.btnFinish.Text = "Terminar";
             this.btnFinish.UseVisualStyleBackColor = true;
@@ -122,13 +122,13 @@ namespace VaccinationManagement.Views
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label3.Location = new System.Drawing.Point(405, 124);
+            this.label3.Location = new System.Drawing.Point(241, 99);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(279, 39);
+            this.label3.Size = new System.Drawing.Size(341, 39);
             this.label3.TabIndex = 7;
             this.label3.Text = "Agregar efectos secundarios ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -136,7 +136,7 @@ namespace VaccinationManagement.Views
             // label4
             // 
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(526, 319);
+            this.label4.Location = new System.Drawing.Point(404, 253);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 15);
@@ -150,15 +150,15 @@ namespace VaccinationManagement.Views
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLateral.Location = new System.Drawing.Point(0, 0);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(265, 615);
+            this.pnlLateral.Size = new System.Drawing.Size(193, 454);
             this.pnlLateral.TabIndex = 11;
             // 
             // picAdd
             // 
             this.picAdd.Image = ((System.Drawing.Image) (resources.GetObject("picAdd.Image")));
-            this.picAdd.Location = new System.Drawing.Point(70, 205);
+            this.picAdd.Location = new System.Drawing.Point(22, 88);
             this.picAdd.Name = "picAdd";
-            this.picAdd.Size = new System.Drawing.Size(144, 191);
+            this.picAdd.Size = new System.Drawing.Size(152, 255);
             this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAdd.TabIndex = 0;
             this.picAdd.TabStop = false;
@@ -168,7 +168,7 @@ namespace VaccinationManagement.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
-            this.ClientSize = new System.Drawing.Size(769, 615);
+            this.ClientSize = new System.Drawing.Size(593, 454);
             this.Controls.Add(this.pnlLateral);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

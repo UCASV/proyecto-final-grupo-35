@@ -88,10 +88,6 @@
           <SubType>Form</SubType>
         </Compile>
         
-        <Compile Update="Views\MessageBox\FrmMessageBoxCancel.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        
         <Compile Update="Views\MessageBox\FrmCitesInTheFound.cs">
           <SubType>Form</SubType>
         </Compile>
