@@ -78,7 +78,7 @@ namespace VaccinationManagement.Views
                 using (var invalid = new FrmInvalidData())
                 {
                     var result = invalid.ShowDialog();
-                    if (result == DialogResult.OK) ;
+                    if (result == DialogResult.OK);
                 }
             }
         }
@@ -86,6 +86,7 @@ namespace VaccinationManagement.Views
 
         private void btnOpenPrinter(object sender, EventArgs e)
         {
+            var db = new VaccinationContext();
             
             //
             if (textBox1.Text.Equals(""))
@@ -97,15 +98,25 @@ namespace VaccinationManagement.Views
                         return;
                 }
             }
+            try
+            {
+                LastAppointment = db.Appointments.Where(
+                    W => W.IdCitizen == Int32.Parse(textBox1.Text)).ToList().First();                    
+            }
+            catch (InvalidOperationException exeption)
+            {
+                    return;        
+            }
+            catch (FormatException exeption)
+            {
+                    return;        
+            }
             
-            var db = new VaccinationContext();
             using (var citeDates = new FrmCiteDates(
                     $"Se ha encontrado una cita para el dui {textBox1.Text} \n Presiona 'OK' para imprimir una hoja con los datos de la " +
                     $"más reciente cita")
                     )
             {
-                LastAppointment = db.Appointments.Where(
-                    W => W.IdCitizen == Int32.Parse(textBox1.Text)).ToList().First();
                 
                 var result = citeDates.ShowDialog();
                 if (result == DialogResult.OK)

@@ -140,3 +140,5 @@ Only has the escencial data for a user to know about
 
 >Views 
 
+Contains all the Windows Form to be displayed and the most of the code
+

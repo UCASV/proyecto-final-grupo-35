@@ -167,6 +167,8 @@ INSERT INTO USERS VALUES(8,'m23tpmlf','Gestor_8');
 INSERT INTO USERS VALUES(9,'fvjvockh','Gestor_9');
 INSERT INTO USERS VALUES(10,'6jdqwfks','Gestor_10');
 
+INSERT INTO USERS VALUES(10,'passWord','UserTest');
+
 
 -- INSERTANDO DATOS DE GESTORES
 INSERT INTO EMPLOYEE VALUES(1,'Nicole Lorenzo','quettoujouhoiha-5296@yopmail.com','67229 Hauck Knolls Apt. 251 - Columbus, SC / 12511', 1,1,1);
