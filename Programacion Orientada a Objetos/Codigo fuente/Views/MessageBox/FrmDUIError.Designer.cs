@@ -56,11 +56,12 @@ namespace VaccinationManagement.Views
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 40);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Ingrese un numero de Dui";
+            this.label1.Text = "Ingrese un número de DUI";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;

@@ -62,10 +62,6 @@ namespace VaccinationManagement.Views
             ((System.ComponentModel.ISupportInitialize) (this.picUser)).BeginInit();
             this.SuspendLayout();
             // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -116,6 +112,10 @@ namespace VaccinationManagement.Views
             this.txtb_name.Name = "txtb_name";
             this.txtb_name.Size = new System.Drawing.Size(329, 20);
             this.txtb_name.TabIndex = 7;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // label6
             // 
@@ -199,6 +199,7 @@ namespace VaccinationManagement.Views
             // 
             // btn_add_disease
             // 
+            this.btn_add_disease.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_add_disease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add_disease.ForeColor = System.Drawing.Color.White;
             this.btn_add_disease.Location = new System.Drawing.Point(362, 311);
@@ -241,6 +242,7 @@ namespace VaccinationManagement.Views
             // 
             // Save
             // 
+            this.Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.ForeColor = System.Drawing.Color.White;
             this.Save.Location = new System.Drawing.Point(315, 490);

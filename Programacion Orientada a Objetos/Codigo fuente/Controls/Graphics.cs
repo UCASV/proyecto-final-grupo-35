@@ -66,7 +66,7 @@ namespace VaccinationManagement.Controls
                 canva.DrawString(frequency.EffectName, fontGraphics,
                     brush, new RectangleF(x0EffectName, 425, x0 + 150, 750), lblFormat);
                 
-                canva.DrawString($"{frequency.EffectFrequency}", fontGraphics, brush, x0, TopY-25);
+                canva.DrawString($"{frequency.EffectFrequency} casos ", fontGraphics, brush, x0, TopY-25);
                 
                 
                 canva.DrawLine(penBar, x0 , y0, x0, y0+5);

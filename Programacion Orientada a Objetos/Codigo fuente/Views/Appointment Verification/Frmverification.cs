@@ -15,7 +15,7 @@ namespace VaccinationManagement.Views
     public partial class Frmverification : Form
     {
         public Button btnVerification;
-        public Button btnVerificationPrint;
+        public System.Windows.Forms.Button btnVerificationPrint;
         
         public Citizen CitizenToChange;
         

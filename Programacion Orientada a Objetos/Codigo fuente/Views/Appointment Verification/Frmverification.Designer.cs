@@ -42,10 +42,6 @@ namespace VaccinationManagement.Views
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -54,7 +50,7 @@ namespace VaccinationManagement.Views
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(331, 86);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Verificacion de datos de cita de vacunacion";
+            this.label1.Text = "Verificación de datos de cita de vacunación";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
@@ -65,6 +61,10 @@ namespace VaccinationManagement.Views
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(237, 20);
             this.textBox1.TabIndex = 1;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // btnVerification
             // 

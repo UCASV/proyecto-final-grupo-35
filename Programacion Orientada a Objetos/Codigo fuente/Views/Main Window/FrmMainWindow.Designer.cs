@@ -48,7 +48,6 @@ namespace VaccinationManagement.View
             this.picLogoGobierno = new System.Windows.Forms.PictureBox();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
-            this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimized = new System.Windows.Forms.PictureBox();
             this.picCloseForm = new System.Windows.Forms.PictureBox();
             this.tmrHour = new System.Windows.Forms.Timer(this.components);
@@ -56,7 +55,6 @@ namespace VaccinationManagement.View
             this.pnlLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.picLogoGobierno)).BeginInit();
             this.pnlSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.picMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.picCloseForm)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +120,7 @@ namespace VaccinationManagement.View
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(149, 53);
             this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Cerrar Sesion";
+            this.btnExit.Text = "Cerrar Sesión";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -138,7 +136,7 @@ namespace VaccinationManagement.View
             this.btnVerificationCita.Name = "btnVerificationCita";
             this.btnVerificationCita.Size = new System.Drawing.Size(205, 53);
             this.btnVerificationCita.TabIndex = 3;
-            this.btnVerificationCita.Text = "VERIFICACION DE CITA";
+            this.btnVerificationCita.Text = "VERIFICACIÓN DE CITA";
             this.btnVerificationCita.UseVisualStyleBackColor = true;
             this.btnVerificationCita.Click += new System.EventHandler(this.btnVerificationCita_Click);
             // 
@@ -154,7 +152,7 @@ namespace VaccinationManagement.View
             this.UpdateDataView.Name = "UpdateDataView";
             this.UpdateDataView.Size = new System.Drawing.Size(205, 53);
             this.UpdateDataView.TabIndex = 2;
-            this.UpdateDataView.Text = "   ACTUALIZACION DE CITAS";
+            this.UpdateDataView.Text = "   ACTUALIZACIÓN DE CITAS";
             this.UpdateDataView.UseVisualStyleBackColor = true;
             this.UpdateDataView.Click += new System.EventHandler(this.UpdateDataView_Click);
             // 
@@ -191,7 +189,6 @@ namespace VaccinationManagement.View
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (56)))), ((int) (((byte) (60)))), ((int) (((byte) (68)))));
             this.pnlSuperior.Controls.Add(this.lblUser);
-            this.pnlSuperior.Controls.Add(this.picClose);
             this.pnlSuperior.Controls.Add(this.picMinimized);
             this.pnlSuperior.Controls.Add(this.picCloseForm);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
@@ -213,23 +210,11 @@ namespace VaccinationManagement.View
             this.lblUser.TabIndex = 4;
             this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picClose
-            // 
-            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picClose.Image = ((System.Drawing.Image) (resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(952, 3);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(45, 27);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picClose.TabIndex = 2;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            // 
             // picMinimized
             // 
             this.picMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMinimized.Image = ((System.Drawing.Image) (resources.GetObject("picMinimized.Image")));
-            this.picMinimized.Location = new System.Drawing.Point(914, 5);
+            this.picMinimized.Location = new System.Drawing.Point(956, 3);
             this.picMinimized.Name = "picMinimized";
             this.picMinimized.Size = new System.Drawing.Size(32, 27);
             this.picMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -262,7 +247,6 @@ namespace VaccinationManagement.View
             this.pnlLateral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.picLogoGobierno)).EndInit();
             this.pnlSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.picMinimized)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.picCloseForm)).EndInit();
             this.ResumeLayout(false);
@@ -275,8 +259,6 @@ namespace VaccinationManagement.View
         private System.Windows.Forms.Button btnMore;
 
         private System.Windows.Forms.Timer tmrHour;
-
-        private System.Windows.Forms.PictureBox picClose;
 
         private System.Windows.Forms.Panel pnlCentral;
         private System.Windows.Forms.Panel pnlSuperior;

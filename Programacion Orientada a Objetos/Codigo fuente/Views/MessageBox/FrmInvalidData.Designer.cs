@@ -56,7 +56,7 @@ namespace VaccinationManagement.Views
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ERROR: Datos no validos";
+            this.label1.Text = "ERROR: Datos no válidos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1

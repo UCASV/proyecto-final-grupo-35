@@ -56,11 +56,12 @@ namespace VaccinationManagement.Views
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 58);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Se agregaron los efectos secundario desarrollados por el paciente";
+            this.label1.Text = "Se agregaron los efectos secundarios desarrollados por el paciente";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;

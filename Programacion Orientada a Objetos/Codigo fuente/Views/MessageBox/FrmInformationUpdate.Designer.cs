@@ -56,7 +56,7 @@ namespace VaccinationManagement.Views
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 41);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Informacion actualizada con exito";
+            this.label1.Text = "Información actualizada con éxito";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1

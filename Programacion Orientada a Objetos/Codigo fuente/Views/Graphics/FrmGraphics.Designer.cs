@@ -82,7 +82,7 @@ namespace VaccinationManagement.Views.Main_Window
             this.lblEffects.Name = "lblEffects";
             this.lblEffects.Size = new System.Drawing.Size(577, 50);
             this.lblEffects.TabIndex = 3;
-            this.lblEffects.Text = "GRAFICO DE DATOS DE EFECTOS SECUNDARIOS";
+            this.lblEffects.Text = "GRÁFICO DE DATOS DE EFECTOS SECUNDARIOS";
             this.lblEffects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnShowGraphics
@@ -103,7 +103,6 @@ namespace VaccinationManagement.Views.Main_Window
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (28)))), ((int) (((byte) (29)))), ((int) (((byte) (29)))));
             this.ClientSize = new System.Drawing.Size(769, 615);
-            //this.Controls.Add(this.btnShowGraphics);
             this.Controls.Add(this.lblEffects);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblHour);

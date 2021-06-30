@@ -84,7 +84,7 @@ namespace VaccinationManagement.Views.Main_Window
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(338, 50);
             this.label1.TabIndex = 3;
-            this.label1.Text = "CERRANDO SESION";
+            this.label1.Text = "CERRANDO SESIÓN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tmrOne

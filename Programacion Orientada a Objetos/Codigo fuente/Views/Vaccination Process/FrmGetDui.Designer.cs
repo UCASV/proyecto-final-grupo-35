@@ -65,6 +65,7 @@ namespace VaccinationManagement.Views
             // 
             // btnVerification
             // 
+            this.btnVerification.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerification.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnVerification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerification.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));

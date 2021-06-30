@@ -52,15 +52,16 @@ namespace VaccinationManagement.Views
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 101);
+            this.label1.Location = new System.Drawing.Point(20, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 48);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Informacion Guardada con Exito";
+            this.label1.Text = "Información guardada con éxito";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
