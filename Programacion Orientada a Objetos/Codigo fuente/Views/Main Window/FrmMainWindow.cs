@@ -63,7 +63,12 @@ namespace VaccinationManagement.View
         private void FrmverificationChangeDataEvent(object sender, EventArgs e)
         {
             //Se asignó al boton 
-            ChangeChildrenFrm(new VaccinationProcess(FrmGetDuiToDisplay.appointmentoToDisplay));
+            
+            
+            if (FrmGetDuiToDisplay.appointmentoToDisplay != null)
+            {
+                ChangeChildrenFrm(new VaccinationProcess(FrmGetDuiToDisplay.appointmentoToDisplay));
+            }
             
         }
 

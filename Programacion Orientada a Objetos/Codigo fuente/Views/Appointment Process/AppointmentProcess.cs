@@ -61,7 +61,6 @@ namespace VaccinationManagement.Views
             if (!CheckForAllBox())
             {
                 var ErrorData = new FrmReviewData();
-                
                 var result = ErrorData.ShowDialog();
                 if(result == DialogResult.OK)
                 

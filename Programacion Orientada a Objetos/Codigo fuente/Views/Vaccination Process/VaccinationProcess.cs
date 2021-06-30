@@ -14,10 +14,10 @@ namespace VaccinationManagement.Views
     public partial class VaccinationProcess : Form
     {
         
-        private int dui;
+        private int?  dui;
         private Appointment appointmentToChange;
 
-        public VaccinationProcess(int dui)
+        public VaccinationProcess(int? dui)
         {
             
             var db = new VaccinationContext();

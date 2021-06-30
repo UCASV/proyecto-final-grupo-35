@@ -177,6 +177,7 @@ namespace VaccinationManagement.View
             // 
             // picLogoGobierno
             // 
+            this.picLogoGobierno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picLogoGobierno.Image = ((System.Drawing.Image) (resources.GetObject("picLogoGobierno.Image")));
             this.picLogoGobierno.Location = new System.Drawing.Point(3, 6);
             this.picLogoGobierno.Name = "picLogoGobierno";
