@@ -137,5 +137,5 @@ public class AppointmentsVm
 Only has the escencial data for a user to know about
 
 
->Views 
+
 
