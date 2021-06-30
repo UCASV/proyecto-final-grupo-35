@@ -9,7 +9,7 @@ namespace VaccinationManagement.Views
     public partial class FrmGetDui : Form
     {
         public System.Windows.Forms.Button btnVerification;
-        public int vf;
+        public int appointmentoToDisplay;
         public FrmGetDui()
         {
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace VaccinationManagement.Views
             {
                 var vaccinationProcess = new VaccinationProcess(appointments.ToList()[0]);
                 Hide();
-                vf = appointments.ToList().First();
+                appointmentoToDisplay = appointments.ToList().First();
                 Close();
             }
             else

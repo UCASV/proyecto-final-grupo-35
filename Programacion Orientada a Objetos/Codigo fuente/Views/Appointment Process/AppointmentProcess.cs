@@ -89,6 +89,8 @@ namespace VaccinationManagement.Views
                     db.Diseases.Add(d);
                     db.SaveChanges();
                 });
+
+                Close();
                
             }
 

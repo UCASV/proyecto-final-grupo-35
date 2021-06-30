@@ -24,65 +24,55 @@ namespace VaccinationManagement.View
             
             lblUser.Text = LocationData.GestorName;
             
-            FormHija(new FrmGraphics());
+            ChangeChildrenFrm(new FrmGraphics());
 
         }
         
         private void picLogoGobierno_Click(object sender, EventArgs e)
         {
-              FormHija(new FrmGraphics());
+              ChangeChildrenFrm(new FrmGraphics());
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            //Se asignó al boton 
-            
-            FormHija(new AppointmentProcess());
-            //var appointmentProcess = new AppointmentProcess();
-                       
-            // Abrir un formulario para registrar los datos del ciudadano 
-            //Hide();
-            //appointmentProcess.ShowDialog();
-            //Show();
+            //Se asignó al boton    
+            ChangeChildrenFrm(new AppointmentProcess());
+        }
+        private void childrenFormClose(object sender, EventArgs e)
+        {
+            ChangeChildrenFrm(new FrmGraphics());
+
         }
         
         private void btnVerificationFrm_Click(object sender, EventArgs e)
         {
             //Se asignó al boton
-            FormHija(new AppointmentProcess(fh2.CitizenToChange));
+            ChangeChildrenFrm(new AppointmentProcess(FrmVerificationChildren.CitizenToChange));
         }
+
         
         private void btnVerificationCita_Click(object sender, EventArgs e)
         {
           
-          FormHija2(new Frmverification());
-          fh2.btnVerification.Click += btnVerificationFrm_Click;
-          fh2.btnVerificationPrint.Click += btnVerificationFrm_Click;
+          ChangeToFrmVefication(new Frmverification());
+          FrmVerificationChildren.btnVerification.Click += btnVerificationFrm_Click;
+          FrmVerificationChildren.btnVerificationPrint.Click += btnVerificationFrm_Click;
           
         }
         
-        private void UpdateDataView_Click2(object sender, EventArgs e)
+        private void FrmverificationChangeDataEvent(object sender, EventArgs e)
         {
             //Se asignó al boton 
-            //var vaccinationProcessLogin = new FrmGetDui();
-            FormHija(new VaccinationProcess(fh3.vf));
+            ChangeChildrenFrm(new VaccinationProcess(FrmGetDuiToDisplay.appointmentoToDisplay));
             
-            // Abrir un formulario para verificar el Dui 
-            //Hide();
-            //vaccinationProcessLogin.ShowDialog();
-            //Show();
         }
 
         private void UpdateDataView_Click(object sender, EventArgs e)
         {
            //Se asignó al boton 
-           //var vaccinationProcessLogin = new FrmGetDui();
-           FormHija3(new FrmGetDui());
-           fh3.btnVerification.Click += UpdateDataView_Click2;
-           // Abrir un formulario para verificar el Dui 
-           //Hide();
-           //vaccinationProcessLogin.ShowDialog();
-           //Show();
+           ChangeToFrmGetDui(new FrmGetDui());
+           FrmGetDuiToDisplay.btnVerification.Click += FrmverificationChangeDataEvent;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -121,6 +111,52 @@ namespace VaccinationManagement.View
             this.WindowState = FormWindowState.Minimized;
         }
         
+        private Form ChildrenToDisplay;
+          private void  ChangeChildrenFrm(object ChangeChildrenFrm)
+          {
+                if (this.pnlPrincipal.Controls.Count > 0)
+                    this.pnlPrincipal.Controls.RemoveAt(0);
+                ChildrenToDisplay = ChangeChildrenFrm as Form;
+                ChildrenToDisplay.TopLevel = false;
+                ChildrenToDisplay.Dock = DockStyle.Fill;
+                this.pnlPrincipal.Controls.Add(ChildrenToDisplay);
+                this.pnlPrincipal.Tag = ChildrenToDisplay;
+                ChildrenToDisplay.Show();
+
+                ChildrenToDisplay.FormClosed += childrenFormClose; 
+          }
+          private Frmverification FrmVerificationChildren;
+          private void  ChangeToFrmVefication(Frmverification ChangeToFrmVefication)
+          {
+             if (this.pnlPrincipal.Controls.Count > 0)
+                this.pnlPrincipal.Controls.RemoveAt(0);
+             FrmVerificationChildren = ChangeToFrmVefication;
+             FrmVerificationChildren.TopLevel = false;
+             FrmVerificationChildren.Dock = DockStyle.Fill;
+             this.pnlPrincipal.Controls.Add(FrmVerificationChildren);
+             this.pnlPrincipal.Tag = FrmVerificationChildren;
+             FrmVerificationChildren.Show();
+
+             FrmVerificationChildren.FormClosed += childrenFormClose; 
+
+          }
+          
+          private FrmGetDui FrmGetDuiToDisplay;
+          
+          private void ChangeToFrmGetDui(FrmGetDui ChangeToFrmGetDui)
+          {
+            if (this.pnlPrincipal.Controls.Count > 0)
+            this.pnlPrincipal.Controls.RemoveAt(0);
+            FrmGetDuiToDisplay = ChangeToFrmGetDui;
+            FrmGetDuiToDisplay.TopLevel = false;
+            FrmGetDuiToDisplay.Dock = DockStyle.Fill;
+            this.pnlPrincipal.Controls.Add(FrmGetDuiToDisplay);
+            this.pnlPrincipal.Tag = FrmGetDuiToDisplay;
+            FrmGetDuiToDisplay.Show();
+
+            FrmGetDuiToDisplay.FormClosed += childrenFormClose; 
+
+          }
         
         
         
@@ -139,44 +175,6 @@ namespace VaccinationManagement.View
 
         
 
-        private Form fh;
-          private void  FormHija(object formhija)
-          {
-                if (this.pnlPrincipal.Controls.Count > 0)
-                    this.pnlPrincipal.Controls.RemoveAt(0);
-                fh = formhija as Form;
-                fh.TopLevel = false;
-                fh.Dock = DockStyle.Fill;
-                this.pnlPrincipal.Controls.Add(fh);
-                this.pnlPrincipal.Tag = fh;
-                fh.Show();
-          }
-          private Frmverification fh2;
-          private void  FormHija2(Frmverification formhija2)
-          {
-             if (this.pnlPrincipal.Controls.Count > 0)
-             this.pnlPrincipal.Controls.RemoveAt(0);
-             fh2 = formhija2;
-             fh2.TopLevel = false;
-             fh2.Dock = DockStyle.Fill;
-             this.pnlPrincipal.Controls.Add(fh2);
-             this.pnlPrincipal.Tag = fh2;
-             fh2.Show();
-          }
-          
-          private FrmGetDui fh3;
-          
-          private void  FormHija3(FrmGetDui formhija3)
-          {
-            if (this.pnlPrincipal.Controls.Count > 0)
-            this.pnlPrincipal.Controls.RemoveAt(0);
-            fh3 = formhija3;
-            fh3.TopLevel = false;
-            fh3.Dock = DockStyle.Fill;
-            this.pnlPrincipal.Controls.Add(fh3);
-            this.pnlPrincipal.Tag = fh3;
-            fh3.Show();
-          }
 
 
           
