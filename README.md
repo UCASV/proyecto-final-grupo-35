@@ -47,7 +47,7 @@ Download the manual from the repository also incluided in the Release v1.0.1
     
     - Press "Más Informacion" underlined text then "Ejecutar de todas formas" 
 
-     ![Svr winScree img]https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRInstallerWINError.png "Svr error")
+     ![Svr winScree img](https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRInstallerWINError.png "Svr error")
      
      ![Svr winScree img](https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRInstallerWINError2.png "Svr error2")
 
