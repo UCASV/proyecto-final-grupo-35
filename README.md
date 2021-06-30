@@ -22,7 +22,7 @@ Download the manual from the repository also incluided in the Release v1.0.1
 > Requirements to execute
 1. OS Microsoft Windows  7/8/8.1/10
 2. [Microsoft SQL Server 2019](https://www.microsoft.com/es-es/sql-server/sql-server-downloads) as the relational database management system installed 
-3. Download and install [Release v1.0.1](github.com/) on your PC [(follow the instructions)]()
+3. Download and install [Release v1.0.2](https://github.com/UCASV/proyecto-final-grupo-35/releases/tag/1.0.2) on your PC [(follow the instructions)](https://github.com/UCASV/proyecto-final-grupo-35#instalation-instructions)
 
 #  
 
@@ -37,19 +37,19 @@ Download the manual from the repository also incluided in the Release v1.0.1
 
     - Now you can close the window                   
     
-2. Download and unzip [Release v1.0.2](github.com/) on your PC
-> Some S
+2. Download and unzip [Release v1.0.2](https://github.com/UCASV/proyecto-final-grupo-35/releases/tag/1.0.2) on your PC
+
 3. Execute SRVInstall.exe file
 
-    ![Svr file img](https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRIntallerImg.png "Svr file")
+    ![Svr file img](https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRInstallerImg.png "Svr file")
 
     - Since this is not a signed .exe file, this screen will be shown and some Antivirus may erase the file 
     
     - Press "Más Informacion" underlined text then "Ejecutar de todas formas" 
 
-     ![Svr winScree img](https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRIntallerWINError.png "Svr error")
+     ![Svr winScree img]https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRInstallerWINError.png "Svr error")
      
-     ![Svr winScree img](https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRIntallerWINError2.png "Svr error2")
+     ![Svr winScree img](https://raw.githubusercontent.com/UCASV/proyecto-final-grupo-35/master/Programacion%20Orientada%20a%20Objetos/Docs/Resources/SVRInstallerWINError2.png "Svr error2")
 
 
 4. Follow Instalator Steps
