@@ -37,7 +37,7 @@ Download the manual from the repository also incluided in the Release v1.0.1
 
     - Now you can close the window                   
     
-2. Download and unzip [Release v1.0.2](https://github.com/UCASV/proyecto-final-grupo-35/releases/tag/1.0.2) on your PC
+2. Download [Release v1.0.2](https://github.com/UCASV/proyecto-final-grupo-35/releases/tag/1.0.2) on your PC
 
 3. Execute SRVInstall.exe file
 
